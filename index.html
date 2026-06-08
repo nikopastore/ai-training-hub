@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Training Hub — Personal AI Fluency Tracker</title>
+  <meta name="description" content="A gamified command center for the top AI/ML courses of 2026. Track progress, earn XP, build AI fluency." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="28" height="28">
+          <path d="M12 2L4 7v10l8 5 8-5V7l-8-5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+          <path d="M12 22V12M4 7l8 5 8-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+        </svg>
+      </div>
+      <div>
+        <h1 class="brand-title">AI Training Hub</h1>
+        <p class="brand-sub">Personal AI fluency tracker</p>
+      </div>
+    </div>
+
+    <div class="stats" role="group" aria-label="Your stats">
+      <div class="stat" title="Level">
+        <span class="stat-label">Level</span>
+        <span class="stat-value" id="stat-level">1</span>
+      </div>
+      <div class="stat" title="Total XP">
+        <span class="stat-label">XP</span>
+        <span class="stat-value" id="stat-xp">0</span>
+      </div>
+      <div class="stat" title="Day streak">
+        <span class="stat-label">Streak</span>
+        <span class="stat-value" id="stat-streak">0</span>
+      </div>
+      <div class="stat" title="Courses in progress">
+        <span class="stat-label">Active</span>
+        <span class="stat-value" id="stat-active">0</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="progress-card" aria-labelledby="overall-heading">
+      <div class="progress-card-head">
+        <h2 id="overall-heading">Overall progress</h2>
+        <span class="progress-pct" id="progress-pct">0%</span>
+      </div>
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p class="progress-meta" id="progress-meta">0 of 0 courses completed</p>
+    </section>
+
+    <section class="search-row" aria-label="Filter courses">
+      <input type="search" id="search" placeholder="Search courses, providers, or topics…" aria-label="Search courses" />
+      <div class="filter-chips" id="filter-chips" role="group" aria-label="Filter by tier"></div>
+    </section>
+
+    <section class="tier-section" data-tier="learn">
+      <header class="tier-header">
+        <h2 class="tier-title">Learn</h2>
+        <p class="tier-desc">Foundations · read, watch, internalize</p>
+      </header>
+      <div class="course-grid" data-tier="learn"></div>
+    </section>
+
+    <section class="tier-section" data-tier="build">
+      <header class="tier-header">
+        <h2 class="tier-title">Build</h2>
+        <p class="tier-desc">Hands-on · ship code, deploy models</p>
+      </header>
+      <div class="course-grid" data-tier="build"></div>
+    </section>
+
+    <section class="tier-section" data-tier="ship">
+      <header class="tier-header">
+        <h2 class="tier-title">Ship</h2>
+        <p class="tier-desc">Production · take it to users</p>
+      </header>
+      <div class="course-grid" data-tier="ship"></div>
+    </section>
+
+    <section class="achievements-section" aria-labelledby="achievements-heading">
+      <h2 id="achievements-heading">Achievements</h2>
+      <div class="achievements-grid" id="achievements-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Personal AI fluency tracker · All progress saved locally · MIT licensed</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

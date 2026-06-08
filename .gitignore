@@ -1,0 +1,28 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log
+.npm/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Local data (preserve template, ignore user state)
+data/user-state.json
+
+# Screenshots and build artifacts
+*.log
+.cache/

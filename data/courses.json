@@ -1,0 +1,272 @@
+[
+  {
+    "id": "anthropic-intro",
+    "title": "Introduction to Claude",
+    "provider": "Anthropic Skilljar",
+    "tier": "learn",
+    "xp": 150,
+    "tags": ["anthropic", "free", "foundations"],
+    "url": "https://anthropic.skilljar.com/introduction-to-claude",
+    "description": "Start here. Learn what Claude is, how it differs from other models, and the mental model for working with it."
+  },
+  {
+    "id": "anthropic-prompt-eng",
+    "title": "Prompt Engineering Fundamentals",
+    "provider": "Anthropic Skilljar",
+    "tier": "learn",
+    "xp": 200,
+    "tags": ["anthropic", "free", "prompting"],
+    "url": "https://anthropic.skilljar.com/prompt-engineering-fundamentals",
+    "description": "The patterns that make prompts work — clarity, examples, system prompts, structured output. The single highest-leverage skill in applied AI."
+  },
+  {
+    "id": "anthropic-prompt-eng-intermediate",
+    "title": "Intermediate Prompt Engineering",
+    "provider": "Anthropic Skilljar",
+    "tier": "learn",
+    "xp": 220,
+    "tags": ["anthropic", "free", "prompting"],
+    "url": "https://anthropic.skilljar.com/claude-with-the-anthropic-api",
+    "description": "Beyond the basics — chain-of-thought, role prompting, when to break the rules, and how to debug bad outputs."
+  },
+  {
+    "id": "anthropic-api",
+    "title": "Claude with the Anthropic API",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 280,
+    "tags": ["anthropic", "free", "api", "build"],
+    "url": "https://anthropic.skilljar.com/claude-with-the-anthropic-api",
+    "description": "Hands-on with the Messages API, streaming, tool use, vision inputs, and prompt caching."
+  },
+  {
+    "id": "anthropic-tool-use",
+    "title": "Tool Use with Claude",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 280,
+    "tags": ["anthropic", "free", "agents", "build"],
+    "url": "https://anthropic.skilljar.com/tool-use-with-claude",
+    "description": "How to give Claude hands — function calling, tool schemas, multi-step agents, and the gotchas that break them."
+  },
+  {
+    "id": "anthropic-mcp",
+    "title": "Model Context Protocol (MCP)",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 260,
+    "tags": ["anthropic", "free", "mcp", "agents", "build"],
+    "url": "https://anthropic.skilljar.com/model-context-protocol",
+    "description": "The protocol for connecting models to tools and data. Build an MCP server, connect it to Claude, see the agent loop in action."
+  },
+  {
+    "id": "anthropic-claude-code",
+    "title": "Claude Code in Action",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 300,
+    "tags": ["anthropic", "free", "developer", "build"],
+    "url": "https://anthropic.skilljar.com/claude-code-in-action",
+    "description": "Agentic coding at the terminal — Claude Code, subagents, hooks, and the patterns that turn it into a real teammate."
+  },
+  {
+    "id": "anthropic-agents-compound",
+    "title": "Building Compound AI Systems",
+    "provider": "Anthropic Skilljar",
+    "tier": "ship",
+    "xp": 320,
+    "tags": ["anthropic", "free", "architecture", "ship"],
+    "url": "https://anthropic.skilljar.com/building-compound-ai-systems",
+    "description": "Real systems are pipelines, not single calls. Retrieval, routing, ensembles, evaluators — the architecture patterns from production."
+  },
+  {
+    "id": "anthropic-eval",
+    "title": "Evaluating AI Applications",
+    "provider": "Anthropic Skilljar",
+    "tier": "ship",
+    "xp": 320,
+    "tags": ["anthropic", "free", "evaluation", "ship"],
+    "url": "https://anthropic.skilljar.com/evaluating-ai-applications",
+    "description": "You can't ship what you can't measure. Building eval suites, grading rubrics, A/B testing prompts, and the metrics that actually matter."
+  },
+  {
+    "id": "anthropic-constitutional",
+    "title": "Constitutional AI & Safety",
+    "provider": "Anthropic Skilljar",
+    "tier": "learn",
+    "xp": 200,
+    "tags": ["anthropic", "free", "safety", "theory"],
+    "url": "https://anthropic.skilljar.com/constitutional-ai",
+    "description": "How Claude is trained to be helpful, harmless, and honest — and why that matters when you're building with it."
+  },
+  {
+    "id": "anthropic-context-eng",
+    "title": "Context Engineering for Agents",
+    "provider": "Anthropic Skilljar",
+    "tier": "ship",
+    "xp": 300,
+    "tags": ["anthropic", "free", "context", "ship"],
+    "url": "https://anthropic.skilljar.com/context-engineering-for-agents",
+    "description": "Context is the new prompt. Memory, retrieval, summarization, scratchpads — engineering what the model sees is most of the work."
+  },
+  {
+    "id": "anthropic-extended-thinking",
+    "title": "Extended Thinking & Reasoning",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 240,
+    "tags": ["anthropic", "free", "reasoning", "build"],
+    "url": "https://anthropic.skilljar.com/extended-thinking",
+    "description": "When to let Claude think out loud, when not to, and how to budget reasoning tokens for the right tasks."
+  },
+  {
+    "id": "anthropic-vision",
+    "title": "Working with Images",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 220,
+    "tags": ["anthropic", "free", "vision", "build"],
+    "url": "https://anthropic.skilljar.com/working-with-images",
+    "description": "Multimodal inputs — PDFs, charts, screenshots, document Q&A. The real-world patterns for visual understanding."
+  },
+  {
+    "id": "anthropic-prompt-caching",
+    "title": "Prompt Caching & Cost Optimization",
+    "provider": "Anthropic Skilljar",
+    "tier": "ship",
+    "xp": 240,
+    "tags": ["anthropic", "free", "cost", "ship"],
+    "url": "https://anthropic.skilljar.com/prompt-caching",
+    "description": "Caching, batching, model selection, and the architectural moves that take your API bill from painful to negligible."
+  },
+  {
+    "id": "anthropic-claude-sdk",
+    "title": "Building with the Claude SDK",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 260,
+    "tags": ["anthropic", "free", "sdk", "build"],
+    "url": "https://anthropic.skilljar.com/building-with-the-claude-sdk",
+    "description": "The Claude Agent SDK in Python and TypeScript — full programmatic control, streaming, retries, and production patterns."
+  },
+  {
+    "id": "anthropic-flow-engineering",
+    "title": "Flow Engineering",
+    "provider": "Anthropic Skilljar",
+    "tier": "ship",
+    "xp": 320,
+    "tags": ["anthropic", "free", "orchestration", "ship"],
+    "url": "https://anthropic.skilljar.com/flow-engineering",
+    "description": "Orchestrating multi-step agent workflows — error recovery, human-in-the-loop, state machines for agents."
+  },
+  {
+    "id": "anthropic-claude-on-aws",
+    "title": "Claude on Amazon Bedrock",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 200,
+    "tags": ["anthropic", "free", "aws", "build"],
+    "url": "https://anthropic.skilljar.com/claude-on-amazon-bedrock",
+    "description": "Deploying Claude through AWS — IAM, VPC, cost controls, and the production deployment story."
+  },
+  {
+    "id": "anthropic-claude-on-gcp",
+    "title": "Claude on Google Cloud (Vertex AI)",
+    "provider": "Anthropic Skilljar",
+    "tier": "build",
+    "xp": 200,
+    "tags": ["anthropic", "free", "gcp", "build"],
+    "url": "https://anthropic.skilljar.com/claude-on-google-cloud",
+    "description": "Vertex AI setup, model garden, and integrating Claude into Google Cloud workflows."
+  },
+  {
+    "id": "cs231n",
+    "title": "CS231n: Convolutional Neural Networks",
+    "provider": "Stanford (YouTube)",
+    "tier": "learn",
+    "xp": 280,
+    "tags": ["free", "vision", "theory", "stanford"],
+    "url": "http://cs231n.stanford.edu/",
+    "description": "Andrej Karpathy's legendary Stanford course. The deep dive into CNNs, backprop, and the foundations of modern vision."
+  },
+  {
+    "id": "cs336",
+    "title": "CS336: Language Modeling From Scratch",
+    "provider": "Stanford (YouTube)",
+    "tier": "ship",
+    "xp": 400,
+    "tags": ["free", "training", "theory", "stanford"],
+    "url": "https://stanford-cs336.github.io/spring2025/",
+    "description": "Build a language model from scratch — tokenization, architectures, distributed training, and the systems-level work that productionizes LLMs."
+  },
+  {
+    "id": "fastai",
+    "title": "Practical Deep Learning for Coders",
+    "provider": "fast.ai",
+    "tier": "build",
+    "xp": 280,
+    "tags": ["free", "practical", "build"],
+    "url": "https://course.fast.ai/",
+    "description": "Top-down, code-first. Get a working model in 5 minutes, then peel back the layers. The best on-ramp for ML practitioners."
+  },
+  {
+    "id": "huggingface-agents",
+    "title": "Agentic AI with Hugging Face",
+    "provider": "Hugging Face",
+    "tier": "build",
+    "xp": 260,
+    "tags": ["free", "agents", "build"],
+    "url": "https://huggingface.co/learn/agents-course",
+    "description": "smolagents, function-calling, RAG, and the open-source stack for building production agents. Hands-on from notebook to deployment."
+  },
+  {
+    "id": "deeplearning-ai-agentic",
+    "title": "Agentic AI (DeepLearning.AI)",
+    "provider": "DeepLearning.AI",
+    "tier": "build",
+    "xp": 240,
+    "tags": ["free", "agents", "build", "andrew-ng"],
+    "url": "https://www.deeplearning.ai/short-courses/agentic-ai/",
+    "description": "Andrew Ng's short course on the agent stack — ReAct, planning, reflection, and the five patterns that show up in every real system."
+  },
+  {
+    "id": "google-generative-ai",
+    "title": "Generative AI Learning Path",
+    "provider": "Google Cloud Skills Boost",
+    "tier": "learn",
+    "xp": 220,
+    "tags": ["free", "google", "foundations"],
+    "url": "https://www.cloudskillsboost.google/paths/118",
+    "description": "Google's structured path through generative AI — Gemini, embeddings, vector search, and the production patterns on GCP."
+  },
+  {
+    "id": "karpathy-zero-to-hero",
+    "title": "Neural Networks: Zero to Hero",
+    "provider": "Andrej Karpathy (YouTube)",
+    "tier": "learn",
+    "xp": 320,
+    "tags": ["free", "theory", "from-scratch"],
+    "url": "https://karpathy.ai/zero-to-hero.html",
+    "description": "Build GPT from scratch, in code, line by line. The single best resource for understanding what an LLM actually is."
+  },
+  {
+    "id": "kahn-academy-ai",
+    "title": "Kahn Academy AI for Education",
+    "provider": "Kahn Academy",
+    "tier": "learn",
+    "xp": 180,
+    "tags": ["free", "khan", "foundations"],
+    "url": "https://www.khanacademy.org/computing/ai",
+    "description": "Khan Academy's AI literacy track — concepts, ethics, and how to think about AI in everyday life and work."
+  },
+  {
+    "id": "fullstack-deeplearning",
+    "title": "Full Stack Deep Learning",
+    "provider": "FSDL",
+    "tier": "ship",
+    "xp": 300,
+    "tags": ["free", "production", "ship"],
+    "url": "https://fullstackdeeplearning.com/",
+    "description": "The course on shipping ML — data labeling, training pipelines, deployment, monitoring, and the boring work that makes models actually useful."
+  }
+]

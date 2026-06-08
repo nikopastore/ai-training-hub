@@ -1,0 +1,26 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x, 22.x]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: npm install || true
+      - name: Validate courses.json
+        run: node -e "const c=require('./data/courses.json'); if(!Array.isArray(c)||c.length<20) throw new Error('Catalog too small'); console.log('Catalog OK:', c.length, 'courses');"
+      - name: Run tests
+        run: npm test
