@@ -126,8 +126,8 @@ test("daysBetween handles leap year", () => {
 // ============================================================
 // ACHIEVEMENTS
 // ============================================================
-test("ACHIEVEMENTS list has 18 entries (3 quality-tier achievements added)", () => {
-  assert.equal(Hub.ACHIEVEMENTS.length, 18);
+test("ACHIEVEMENTS list has 19 entries (4 quality-tier achievements)", () => {
+  assert.equal(Hub.ACHIEVEMENTS.length, 19);
 });
 
 test("each achievement has id, icon, name, desc", () => {
@@ -165,6 +165,13 @@ test("a-tier-collector achievement exists with gold medal icon", () => {
 test("tier-explorer achievement exists", () => {
   const a = Hub.ACHIEVEMENTS.find(x => x.id === "tier-explorer");
   assert.ok(a);
+});
+
+test("centurion achievement exists with 💯 icon", () => {
+  const a = Hub.ACHIEVEMENTS.find(x => x.id === "centurion");
+  assert.ok(a);
+  assert.equal(a.icon, "💯");
+  assert.match(a.desc, /1[,.]?000 XP/i);
 });
 
 // ============================================================
@@ -237,6 +244,58 @@ test("completing one of each tier (S+A+B) unlocks tier-explorer achievement", ()
   Hub.completeCourse(a.id, a, catalog);
   Hub.completeCourse(b.id, b, catalog);
   assert.ok(Hub.getState().achievements["tier-explorer"], "tier-explorer should be unlocked after S+A+B");
+});
+
+test("earning 1000+ XP from S-tier courses unlocks centurion achievement", () => {
+  Hub.resetAll();
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const sCourses = catalog.filter(c => c.quality === "S");
+  // Complete enough S-tier courses to hit 1000 XP
+  let xp = 0;
+  for (const c of sCourses) {
+    if (xp >= 1000) break;
+    Hub.completeCourse(c.id, c, catalog);
+    xp += c.xp;
+  }
+  assert.ok(xp >= 1000, `test setup: need 1000+ S XP, got ${xp}`);
+  assert.ok(Hub.getState().achievements["centurion"], "centurion should unlock at 1000+ S-tier XP");
+});
+
+test("5 new certification courses (azure/aws-ml/google-ml/nvidia/kaggle) are present", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const required = [
+    "azure-ai-engineer",
+    "aws-ml-specialty",
+    "google-ml-engineer",
+    "nvidia-dli",
+    "kaggle-learn",
+  ];
+  for (const id of required) {
+    const found = catalog.find(c => c.id === id);
+    assert.ok(found, `expected course ${id} to exist`);
+    assert.ok(found.url.startsWith("https://"), `${id} should have https URL`);
+    assert.ok(["S", "A", "B", "C"].includes(found.quality), `${id} should have quality tier`);
+  }
+});
+
+test("catalog has exactly 5 top picks (curated S-tier highlights)", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const picks = catalog.filter(c => c.picks === true);
+  assert.equal(picks.length, 5, `expected 5 top picks, found ${picks.length}`);
+  for (const p of picks) {
+    assert.equal(p.quality, "S", `top pick should be S-tier: ${p.id} is ${p.quality}`);
+  }
+});
+
+test("AWS ML Specialty is in the top picks (new addition)", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const aws = catalog.find(c => c.id === "aws-ml-specialty");
+  assert.ok(aws.picks === true, "AWS ML Specialty should be a top pick");
+});
+
+test("at least 60 courses in catalog", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  assert.ok(catalog.length >= 60, `expected >= 60 courses, got ${catalog.length}`);
 });
 
 // ============================================================

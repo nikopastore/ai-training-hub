@@ -125,6 +125,7 @@
     { id: "s-tier-collector", icon: "👑", name: "S-Tier Scholar", desc: "Complete all S-tier courses" },
     { id: "a-tier-collector", icon: "🥇", name: "Gold Standard", desc: "Complete all A-tier courses" },
     { id: "tier-explorer", icon: "🎖️", name: "Tier Explorer", desc: "Complete courses from every quality tier (S, A, B)" },
+    { id: "centurion", icon: "💯", name: "Centurion", desc: "Earn 1,000 XP from S-tier courses" },
   ];
 
   const checkAchievements = (catalog) => {
@@ -193,6 +194,12 @@
       completed.map(c => c.quality).filter(q => q && QUALITY_TIERS.includes(q))
     );
     if (["S", "A", "B"].every(q => tiersWithCompletion.has(q))) tryUnlock("tier-explorer");
+
+    // Centurion: 1000 XP specifically from S-tier courses
+    const sTierXp = completed
+      .filter(c => c.quality === "S")
+      .reduce((sum, c) => sum + (c.xp || 0), 0);
+    if (sTierXp >= 1000) tryUnlock("centurion");
 
     return newlyUnlocked;
   };
@@ -282,6 +289,66 @@
     el("#progress-fill").style.width = `${pct}%`;
     el("#progress-bar").setAttribute("aria-valuenow", pct);
     el("#progress-meta").textContent = `${completed} of ${total} courses completed`;
+  };
+
+  const renderTierDistribution = () => {
+    const grid = el("#tier-distribution");
+    if (!grid) return;
+    grid.innerHTML = "";
+    QUALITY_TIERS.forEach(q => {
+      const all = catalog.filter(c => (c.quality || "B") === q);
+      const done = all.filter(c => state.courses[c.id]?.status === "completed").length;
+      const total = all.length;
+      const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+      const xpDone = all.filter(c => state.courses[c.id]?.status === "completed")
+        .reduce((s, c) => s + (c.xp || 0), 0);
+      const xpTotal = all.reduce((s, c) => s + (c.xp || 0), 0);
+      const card = document.createElement("div");
+      card.className = `tier-stat tier-stat-${q.toLowerCase()}`;
+      card.innerHTML = `
+        <div class="tier-stat-head">
+          <span class="tier-badge tier-badge-${q.toLowerCase()}">${q}</span>
+          <span class="tier-stat-count">${done}/${total}</span>
+        </div>
+        <div class="tier-stat-bar"><div class="tier-stat-fill" style="width:${pct}%"></div></div>
+        <div class="tier-stat-foot">
+          <span class="tier-stat-pct">${pct}%</span>
+          <span class="tier-stat-xp">${xpDone.toLocaleString()} / ${xpTotal.toLocaleString()} XP</span>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  };
+
+  const renderTopPicks = () => {
+    const grid = el("#top-picks-grid");
+    if (!grid) return;
+    grid.innerHTML = "";
+    const picks = catalog.filter(c => c.picks === true);
+    picks.forEach(course => {
+      const courseState = state.courses[course.id] || { status: "not-started" };
+      const status = courseState.status;
+      const card = document.createElement("article");
+      card.className = `pick-card quality-${(course.quality || "B").toLowerCase()} ${status === "completed" ? "completed" : ""} ${status === "in-progress" ? "in-progress" : ""}`;
+      card.dataset.id = course.id;
+      card.innerHTML = `
+        ${status === "completed" ? `<div class="completed-check" aria-label="Completed">✓</div>` : ""}
+        <div class="pick-card-top">
+          <span class="course-provider">${course.provider}</span>
+          <span class="tier-badge tier-badge-${course.quality.toLowerCase()}" title="${course.qualityReason || ""}">${course.quality}</span>
+        </div>
+        <h3 class="pick-card-title">${course.title}</h3>
+        <p class="pick-card-desc">${course.description || ""}</p>
+        <div class="pick-card-actions">
+          <span class="course-xp">+${course.xp} XP</span>
+          <a class="btn btn-ghost" href="${course.url}" target="_blank" rel="noopener noreferrer">Open ↗</a>
+          <button class="btn ${status === "completed" ? "btn-ghost" : status === "in-progress" ? "btn-terracotta" : "btn-primary"}" data-action="${status === "completed" ? "uncomplete" : status === "in-progress" ? "complete" : "start"}">${
+            status === "completed" ? "Done" : status === "in-progress" ? "Mark complete" : "Start"
+          }</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
   };
 
   const matchesFilter = (course) => {
@@ -413,6 +480,8 @@
   const renderAll = () => {
     renderStats();
     renderProgress();
+    renderTierDistribution();
+    renderTopPicks();
     renderFilters();
     renderCourses();
     renderAchievements();
