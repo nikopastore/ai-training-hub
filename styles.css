@@ -185,6 +185,130 @@ body {
   color: var(--cream);
 }
 
+/* ============================================================
+   QUALITY TIER SYSTEM (S/A/B/C) — graded on usefulness + industry weight
+   ============================================================ */
+:root {
+  --tier-s-bg: linear-gradient(135deg, #f5d472 0%, #d4a341 50%, #b8862c 100%);
+  --tier-s-text: #2a1f0a;
+  --tier-s-shadow: rgba(212, 163, 65, 0.35);
+  --tier-a-bg: linear-gradient(135deg, #e8e0d0 0%, #c4b9a8 50%, #9c8e7c 100%);
+  --tier-a-text: #2a241d;
+  --tier-a-shadow: rgba(156, 142, 124, 0.3);
+  --tier-b-bg: linear-gradient(135deg, #d4a37a 0%, #b07a4d 50%, #8a5a35 100%);
+  --tier-b-text: #1f1408;
+  --tier-b-shadow: rgba(176, 122, 77, 0.3);
+  --tier-c-bg: linear-gradient(135deg, #c5b8a8 0%, #9a8d7c 50%, #6e6457 100%);
+  --tier-c-text: #faf6ef;
+  --tier-c-shadow: rgba(110, 100, 87, 0.3);
+}
+
+.tier-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 6px var(--tier-s-shadow);
+  border: 1px solid rgba(0,0,0,0.08);
+  cursor: help;
+  transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+}
+.tier-badge:hover { transform: scale(1.08); }
+.tier-badge-s { background: var(--tier-s-bg); color: var(--tier-s-text); box-shadow: 0 1px 2px rgba(0,0,0,0.1), 0 2px 8px var(--tier-s-shadow), inset 0 1px 0 rgba(255,255,255,0.4); }
+.tier-badge-a { background: var(--tier-a-bg); color: var(--tier-a-text); box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 6px var(--tier-a-shadow), inset 0 1px 0 rgba(255,255,255,0.3); }
+.tier-badge-b { background: var(--tier-b-bg); color: var(--tier-b-text); box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 6px var(--tier-b-shadow), inset 0 1px 0 rgba(255,255,255,0.3); }
+.tier-badge-c { background: var(--tier-c-bg); color: var(--tier-c-text); box-shadow: 0 1px 2px rgba(0,0,0,0.08), 0 2px 6px var(--tier-c-shadow), inset 0 1px 0 rgba(255,255,255,0.2); }
+
+.quality-row {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 12px;
+  margin-bottom: 18px;
+  padding: 14px 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-1);
+}
+.quality-row-label {
+  display: flex; flex-direction: column; gap: 1px;
+  margin-right: 4px;
+}
+.quality-row-title {
+  font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
+  font-weight: 700; color: var(--ink-2);
+}
+.quality-row-hint {
+  font-size: 11px; color: var(--ink-3);
+  font-style: italic;
+}
+.quality-chips { gap: 8px; }
+.quality-chips .chip {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  min-width: 38px;
+  text-align: center;
+  padding: 6px 12px;
+}
+.quality-chips .chip.quality-chip-s { border-color: #d4a341; }
+.quality-chips .chip.quality-chip-a { border-color: #9c8e7c; }
+.quality-chips .chip.quality-chip-b { border-color: #b07a4d; }
+.quality-chips .chip.quality-chip-c { border-color: #6e6457; }
+.quality-chips .chip.quality-chip-s.active { background: var(--tier-s-bg); color: var(--tier-s-text); border-color: #b8862c; }
+.quality-chips .chip.quality-chip-a.active { background: var(--tier-a-bg); color: var(--tier-a-text); border-color: #9c8e7c; }
+.quality-chips .chip.quality-chip-b.active { background: var(--tier-b-bg); color: var(--tier-b-text); border-color: #8a5a35; }
+.quality-chips .chip.quality-chip-c.active { background: var(--tier-c-bg); color: var(--tier-c-text); border-color: #6e6457; }
+
+.tier-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 36px;
+  padding: 18px 20px;
+  background: linear-gradient(180deg, var(--cream-2), var(--paper));
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.legend-item {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.legend-item strong {
+  display: block;
+  font-size: 13px; font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.legend-item p {
+  margin: 0;
+  font-size: 12px; line-height: 1.45;
+  color: var(--ink-3);
+}
+.legend-item .tier-badge { width: 32px; height: 32px; font-size: 14px; border-radius: 9px; }
+
+.course-top {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.course-top .course-provider { margin-bottom: 0; }
+
+/* Card left border accent by quality tier */
+.course.quality-s { border-left: 3px solid #d4a341; }
+.course.quality-a { border-left: 3px solid #9c8e7c; }
+.course.quality-b { border-left: 3px solid #b07a4d; }
+.course.quality-c { border-left: 3px solid #6e6457; }
+
+@media (max-width: 640px) {
+  .tier-legend { grid-template-columns: 1fr; }
+  .quality-row { padding: 12px 14px; }
+}
+
 .tier-section { margin-bottom: 40px; }
 .tier-header {
   display: flex; align-items: baseline; gap: 12px;

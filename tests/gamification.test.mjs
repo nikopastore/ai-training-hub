@@ -126,8 +126,8 @@ test("daysBetween handles leap year", () => {
 // ============================================================
 // ACHIEVEMENTS
 // ============================================================
-test("ACHIEVEMENTS list has 15 entries", () => {
-  assert.equal(Hub.ACHIEVEMENTS.length, 15);
+test("ACHIEVEMENTS list has 18 entries (3 quality-tier achievements added)", () => {
+  assert.equal(Hub.ACHIEVEMENTS.length, 18);
 });
 
 test("each achievement has id, icon, name, desc", () => {
@@ -148,6 +148,95 @@ test("anthropic-pick achievement exists", () => {
   const a = Hub.ACHIEVEMENTS.find(x => x.id === "anthropic-pick");
   assert.ok(a, "anthropic-pick achievement should exist");
   assert.match(a.name, /anthropic/i);
+});
+
+test("s-tier-collector achievement exists with crown icon", () => {
+  const a = Hub.ACHIEVEMENTS.find(x => x.id === "s-tier-collector");
+  assert.ok(a);
+  assert.equal(a.icon, "👑");
+});
+
+test("a-tier-collector achievement exists with gold medal icon", () => {
+  const a = Hub.ACHIEVEMENTS.find(x => x.id === "a-tier-collector");
+  assert.ok(a);
+  assert.equal(a.icon, "🥇");
+});
+
+test("tier-explorer achievement exists", () => {
+  const a = Hub.ACHIEVEMENTS.find(x => x.id === "tier-explorer");
+  assert.ok(a);
+});
+
+// ============================================================
+// QUALITY TIER SYSTEM
+// ============================================================
+test("QUALITY_TIERS exposes S/A/B/C in order", () => {
+  assert.deepEqual(Hub.QUALITY_TIERS, ["S", "A", "B", "C"]);
+});
+
+test("QUALITY_LABELS has entries for all 4 tiers", () => {
+  for (const t of ["S", "A", "B", "C"]) {
+    assert.ok(Hub.QUALITY_LABELS[t], `missing label for ${t}`);
+  }
+});
+
+test("QUALITY_DESCRIPTIONS has entries for all 4 tiers", () => {
+  for (const t of ["S", "A", "B", "C"]) {
+    assert.ok(Hub.QUALITY_DESCRIPTIONS[t], `missing description for ${t}`);
+  }
+});
+
+test("catalog has at least 1 S-tier course", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const sCount = catalog.filter(c => c.quality === "S").length;
+  assert.ok(sCount >= 1, `expected >= 1 S-tier course, found ${sCount}`);
+});
+
+test("every course in catalog has a quality tier (S/A/B/C)", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  for (const c of catalog) {
+    assert.ok(["S", "A", "B", "C"].includes(c.quality), `course ${c.id} has invalid quality: ${c.quality}`);
+    assert.ok(c.qualityReason, `course ${c.id} missing qualityReason`);
+  }
+});
+
+test("5 new certification courses are present", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const required = [
+    "anthropic-claude-cert-architect",
+    "github-foundations",
+    "google-ai-essentials",
+    "aws-ai-practitioner",
+    "ibm-genai-engineering",
+  ];
+  for (const id of required) {
+    const found = catalog.find(c => c.id === id);
+    assert.ok(found, `expected course ${id} to exist`);
+    assert.ok(found.url.startsWith("https://"), `${id} should have https URL`);
+  }
+});
+
+test("completing all S-tier courses unlocks s-tier-collector achievement", () => {
+  Hub.resetAll();
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const sCourses = catalog.filter(c => c.quality === "S");
+  for (const c of sCourses) {
+    Hub.completeCourse(c.id, c, catalog);
+  }
+  assert.ok(Hub.getState().achievements["s-tier-collector"], "s-tier-collector should be unlocked");
+});
+
+test("completing one of each tier (S+A+B) unlocks tier-explorer achievement", () => {
+  Hub.resetAll();
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const s = catalog.find(c => c.quality === "S");
+  const a = catalog.find(c => c.quality === "A");
+  const b = catalog.find(c => c.quality === "B");
+  assert.ok(s && a && b, "catalog must have at least one S, A, and B course");
+  Hub.completeCourse(s.id, s, catalog);
+  Hub.completeCourse(a.id, a, catalog);
+  Hub.completeCourse(b.id, b, catalog);
+  assert.ok(Hub.getState().achievements["tier-explorer"], "tier-explorer should be unlocked after S+A+B");
 });
 
 // ============================================================

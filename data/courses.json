@@ -5,9 +5,15 @@
     "provider": "Anthropic Skilljar",
     "tier": "learn",
     "xp": 150,
-    "tags": ["anthropic", "free", "foundations"],
+    "tags": [
+      "anthropic",
+      "free",
+      "foundations"
+    ],
     "url": "https://anthropic.skilljar.com/claude-101",
-    "description": "Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning."
+    "description": "Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning.",
+    "quality": "A",
+    "qualityReason": "The official Anthropic 101. Authoritative entry point."
   },
   {
     "id": "anthropic-ai-fluency",
@@ -15,9 +21,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "learn",
     "xp": 200,
-    "tags": ["anthropic", "free", "foundations", "fluency"],
+    "tags": [
+      "anthropic",
+      "free",
+      "foundations",
+      "fluency"
+    ],
     "url": "https://anthropic.skilljar.com/ai-fluency-framework-foundations",
-    "description": "The meta course — learn to collaborate with AI systems effectively, efficiently, ethically, and safely. The Anthropic-endorsed framework for AI collaboration."
+    "description": "The meta course \u2014 learn to collaborate with AI systems effectively, efficiently, ethically, and safely. The Anthropic-endorsed framework for AI collaboration.",
+    "quality": "A",
+    "qualityReason": "Anthropic's official fluency framework. Strong brand weight."
   },
   {
     "id": "anthropic-capabilities",
@@ -25,9 +38,15 @@
     "provider": "Anthropic Skilljar",
     "tier": "learn",
     "xp": 150,
-    "tags": ["anthropic", "free", "foundations"],
+    "tags": [
+      "anthropic",
+      "free",
+      "foundations"
+    ],
     "url": "https://anthropic.skilljar.com/ai-capabilities-and-limitations",
-    "description": "An introductory course about how AI works — what models can and can't do, and how to think about their failure modes."
+    "description": "An introductory course about how AI works \u2014 what models can and can't do, and how to think about their failure modes.",
+    "quality": "A",
+    "qualityReason": "Anthropic's intro to how AI works."
   },
   {
     "id": "anthropic-prompt-eng",
@@ -35,9 +54,15 @@
     "provider": "Anthropic Skilljar",
     "tier": "learn",
     "xp": 200,
-    "tags": ["anthropic", "free", "prompting"],
+    "tags": [
+      "anthropic",
+      "free",
+      "prompting"
+    ],
     "url": "https://anthropic.skilljar.com/prompt-engineering-fundamentals",
-    "description": "The patterns that make prompts work — clarity, examples, system prompts, structured output. The single highest-leverage skill in applied AI."
+    "description": "The patterns that make prompts work \u2014 clarity, examples, system prompts, structured output. The single highest-leverage skill in applied AI.",
+    "quality": "A",
+    "qualityReason": "The Anthropic-endorsed prompt engineering fundamentals. Essential."
   },
   {
     "id": "anthropic-prompt-eng-intermediate",
@@ -45,9 +70,15 @@
     "provider": "Anthropic Skilljar",
     "tier": "learn",
     "xp": 220,
-    "tags": ["anthropic", "free", "prompting"],
+    "tags": [
+      "anthropic",
+      "free",
+      "prompting"
+    ],
     "url": "https://anthropic.skilljar.com/claude-with-the-anthropic-api",
-    "description": "Beyond the basics — chain-of-thought, role prompting, when to break the rules, and how to debug bad outputs."
+    "description": "Beyond the basics \u2014 chain-of-thought, role prompting, when to break the rules, and how to debug bad outputs.",
+    "quality": "A",
+    "qualityReason": "Intermediate-level official Anthropic prompting material."
   },
   {
     "id": "anthropic-claude-cowork",
@@ -55,9 +86,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 260,
-    "tags": ["anthropic", "free", "cowork", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "cowork",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/introduction-to-claude-cowork",
-    "description": "Work alongside Claude on real files and projects. Hands-on with the Cowork task loop, plugins, skills, file and research workflows, and multi-step work."
+    "description": "Work alongside Claude on real files and projects. Hands-on with the Cowork task loop, plugins, skills, file and research workflows, and multi-step work.",
+    "quality": "A",
+    "qualityReason": "Hands-on with the new Cowork paradigm from the team that built it."
   },
   {
     "id": "anthropic-api",
@@ -65,9 +103,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 280,
-    "tags": ["anthropic", "free", "api", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "api",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/claude-with-the-anthropic-api",
-    "description": "The full spectrum of working with Anthropic models — Messages API, streaming, tool use, vision inputs, prompt caching, and the SDKs."
+    "description": "The full spectrum of working with Anthropic models \u2014 Messages API, streaming, tool use, vision inputs, prompt caching, and the SDKs.",
+    "quality": "A",
+    "qualityReason": "Official Claude API training. Direct from Anthropic."
   },
   {
     "id": "anthropic-tool-use",
@@ -75,9 +120,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 280,
-    "tags": ["anthropic", "free", "agents", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "agents",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/tool-use-with-claude",
-    "description": "How to give Claude hands — function calling, tool schemas, multi-step agents, and the gotchas that break them."
+    "description": "How to give Claude hands \u2014 function calling, tool schemas, multi-step agents, and the gotchas that break them.",
+    "quality": "A",
+    "qualityReason": "Function calling + agents. Core production skill."
   },
   {
     "id": "anthropic-mcp",
@@ -85,9 +137,17 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 260,
-    "tags": ["anthropic", "free", "mcp", "agents", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "mcp",
+      "agents",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/introduction-to-model-context-protocol",
-    "description": "Build MCP servers and clients from scratch in Python. Master the three core primitives — tools, resources, and prompts — to connect Claude to external services."
+    "description": "Build MCP servers and clients from scratch in Python. Master the three core primitives \u2014 tools, resources, and prompts \u2014 to connect Claude to external services.",
+    "quality": "A",
+    "qualityReason": "Official MCP intro. The emerging standard's first-party training."
   },
   {
     "id": "anthropic-mcp-advanced",
@@ -95,9 +155,17 @@
     "provider": "Anthropic Skilljar",
     "tier": "ship",
     "xp": 320,
-    "tags": ["anthropic", "free", "mcp", "agents", "ship"],
+    "tags": [
+      "anthropic",
+      "free",
+      "mcp",
+      "agents",
+      "ship"
+    ],
     "url": "https://anthropic.skilljar.com/model-context-protocol-advanced-topics",
-    "description": "Advanced MCP implementation patterns — sampling, notifications, file system access, and transport mechanisms for production MCP server development."
+    "description": "Advanced MCP implementation patterns \u2014 sampling, notifications, file system access, and transport mechanisms for production MCP server development.",
+    "quality": "S",
+    "qualityReason": "The only authoritative deep-dive on the emerging MCP standard. Cutting-edge."
   },
   {
     "id": "anthropic-claude-code-101",
@@ -105,9 +173,17 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 220,
-    "tags": ["anthropic", "free", "claude-code", "dev-tools", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "claude-code",
+      "dev-tools",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/claude-code-101",
-    "description": "Learn to use Claude Code effectively in your daily development workflow — the official on-ramp to agentic coding."
+    "description": "Learn to use Claude Code effectively in your daily development workflow \u2014 the official on-ramp to agentic coding.",
+    "quality": "A",
+    "qualityReason": "Official Claude Code on-ramp. Authoritative."
   },
   {
     "id": "anthropic-claude-code-action",
@@ -115,9 +191,17 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 300,
-    "tags": ["anthropic", "free", "claude-code", "agents", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "claude-code",
+      "agents",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/claude-code-in-action",
-    "description": "Integrate Claude Code into your development workflow — subagents, hooks, worktrees, plan mode, and the patterns that turn it into a real teammate."
+    "description": "Integrate Claude Code into your development workflow \u2014 subagents, hooks, worktrees, plan mode, and the patterns that turn it into a real teammate.",
+    "quality": "S",
+    "qualityReason": "Real-world Claude Code workflows from the team that built it."
   },
   {
     "id": "anthropic-agent-skills",
@@ -125,9 +209,17 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 240,
-    "tags": ["anthropic", "free", "claude-code", "skills", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "claude-code",
+      "skills",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/introduction-to-agent-skills",
-    "description": "Build, configure, and share Skills in Claude Code — reusable markdown instructions that Claude automatically applies to the right tasks at the right time."
+    "description": "Build, configure, and share Skills in Claude Code \u2014 reusable markdown instructions that Claude automatically applies to the right tasks at the right time.",
+    "quality": "A",
+    "qualityReason": "The official Skills framework training."
   },
   {
     "id": "anthropic-subagents",
@@ -135,9 +227,18 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 260,
-    "tags": ["anthropic", "free", "claude-code", "subagents", "agents", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "claude-code",
+      "subagents",
+      "agents",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/introduction-to-subagents",
-    "description": "Use and create sub-agents in Claude Code to manage context, delegate tasks, and build specialized workflows that keep the main conversation clean."
+    "description": "Use and create sub-agents in Claude Code to manage context, delegate tasks, and build specialized workflows that keep the main conversation clean.",
+    "quality": "A",
+    "qualityReason": "Official sub-agents training. Modern agent patterns."
   },
   {
     "id": "anthropic-agents-compound",
@@ -145,9 +246,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "ship",
     "xp": 320,
-    "tags": ["anthropic", "free", "architecture", "ship"],
+    "tags": [
+      "anthropic",
+      "free",
+      "architecture",
+      "ship"
+    ],
     "url": "https://anthropic.skilljar.com/building-compound-ai-systems",
-    "description": "Real systems are pipelines, not single calls. Retrieval, routing, ensembles, evaluators — the architecture patterns from production."
+    "description": "Real systems are pipelines, not single calls. Retrieval, routing, ensembles, evaluators \u2014 the architecture patterns from production.",
+    "quality": "S",
+    "qualityReason": "Compound AI systems is the most important architectural shift in 2025-2026."
   },
   {
     "id": "anthropic-eval",
@@ -155,9 +263,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "ship",
     "xp": 320,
-    "tags": ["anthropic", "free", "evaluation", "ship"],
+    "tags": [
+      "anthropic",
+      "free",
+      "evaluation",
+      "ship"
+    ],
     "url": "https://anthropic.skilljar.com/evaluating-ai-applications",
-    "description": "You can't ship what you can't measure. Building eval suites, grading rubrics, A/B testing prompts, and the metrics that actually matter."
+    "description": "You can't ship what you can't measure. Building eval suites, grading rubrics, A/B testing prompts, and the metrics that actually matter.",
+    "quality": "S",
+    "qualityReason": "Evaluation is the #1 missing skill in production AI. This is the definitive resource."
   },
   {
     "id": "anthropic-constitutional",
@@ -165,9 +280,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "learn",
     "xp": 200,
-    "tags": ["anthropic", "free", "safety", "theory"],
+    "tags": [
+      "anthropic",
+      "free",
+      "safety",
+      "theory"
+    ],
     "url": "https://anthropic.skilljar.com/constitutional-ai",
-    "description": "How Claude is trained to be helpful, harmless, and honest — and why that matters when you're building with it."
+    "description": "How Claude is trained to be helpful, harmless, and honest \u2014 and why that matters when you're building with it.",
+    "quality": "A",
+    "qualityReason": "How Claude is actually trained. Authoritative."
   },
   {
     "id": "anthropic-context-eng",
@@ -175,9 +297,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "ship",
     "xp": 300,
-    "tags": ["anthropic", "free", "context", "ship"],
+    "tags": [
+      "anthropic",
+      "free",
+      "context",
+      "ship"
+    ],
     "url": "https://anthropic.skilljar.com/context-engineering-for-agents",
-    "description": "Context is the new prompt. Memory, retrieval, summarization, scratchpads — engineering what the model sees is most of the work."
+    "description": "Context is the new prompt. Memory, retrieval, summarization, scratchpads \u2014 engineering what the model sees is most of the work.",
+    "quality": "S",
+    "qualityReason": "Context engineering is the new prompt engineering. Anthropic's authoritative take."
   },
   {
     "id": "anthropic-extended-thinking",
@@ -185,9 +314,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 240,
-    "tags": ["anthropic", "free", "reasoning", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "reasoning",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/extended-thinking",
-    "description": "When to let Claude think out loud, when not to, and how to budget reasoning tokens for the right tasks."
+    "description": "When to let Claude think out loud, when not to, and how to budget reasoning tokens for the right tasks.",
+    "quality": "A",
+    "qualityReason": "Reasoning tokens are a key 2025 capability."
   },
   {
     "id": "anthropic-vision",
@@ -195,9 +331,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 220,
-    "tags": ["anthropic", "free", "vision", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "vision",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/working-with-images",
-    "description": "Multimodal inputs — PDFs, charts, screenshots, document Q&A. The real-world patterns for visual understanding."
+    "description": "Multimodal inputs \u2014 PDFs, charts, screenshots, document Q&A. The real-world patterns for visual understanding.",
+    "quality": "A",
+    "qualityReason": "Multimodal inputs are essential for modern applications."
   },
   {
     "id": "anthropic-prompt-caching",
@@ -205,9 +348,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "ship",
     "xp": 240,
-    "tags": ["anthropic", "free", "cost", "ship"],
+    "tags": [
+      "anthropic",
+      "free",
+      "cost",
+      "ship"
+    ],
     "url": "https://anthropic.skilljar.com/prompt-caching",
-    "description": "Caching, batching, model selection, and the architectural moves that take your API bill from painful to negligible."
+    "description": "Caching, batching, model selection, and the architectural moves that take your API bill from painful to negligible.",
+    "quality": "S",
+    "qualityReason": "Cost optimization is the #1 production concern. The official guide."
   },
   {
     "id": "anthropic-claude-sdk",
@@ -215,9 +365,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 260,
-    "tags": ["anthropic", "free", "sdk", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "sdk",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/building-with-the-claude-sdk",
-    "description": "The Claude Agent SDK in Python and TypeScript — full programmatic control, streaming, retries, and production patterns."
+    "description": "The Claude Agent SDK in Python and TypeScript \u2014 full programmatic control, streaming, retries, and production patterns.",
+    "quality": "S",
+    "qualityReason": "The canonical SDK reference from Anthropic. Production-ready."
   },
   {
     "id": "anthropic-flow-engineering",
@@ -225,9 +382,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "ship",
     "xp": 320,
-    "tags": ["anthropic", "free", "orchestration", "ship"],
+    "tags": [
+      "anthropic",
+      "free",
+      "orchestration",
+      "ship"
+    ],
     "url": "https://anthropic.skilljar.com/flow-engineering",
-    "description": "Orchestrating multi-step agent workflows — error recovery, human-in-the-loop, state machines for agents."
+    "description": "Orchestrating multi-step agent workflows \u2014 error recovery, human-in-the-loop, state machines for agents.",
+    "quality": "S",
+    "qualityReason": "The most advanced agent orchestration material available \u2014 production-grade patterns."
   },
   {
     "id": "anthropic-claude-on-aws",
@@ -235,9 +399,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 200,
-    "tags": ["anthropic", "free", "aws", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "aws",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/claude-in-amazon-bedrock",
-    "description": "Deploying Claude through AWS — IAM, VPC, cost controls, and the production deployment story."
+    "description": "Deploying Claude through AWS \u2014 IAM, VPC, cost controls, and the production deployment story.",
+    "quality": "A",
+    "qualityReason": "AWS deployment from Anthropic's team."
   },
   {
     "id": "anthropic-claude-on-gcp",
@@ -245,9 +416,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "build",
     "xp": 200,
-    "tags": ["anthropic", "free", "gcp", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "gcp",
+      "build"
+    ],
     "url": "https://anthropic.skilljar.com/claude-with-google-vertex",
-    "description": "Vertex AI setup, model garden, and integrating Claude into Google Cloud workflows."
+    "description": "Vertex AI setup, model garden, and integrating Claude into Google Cloud workflows.",
+    "quality": "A",
+    "qualityReason": "GCP/Vertex deployment from Anthropic's team."
   },
   {
     "id": "anthropic-fluency-educators",
@@ -255,9 +433,16 @@
     "provider": "Anthropic Skilljar",
     "tier": "learn",
     "xp": 180,
-    "tags": ["anthropic", "free", "education", "fluency"],
+    "tags": [
+      "anthropic",
+      "free",
+      "education",
+      "fluency"
+    ],
     "url": "https://anthropic.skilljar.com/ai-fluency-for-educators",
-    "description": "Empowers faculty, instructional designers, and educational leaders to apply AI fluency in their teaching practice and institutional strategy."
+    "description": "Empowers faculty, instructional designers, and educational leaders to apply AI fluency in their teaching practice and institutional strategy.",
+    "quality": "A",
+    "qualityReason": "Audience-specific fluency training from Anthropic."
   },
   {
     "id": "anthropic-building-effective-agents",
@@ -265,9 +450,17 @@
     "provider": "Anthropic Engineering",
     "tier": "build",
     "xp": 280,
-    "tags": ["anthropic", "free", "agents", "architecture", "build"],
+    "tags": [
+      "anthropic",
+      "free",
+      "agents",
+      "architecture",
+      "build"
+    ],
     "url": "https://www.anthropic.com/engineering/building-effective-agents",
-    "description": "Anthropic's definitive framework on when to use agents vs simple chains, with reference architectures (orchestrator-workers, evaluator-optimizer, parallelization)."
+    "description": "Anthropic's definitive framework on when to use agents vs simple chains, with reference architectures (orchestrator-workers, evaluator-optimizer, parallelization).",
+    "quality": "A",
+    "qualityReason": "Anthropic's canonical agent framework post."
   },
   {
     "id": "anthropic-claude-code-best-practices",
@@ -275,9 +468,17 @@
     "provider": "Anthropic Engineering",
     "tier": "ship",
     "xp": 280,
-    "tags": ["anthropic", "free", "claude-code", "dev-tools", "ship"],
+    "tags": [
+      "anthropic",
+      "free",
+      "claude-code",
+      "dev-tools",
+      "ship"
+    ],
     "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
-    "description": "Anthropic's official guidance on power-using Claude Code — CLAUDE.md, subagents, hooks, worktrees, plan mode, and context engineering."
+    "description": "Anthropic's official guidance on power-using Claude Code \u2014 CLAUDE.md, subagents, hooks, worktrees, plan mode, and context engineering.",
+    "quality": "S",
+    "qualityReason": "Official Anthropic engineering guide for power-using Claude Code."
   },
   {
     "id": "karpathy-zero-to-hero",
@@ -285,9 +486,16 @@
     "provider": "Andrej Karpathy (YouTube)",
     "tier": "learn",
     "xp": 320,
-    "tags": ["free", "theory", "from-scratch", "karpathy"],
+    "tags": [
+      "free",
+      "theory",
+      "from-scratch",
+      "karpathy"
+    ],
     "url": "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
-    "description": "Build GPT from scratch, in code, line by line. The single best resource for understanding what an LLM actually is. 7 videos, ~8 hours total."
+    "description": "Build GPT from scratch, in code, line by line. The single best resource for understanding what an LLM actually is. 7 videos, ~8 hours total.",
+    "quality": "A",
+    "qualityReason": "The best hands-on transformer education. Karpathy is the gold standard."
   },
   {
     "id": "karpathy-llm-intro",
@@ -295,9 +503,16 @@
     "provider": "Andrej Karpathy (YouTube)",
     "tier": "learn",
     "xp": 200,
-    "tags": ["free", "theory", "karpathy", "1-hour"],
+    "tags": [
+      "free",
+      "theory",
+      "karpathy",
+      "1-hour"
+    ],
     "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g",
-    "description": "Karpathy's 1-hour mental model for how LLMs work — pretraining, fine-tuning, RLHF, the transformer stack. Best on-ramp if you only have 60 minutes."
+    "description": "Karpathy's 1-hour mental model for how LLMs work \u2014 pretraining, fine-tuning, RLHF, the transformer stack. Best on-ramp if you only have 60 minutes.",
+    "quality": "A",
+    "qualityReason": "The 1-hour mental model from the field's leading educator."
   },
   {
     "id": "karpathy-software-3",
@@ -305,9 +520,16 @@
     "provider": "Andrej Karpathy (YouTube)",
     "tier": "learn",
     "xp": 220,
-    "tags": ["free", "vision", "karpathy", "talk"],
+    "tags": [
+      "free",
+      "vision",
+      "karpathy",
+      "talk"
+    ],
     "url": "https://www.youtube.com/watch?v=LCEmiRjPEtQ",
-    "description": "Karpathy's 2025 talk on Software 3.0 — the emerging paradigm where LLMs are a new kind of computer and English is the new programming language. Must-watch framing."
+    "description": "Karpathy's 2025 talk on Software 3.0 \u2014 the emerging paradigm where LLMs are a new kind of computer and English is the new programming language. Must-watch framing.",
+    "quality": "A",
+    "qualityReason": "Karpathy's 2025 framing talk. Must-watch."
   },
   {
     "id": "3blue1brown-llm",
@@ -315,9 +537,16 @@
     "provider": "3Blue1Brown (YouTube)",
     "tier": "learn",
     "xp": 180,
-    "tags": ["free", "visual", "theory", "3blue1brown"],
+    "tags": [
+      "free",
+      "visual",
+      "theory",
+      "3blue1brown"
+    ],
     "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
-    "description": "The visual, intuitive series on transformers, embeddings, attention, and how LLMs generate text. The best 1-hour primer if you think in pictures."
+    "description": "The visual, intuitive series on transformers, embeddings, attention, and how LLMs generate text. The best 1-hour primer if you think in pictures.",
+    "quality": "A",
+    "qualityReason": "The best visual transformer primer. Universally praised."
   },
   {
     "id": "3blue1brown-nn",
@@ -325,9 +554,17 @@
     "provider": "3Blue1Brown (YouTube)",
     "tier": "learn",
     "xp": 240,
-    "tags": ["free", "visual", "theory", "3blue1brown", "deep-learning"],
+    "tags": [
+      "free",
+      "visual",
+      "theory",
+      "3blue1brown",
+      "deep-learning"
+    ],
     "url": "https://www.youtube.com/playlist?list=PLoROMvodv4rMFqRtEuo6SGjY4XbRIVRd4",
-    "description": "The original 3Blue1Brown series on deep learning — backprop, gradient descent, and how networks learn. The most-watched visual DL series on the internet."
+    "description": "The original 3Blue1Brown series on deep learning \u2014 backprop, gradient descent, and how networks learn. The most-watched visual DL series on the internet.",
+    "quality": "A",
+    "qualityReason": "The most-watched visual DL series. Excellent."
   },
   {
     "id": "cs231n",
@@ -335,9 +572,16 @@
     "provider": "Stanford (YouTube)",
     "tier": "learn",
     "xp": 280,
-    "tags": ["free", "vision", "theory", "stanford"],
+    "tags": [
+      "free",
+      "vision",
+      "theory",
+      "stanford"
+    ],
     "url": "http://cs231n.stanford.edu/",
-    "description": "Andrej Karpathy's legendary Stanford course. The deep dive into CNNs, backprop, and the foundations of modern vision."
+    "description": "Andrej Karpathy's legendary Stanford course. The deep dive into CNNs, backprop, and the foundations of modern vision.",
+    "quality": "A",
+    "qualityReason": "Karpathy's legendary Stanford CNN course. Industry classic."
   },
   {
     "id": "cs336",
@@ -345,9 +589,16 @@
     "provider": "Stanford (YouTube)",
     "tier": "ship",
     "xp": 400,
-    "tags": ["free", "training", "theory", "stanford"],
+    "tags": [
+      "free",
+      "training",
+      "theory",
+      "stanford"
+    ],
     "url": "https://stanford-cs336.github.io/spring2025/",
-    "description": "Build a language model from scratch — tokenization, architectures, distributed training, and the systems-level work that productionizes LLMs."
+    "description": "Build a language model from scratch \u2014 tokenization, architectures, distributed training, and the systems-level work that productionizes LLMs.",
+    "quality": "S",
+    "qualityReason": "Stanford's flagship LM-from-scratch course. The most rigorous available."
   },
   {
     "id": "fastai",
@@ -355,9 +606,15 @@
     "provider": "fast.ai",
     "tier": "build",
     "xp": 280,
-    "tags": ["free", "practical", "build"],
+    "tags": [
+      "free",
+      "practical",
+      "build"
+    ],
     "url": "https://course.fast.ai/",
-    "description": "Top-down, code-first. Get a working model in 5 minutes, then peel back the layers. The best on-ramp for ML practitioners."
+    "description": "Top-down, code-first. Get a working model in 5 minutes, then peel back the layers. The best on-ramp for ML practitioners.",
+    "quality": "A",
+    "qualityReason": "Top-down practical DL. Jeremy Howard's pedagogical style."
   },
   {
     "id": "huggingface-agents",
@@ -365,9 +622,15 @@
     "provider": "Hugging Face",
     "tier": "build",
     "xp": 260,
-    "tags": ["free", "agents", "build"],
+    "tags": [
+      "free",
+      "agents",
+      "build"
+    ],
     "url": "https://huggingface.co/learn/agents-course",
-    "description": "smolagents, function-calling, RAG, and the open-source stack for building production agents. Hands-on from notebook to deployment."
+    "description": "smolagents, function-calling, RAG, and the open-source stack for building production agents. Hands-on from notebook to deployment.",
+    "quality": "A",
+    "qualityReason": "The OSS standard for agentic AI education."
   },
   {
     "id": "deeplearning-ai-agentic",
@@ -375,9 +638,16 @@
     "provider": "DeepLearning.AI",
     "tier": "build",
     "xp": 240,
-    "tags": ["free", "agents", "build", "andrew-ng"],
+    "tags": [
+      "free",
+      "agents",
+      "build",
+      "andrew-ng"
+    ],
     "url": "https://www.deeplearning.ai/short-courses/agentic-ai/",
-    "description": "Andrew Ng's short course on the agent stack — ReAct, planning, reflection, and the five patterns that show up in every real system."
+    "description": "Andrew Ng's short course on the agent stack \u2014 ReAct, planning, reflection, and the five patterns that show up in every real system.",
+    "quality": "A",
+    "qualityReason": "Andrew Ng's authoritative agentic AI course."
   },
   {
     "id": "deeplearning-ai-short-courses",
@@ -385,9 +655,16 @@
     "provider": "DeepLearning.AI",
     "tier": "build",
     "xp": 280,
-    "tags": ["free", "build", "andrew-ng", "catalog"],
+    "tags": [
+      "free",
+      "build",
+      "andrew-ng",
+      "catalog"
+    ],
     "url": "https://www.deeplearning.ai/short-courses/",
-    "description": "The full catalog of Andrew Ng's 1-2 hour short courses — agents, RAG, function-calling, vector DBs, and the constant stream of new 2025-2026 content."
+    "description": "The full catalog of Andrew Ng's 1-2 hour short courses \u2014 agents, RAG, function-calling, vector DBs, and the constant stream of new 2025-2026 content.",
+    "quality": "A",
+    "qualityReason": "The constantly-updated Andrew Ng short-course catalog."
   },
   {
     "id": "google-generative-ai",
@@ -395,19 +672,33 @@
     "provider": "Google Cloud Skills Boost",
     "tier": "learn",
     "xp": 220,
-    "tags": ["free", "google", "foundations"],
+    "tags": [
+      "free",
+      "google",
+      "foundations"
+    ],
     "url": "https://www.cloudskillsboost.google/paths/118",
-    "description": "Google's structured path through generative AI — Gemini, embeddings, vector search, and the production patterns on GCP."
+    "description": "Google's structured path through generative AI \u2014 Gemini, embeddings, vector search, and the production patterns on GCP.",
+    "quality": "B",
+    "qualityReason": "Google's structured path. Good content, less recognized than their certs."
   },
   {
     "id": "madewithml",
-    "title": "Made With ML — MLOps/LLMOps",
+    "title": "Made With ML \u2014 MLOps/LLMOps",
     "provider": "Goku Mohandas (Anyscale)",
     "tier": "ship",
     "xp": 350,
-    "tags": ["free", "production", "mlops", "llmops", "ship"],
+    "tags": [
+      "free",
+      "production",
+      "mlops",
+      "llmops",
+      "ship"
+    ],
     "url": "https://madewithml.com/",
-    "description": "End-to-end MLOps/LLMOps course — feature stores, model registries, evaluation, monitoring, CI/CD. The de-facto roadmap for shipping ML responsibly."
+    "description": "End-to-end MLOps/LLMOps course \u2014 feature stores, model registries, evaluation, monitoring, CI/CD. The de-facto roadmap for shipping ML responsibly.",
+    "quality": "S",
+    "qualityReason": "The de-facto MLOps/LLMOps roadmap. Used by serious teams shipping ML in production."
   },
   {
     "id": "ai-engineering-book",
@@ -415,9 +706,17 @@
     "provider": "O'Reilly",
     "tier": "ship",
     "xp": 350,
-    "tags": ["production", "book", "system-design", "rag", "agents"],
+    "tags": [
+      "production",
+      "book",
+      "system-design",
+      "rag",
+      "agents"
+    ],
     "url": "https://www.oreilly.com/library/view/ai-engineering/9781098166298/",
-    "description": "The reference book for building production AI applications. RAG, fine-tuning, agents, evaluation, latency/cost tradeoffs, and how the ecosystem evolved through 2024-2025."
+    "description": "The reference book for building production AI applications. RAG, fine-tuning, agents, evaluation, latency/cost tradeoffs, and how the ecosystem evolved through 2024-2025.",
+    "quality": "S",
+    "qualityReason": "Chip Huyen's book is THE production AI reference. Used across the industry."
   },
   {
     "id": "llm-patterns-yan",
@@ -425,9 +724,17 @@
     "provider": "Eugene Yan (Google)",
     "tier": "ship",
     "xp": 300,
-    "tags": ["free", "production", "patterns", "evals", "rag"],
+    "tags": [
+      "free",
+      "production",
+      "patterns",
+      "evals",
+      "rag"
+    ],
     "url": "https://eugeneyan.com/writing/llm-patterns/",
-    "description": "Battle-tested engineering patterns from real LLM products. Best single read for senior engineers moving from prototype to production — evals, UX, RAG, architecture tradeoffs."
+    "description": "Battle-tested engineering patterns from real LLM products. Best single read for senior engineers moving from prototype to production \u2014 evals, UX, RAG, architecture tradeoffs.",
+    "quality": "S",
+    "qualityReason": "Eugene Yan's pattern catalog is the best free senior-engineer resource for LLM products."
   },
   {
     "id": "mcp-spec",
@@ -435,9 +742,17 @@
     "provider": "Anthropic / Open Standard",
     "tier": "build",
     "xp": 300,
-    "tags": ["mcp", "anthropic", "tool-use", "open-standard", "build"],
+    "tags": [
+      "mcp",
+      "anthropic",
+      "tool-use",
+      "open-standard",
+      "build"
+    ],
     "url": "https://modelcontextprotocol.io",
-    "description": "The canonical MCP spec — the emerging standard for LLM tool integration. Read this if you want to build or host an MCP server."
+    "description": "The canonical MCP spec \u2014 the emerging standard for LLM tool integration. Read this if you want to build or host an MCP server.",
+    "quality": "A",
+    "qualityReason": "The canonical MCP spec. Essential reading for tool integration."
   },
   {
     "id": "ai-jason-youtube",
@@ -445,9 +760,16 @@
     "provider": "Jason Zhou (YouTube)",
     "tier": "learn",
     "xp": 300,
-    "tags": ["youtube", "agents", "rag", "production"],
+    "tags": [
+      "youtube",
+      "agents",
+      "rag",
+      "production"
+    ],
     "url": "https://www.youtube.com/@AIJason",
-    "description": "Best-in-class end-to-end build videos on LangGraph, multi-agent systems, evals, and production patterns. Concise, technically accurate, ships with GitHub repos."
+    "description": "Best-in-class end-to-end build videos on LangGraph, multi-agent systems, evals, and production patterns. Concise, technically accurate, ships with GitHub repos.",
+    "quality": "B",
+    "qualityReason": "Best end-to-end build videos, but YouTube-tier (not official training)."
   },
   {
     "id": "anthropic-prompt-eng-guide",
@@ -455,9 +777,17 @@
     "provider": "Anthropic Docs",
     "tier": "learn",
     "xp": 300,
-    "tags": ["prompt-engineering", "anthropic", "official", "claude", "free"],
+    "tags": [
+      "prompt-engineering",
+      "anthropic",
+      "official",
+      "claude",
+      "free"
+    ],
     "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
-    "description": "Authoritative guide for Claude prompts — XML structuring, system-prompt design, long-context tips, prompt caching, tool use, and computer use. The 2025 reference."
+    "description": "Authoritative guide for Claude prompts \u2014 XML structuring, system-prompt design, long-context tips, prompt caching, tool use, and computer use. The 2025 reference.",
+    "quality": "A",
+    "qualityReason": "The official Anthropic prompt engineering reference guide."
   },
   {
     "id": "prompting-guide-dair",
@@ -465,9 +795,16 @@
     "provider": "DAIR.AI (Elvis Saravia)",
     "tier": "learn",
     "xp": 300,
-    "tags": ["prompt-engineering", "community", "techniques", "free"],
+    "tags": [
+      "prompt-engineering",
+      "community",
+      "techniques",
+      "free"
+    ],
     "url": "https://www.promptingguide.ai",
-    "description": "Community-maintained, model-agnostic prompt engineering reference — CoT, ReAct, ToT, APE, and recent 2025-era techniques. Best general-purpose starting point."
+    "description": "Community-maintained, model-agnostic prompt engineering reference \u2014 CoT, ReAct, ToT, APE, and recent 2025-era techniques. Best general-purpose starting point.",
+    "quality": "B",
+    "qualityReason": "Community-maintained, model-agnostic reference. Good but not authoritative."
   },
   {
     "id": "langfuse-docs",
@@ -475,9 +812,18 @@
     "provider": "Langfuse (YC, open source)",
     "tier": "ship",
     "xp": 350,
-    "tags": ["evaluation", "observability", "tracing", "llmops", "open-source", "ship"],
+    "tags": [
+      "evaluation",
+      "observability",
+      "tracing",
+      "llmops",
+      "open-source",
+      "ship"
+    ],
     "url": "https://langfuse.com/docs",
-    "description": "Open-source LLM engineering platform: tracing, prompt management, evaluations, datasets, cost/latency analytics. The OSS default for production observability."
+    "description": "Open-source LLM engineering platform: tracing, prompt management, evaluations, datasets, cost/latency analytics. The OSS default for production observability.",
+    "quality": "S",
+    "qualityReason": "The OSS standard for LLM observability/tracing/evals. Industry-recognized."
   },
   {
     "id": "kahn-academy-ai",
@@ -485,9 +831,15 @@
     "provider": "Kahn Academy",
     "tier": "learn",
     "xp": 180,
-    "tags": ["free", "khan", "foundations"],
+    "tags": [
+      "free",
+      "khan",
+      "foundations"
+    ],
     "url": "https://www.khanacademy.org/computing/ai",
-    "description": "Khan Academy's AI literacy track — concepts, ethics, and how to think about AI in everyday life and work."
+    "description": "Khan Academy's AI literacy track \u2014 concepts, ethics, and how to think about AI in everyday life and work.",
+    "quality": "B",
+    "qualityReason": "Solid AI literacy for general audiences. Good intro."
   },
   {
     "id": "fullstack-deeplearning",
@@ -495,8 +847,103 @@
     "provider": "FSDL",
     "tier": "ship",
     "xp": 300,
-    "tags": ["free", "production", "ship"],
+    "tags": [
+      "free",
+      "production",
+      "ship"
+    ],
     "url": "https://fullstackdeeplearning.com/",
-    "description": "The course on shipping ML — data labeling, training pipelines, deployment, monitoring, and the boring work that makes models actually useful."
+    "description": "The course on shipping ML \u2014 data labeling, training pipelines, deployment, monitoring, and the boring work that makes models actually useful.",
+    "quality": "B",
+    "qualityReason": "Comprehensive shipping ML content. Older (2020) but still relevant."
+  },
+  {
+    "id": "anthropic-claude-cert-architect",
+    "title": "Anthropic AI Fluency (Architect Track)",
+    "provider": "Anthropic Skilljar",
+    "tier": "learn",
+    "quality": "B",
+    "qualityReason": "Closest official Anthropic credential \u2014 AI Fluency cert with free Certificate of Completion. Note: 'Certified Architect' is not a real Anthropic cert; this is the official equivalent.",
+    "xp": 200,
+    "tags": [
+      "anthropic",
+      "free",
+      "foundations",
+      "fluency",
+      "certificate"
+    ],
+    "url": "https://anthropic.skilljar.com/ai-fluency-framework-foundations",
+    "description": "Anthropic's official AI Fluency framework course \u2014 the 4D model (Delegation, Description, Discernment, Diligence) for collaborating with AI. Awards a free Certificate of Completion. (Note: there is no 'Claude Certified Architect' credential from Anthropic \u2014 this is the closest official substitute.)"
+  },
+  {
+    "id": "github-foundations",
+    "title": "GitHub Foundations (GH-900)",
+    "provider": "GitHub",
+    "tier": "learn",
+    "quality": "A",
+    "qualityReason": "GitHub's official entry-level certification \u2014 universally recognized brand for engineering.",
+    "xp": 250,
+    "tags": [
+      "github",
+      "certification",
+      "fundamentals",
+      "git",
+      "dev-tools"
+    ],
+    "url": "https://learn.github.com/certifications/github-foundations",
+    "description": "GitHub's official GH-900 entry-level certification \u2014 Git basics, repositories, collaboration features, and modern dev workflows. 60-question proctored exam, $99. (Note: passing isn't required to learn \u2014 the free learning path is itself the training.)"
+  },
+  {
+    "id": "google-ai-essentials",
+    "title": "Google AI Essentials",
+    "provider": "Google",
+    "tier": "learn",
+    "quality": "A",
+    "qualityReason": "Google-branded beginner AI cert. Strong brand weight, very accessible.",
+    "xp": 220,
+    "tags": [
+      "google",
+      "certification",
+      "foundations",
+      "beginner"
+    ],
+    "url": "https://grow.google/ai-essentials/",
+    "description": "Google's official beginner course on generative-AI fundamentals, prompt design, and using AI tools responsibly. Taught by Google experts, ~5 hours, awards a Google Certificate."
+  },
+  {
+    "id": "aws-ai-practitioner",
+    "title": "AWS Certified AI Practitioner (AIF-C01)",
+    "provider": "AWS",
+    "tier": "learn",
+    "quality": "S",
+    "qualityReason": "The most recognized foundational AI cert in 2025-26. Industry gold standard, AWS-dominant.",
+    "xp": 300,
+    "tags": [
+      "aws",
+      "certification",
+      "ai-ml",
+      "cloud",
+      "production"
+    ],
+    "url": "https://aws.amazon.com/certification/certified-ai-practitioner/",
+    "description": "AWS's foundational AI/ML/GenAI literacy exam \u2014 validates broad understanding of AI concepts, responsible AI, and core AWS AI services (SageMaker, Bedrock, Rekognition, Comprehend). 65-question exam, $100, 3-year validity. The single most recognized foundational AI cert available."
+  },
+  {
+    "id": "ibm-genai-engineering",
+    "title": "IBM Generative AI Engineering Professional Certificate",
+    "provider": "IBM",
+    "tier": "build",
+    "quality": "A",
+    "qualityReason": "IBM-branded professional certificate. Comprehensive content depth is the best of the cert programs.",
+    "xp": 350,
+    "tags": [
+      "ibm",
+      "certification",
+      "generative-ai",
+      "engineering",
+      "professional-certificate"
+    ],
+    "url": "https://www.coursera.org/professional-certificates/ibm-generative-ai-engineering",
+    "description": "IBM's 16-course career-track program \u2014 Python, ML, deep learning, NLP, LLMs, RAG, LangChain, deploying GenAI apps/agents. Taught by IBM Skills Network. Professional certificate from IBM, ~144 hours total."
   }
 ]

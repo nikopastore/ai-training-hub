@@ -11,6 +11,21 @@
   const TIERS = ["learn", "build", "ship"];
   const TIER_LABELS = { learn: "Learn", build: "Build", ship: "Ship" };
 
+  // Quality tier (S=top, A=strong, B=useful, C=niche) — graded on usefulness + market weight
+  const QUALITY_TIERS = ["S", "A", "B", "C"];
+  const QUALITY_LABELS = {
+    S: "S — Top tier",
+    A: "A — Strong",
+    B: "B — Useful",
+    C: "C — Niche",
+  };
+  const QUALITY_DESCRIPTIONS = {
+    S: "Industry-defining content, top recognition, essential reference",
+    A: "Authoritative training, well-recognized, high production value",
+    B: "Solid content, useful learning, moderate industry recognition",
+    C: "Niche or specialized, useful for specific contexts",
+  };
+
   // XP curve: level n requires (100 * n^1.5) cumulative XP
   const xpForLevel = (n) => Math.floor(100 * Math.pow(n, 1.5));
 
@@ -107,6 +122,9 @@
     { id: "deep-dive", icon: "🤿", name: "Deep Dive", desc: "Complete 3 courses in one week" },
     { id: "morning-person", icon: "☀️", name: "Early Bird", desc: "Log progress before 9am" },
     { id: "night-owl", icon: "🦉", name: "Night Owl", desc: "Log progress after 10pm" },
+    { id: "s-tier-collector", icon: "👑", name: "S-Tier Scholar", desc: "Complete all S-tier courses" },
+    { id: "a-tier-collector", icon: "🥇", name: "Gold Standard", desc: "Complete all A-tier courses" },
+    { id: "tier-explorer", icon: "🎖️", name: "Tier Explorer", desc: "Complete courses from every quality tier (S, A, B)" },
   ];
 
   const checkAchievements = (catalog) => {
@@ -161,6 +179,20 @@
     const hour = new Date().getHours();
     if (hour < 9) tryUnlock("morning-person");
     if (hour >= 22) tryUnlock("night-owl");
+
+    // Quality tier achievements
+    const sTotal = catalog.filter(c => c.quality === "S").length;
+    const sDone = catalog.filter(c => c.quality === "S" && state.courses[c.id]?.status === "completed").length;
+    if (sTotal > 0 && sDone === sTotal) tryUnlock("s-tier-collector");
+
+    const aTotal = catalog.filter(c => c.quality === "A").length;
+    const aDone = catalog.filter(c => c.quality === "A" && state.courses[c.id]?.status === "completed").length;
+    if (aTotal > 0 && aDone === aTotal) tryUnlock("a-tier-collector");
+
+    const tiersWithCompletion = new Set(
+      completed.map(c => c.quality).filter(q => q && QUALITY_TIERS.includes(q))
+    );
+    if (["S", "A", "B"].every(q => tiersWithCompletion.has(q))) tryUnlock("tier-explorer");
 
     return newlyUnlocked;
   };
@@ -228,6 +260,7 @@
   // ============================================================
   let catalog = [];
   let activeFilter = "all";
+  let activeQuality = "all";
   let searchQuery = "";
 
   const el = (sel) => document.querySelector(sel);
@@ -253,6 +286,7 @@
 
   const matchesFilter = (course) => {
     if (activeFilter !== "all" && course.tier !== activeFilter) return false;
+    if (activeQuality !== "all" && course.quality !== activeQuality) return false;
     if (searchQuery) {
       const q = searchQuery.toLowerCase();
       return (
@@ -269,13 +303,17 @@
     const courseState = state.courses[course.id] || { status: "not-started" };
     const status = courseState.status;
     const card = document.createElement("article");
-    card.className = `course ${status === "completed" ? "completed" : ""} ${status === "in-progress" ? "in-progress" : ""}`;
+    card.className = `course ${status === "completed" ? "completed" : ""} ${status === "in-progress" ? "in-progress" : ""} quality-${(course.quality || "B").toLowerCase()}`;
     card.dataset.id = course.id;
 
     const tagsHTML = (course.tags || []).slice(0, 3).map(t => {
       const cls = t === "anthropic" ? "tag-anthropic" : (t === "free" ? "tag-free" : "");
       return `<span class="tag ${cls}">${t}</span>`;
     }).join("");
+
+    const quality = course.quality || "B";
+    const qualityLabel = QUALITY_LABELS[quality] || `Tier ${quality}`;
+    const qualityReason = course.qualityReason || "";
 
     let actionHTML = "";
     let statusHTML = "";
@@ -292,7 +330,10 @@
 
     card.innerHTML = `
       ${status === "completed" ? `<div class="completed-check" aria-label="Completed">✓</div>` : ""}
-      <span class="course-provider">${course.provider}</span>
+      <div class="course-top">
+        <span class="course-provider">${course.provider}</span>
+        <span class="tier-badge tier-badge-${quality.toLowerCase()}" title="${qualityReason}" aria-label="Quality tier ${quality}">${quality}</span>
+      </div>
       <h3 class="course-title">${course.title}</h3>
       <p class="course-desc">${course.description || ""}</p>
       <div class="course-meta">${tagsHTML}</div>
@@ -325,16 +366,29 @@
   };
 
   const renderFilters = () => {
-    const container = el("#filter-chips");
-    if (!container) return;
-    container.innerHTML = "";
-    ["all", ...TIERS].forEach(tier => {
-      const chip = document.createElement("button");
-      chip.className = `chip ${activeFilter === tier ? "active" : ""}`;
-      chip.textContent = tier === "all" ? "All" : TIER_LABELS[tier];
-      chip.dataset.tier = tier;
-      container.appendChild(chip);
-    });
+    const tierContainer = el("#filter-chips");
+    if (tierContainer) {
+      tierContainer.innerHTML = "";
+      ["all", ...TIERS].forEach(tier => {
+        const chip = document.createElement("button");
+        chip.className = `chip ${activeFilter === tier ? "active" : ""}`;
+        chip.textContent = tier === "all" ? "All" : TIER_LABELS[tier];
+        chip.dataset.tier = tier;
+        tierContainer.appendChild(chip);
+      });
+    }
+    const qualityContainer = el("#quality-chips");
+    if (qualityContainer) {
+      qualityContainer.innerHTML = "";
+      ["all", ...QUALITY_TIERS].forEach(q => {
+        const chip = document.createElement("button");
+        chip.className = `chip quality-chip-${q.toLowerCase()} ${activeQuality === q ? "active" : ""}`;
+        chip.textContent = q === "all" ? "All tiers" : q;
+        chip.title = q === "all" ? "Show all quality tiers" : QUALITY_DESCRIPTIONS[q] || "";
+        chip.dataset.quality = q;
+        qualityContainer.appendChild(chip);
+      });
+    }
   };
 
   const renderAchievements = () => {
@@ -438,6 +492,16 @@
       renderFilters();
       renderCourses();
     });
+    const qualityChips = el("#quality-chips");
+    if (qualityChips) {
+      qualityChips.addEventListener("click", (e) => {
+        const chip = e.target.closest(".chip");
+        if (!chip) return;
+        activeQuality = chip.dataset.quality;
+        renderFilters();
+        renderCourses();
+      });
+    }
   };
 
   // ============================================================
@@ -463,6 +527,9 @@
       today,
       daysBetween,
       ACHIEVEMENTS,
+      QUALITY_TIERS,
+      QUALITY_LABELS,
+      QUALITY_DESCRIPTIONS,
       getState: () => JSON.parse(JSON.stringify(state)),
       startCourse,
       completeCourse,
