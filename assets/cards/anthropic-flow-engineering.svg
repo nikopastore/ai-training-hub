@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g_42307426" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2a1a2e"/>
+      <stop offset="100%" stop-color="#1a1224"/>
+    </linearGradient>
+    <radialGradient id="o_52725725" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d97757" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#d97757" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a_61584290" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#d97757"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1280" height="720" fill="url(#g_42307426)"/>
+
+  <!-- Decorative pattern -->
+  <line x1="18" y1="145" x2="48" y2="145" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="18" y1="145" x2="18" y2="175" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="18" cy="145" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="14" y1="237" x2="44" y2="237" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="14" y1="237" x2="14" y2="267" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="14" cy="237" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="71" y1="-2" x2="101" y2="-2" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="71" y1="-2" x2="71" y2="28" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="71" cy="-2" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="80" y1="155" x2="110" y2="155" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="80" y1="155" x2="80" y2="185" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="80" cy="155" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="60" y1="420" x2="90" y2="420" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="60" y1="420" x2="60" y2="450" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="60" cy="420" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="67" y1="562" x2="97" y2="562" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="67" y1="562" x2="67" y2="592" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="67" cy="562" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="90" y1="642" x2="120" y2="642" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="90" y1="642" x2="90" y2="672" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="90" cy="642" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="170" y1="17" x2="200" y2="17" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="170" y1="17" x2="170" y2="47" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="170" cy="17" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="146" y1="557" x2="176" y2="557" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="146" y1="557" x2="146" y2="587" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="146" cy="557" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="226" y1="389" x2="256" y2="389" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="226" y1="389" x2="226" y2="419" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="226" cy="389" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="303" y1="246" x2="333" y2="246" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="303" y1="246" x2="303" y2="276" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="303" cy="246" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="397" y1="576" x2="427" y2="576" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="397" y1="576" x2="397" y2="606" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="397" cy="576" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="476" y1="1" x2="506" y2="1" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="476" y1="1" x2="476" y2="31" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="476" cy="1" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="488" y1="470" x2="518" y2="470" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="488" y1="470" x2="488" y2="500" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="488" cy="470" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="545" y1="253" x2="575" y2="253" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="545" y1="253" x2="545" y2="283" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="545" cy="253" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="655" y1="234" x2="685" y2="234" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="655" y1="234" x2="655" y2="264" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="655" cy="234" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="734" y1="471" x2="764" y2="471" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="734" y1="471" x2="734" y2="501" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="734" cy="471" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="820" y1="477" x2="850" y2="477" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="820" y1="477" x2="820" y2="507" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="820" cy="477" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="879" y1="-15" x2="909" y2="-15" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="879" y1="-15" x2="879" y2="15" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="879" cy="-15" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="875" y1="336" x2="905" y2="336" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="875" y1="336" x2="875" y2="366" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="875" cy="336" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="872" y1="402" x2="902" y2="402" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="872" y1="402" x2="872" y2="432" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="872" cy="402" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="977" y1="309" x2="1007" y2="309" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="977" y1="309" x2="977" y2="339" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="977" cy="309" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="965" y1="565" x2="995" y2="565" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="965" y1="565" x2="965" y2="595" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="965" cy="565" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="1028" y1="481" x2="1058" y2="481" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="1028" y1="481" x2="1028" y2="511" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="1028" cy="481" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="1028" y1="565" x2="1058" y2="565" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="1028" y1="565" x2="1028" y2="595" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="1028" cy="565" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="1102" y1="625" x2="1132" y2="625" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="1102" y1="625" x2="1102" y2="655" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="1102" cy="625" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="1195" y1="-2" x2="1225" y2="-2" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="1195" y1="-2" x2="1195" y2="28" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="1195" cy="-2" r="3" fill="#c084fc" opacity="0.25"/>
+<line x1="1219" y1="544" x2="1249" y2="544" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<line x1="1219" y1="544" x2="1219" y2="574" stroke="#c084fc" stroke-width="1" opacity="0.18"/>
+<circle cx="1219" cy="544" r="3" fill="#c084fc" opacity="0.25"/>
+<circle cx="1067" cy="560" r="220" fill="url(#orbGrad8708)" opacity="0.35"/>
+
+  <!-- Subtle vignette -->
+  <rect width="1280" height="720" fill="url(#o_52725725)" opacity="0.15"/>
+
+  <!-- Provider logo / wordmark -->
+  <g transform="translate(60, 80)">
+  <text x="0" y="0" font-family="Georgia, serif" font-size="36" font-weight="700" fill="#d97757" letter-spacing="2">Anthropic</text>
+  <line x1="0" y1="14" x2="200" y2="14" stroke="#c084fc" stroke-width="2" opacity="0.6"/>
+  <text x="0" y="38" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#d97757" opacity="0.65" letter-spacing="3">SKILLJAR · OFFICIAL</text>
+</g>
+
+  <!-- Tier pill (top-left, below logo) -->
+  <g transform="translate(60, 145)">
+    <rect x="0" y="0" width="100" height="32" rx="16" fill="#c8956c"/>
+    <text x="50" y="21" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#1a1005" text-anchor="middle" letter-spacing="2">SHIP</text>
+  </g>
+
+  <!-- Quality tier badge (top-right) -->
+  <g transform="translate(1170, 60)">
+    <circle cx="0" cy="0" r="40" fill="#fbbf24" opacity="0.20"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+    <text x="0" y="12" font-family="Georgia, serif" font-size="38" font-weight="900" fill="#fbbf24" text-anchor="middle">S</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="10" fill="#fbbf24" text-anchor="middle" letter-spacing="2" opacity="0.8">GOLD</text>
+  </g>
+
+  <!-- Course title -->
+  <text x="60" y="385.35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Flow Engineering</text><text x="60" y="335.35" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" fill="#c084fc" opacity="0.85" letter-spacing="4">ANTHROPIC · SHIP TRACK</text><text x="60" y="517.25" font-family="ui-monospace, monospace" font-size="16" fill="#d97757" letter-spacing="2">⚡ +320 XP</text>
+
+  <!-- AI TRAINING HUB footer -->
+  <g transform="translate(60, 670)">
+    <line x1="0" y1="-10" x2="30" y2="-10" stroke="#d97757" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#d97757" letter-spacing="4" opacity="0.85">AI TRAINING HUB</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#c084fc" letter-spacing="2" opacity="0.55">COURSE · ANTHROPIC-FLOW-ENGINEERING</text>
+  </g>
+
+  <!-- Right side meta (provider + url hint) -->
+  <g transform="translate(1220, 670)" text-anchor="end">
+    <line x1="-30" y1="-10" x2="0" y2="-10" stroke="#d97757" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#d97757" letter-spacing="3" opacity="0.85">ANTHROPIC</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#c084fc" letter-spacing="2" opacity="0.55">TIER S · 320 XP</text>
+  </g>
+
+  <!-- Subtle border accent -->
+  <rect x="20" y="20" width="1240" height="680" fill="none" stroke="#d97757" stroke-width="1" opacity="0.10" rx="8"/>
+</svg>

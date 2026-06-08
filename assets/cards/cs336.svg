@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g_8820663" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d0a0a"/>
+      <stop offset="100%" stop-color="#1a0505"/>
+    </linearGradient>
+    <radialGradient id="o_37308903" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8c1515" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#8c1515" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a_27412778" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8c1515"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1280" height="720" fill="url(#g_8820663)"/>
+
+  <!-- Decorative pattern -->
+  <line x1="0" y1="0" x2="1280" y2="0" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="24" x2="1280" y2="24" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="48" x2="1280" y2="48" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="72" x2="1280" y2="72" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="96" x2="1280" y2="96" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="120" x2="1280" y2="120" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="144" x2="1280" y2="144" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="168" x2="1280" y2="168" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="192" x2="1280" y2="192" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="216" x2="1280" y2="216" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="240" x2="1280" y2="240" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="264" x2="1280" y2="264" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="288" x2="1280" y2="288" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="312" x2="1280" y2="312" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="336" x2="1280" y2="336" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="360" x2="1280" y2="360" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="384" x2="1280" y2="384" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="408" x2="1280" y2="408" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="432" x2="1280" y2="432" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="456" x2="1280" y2="456" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="480" x2="1280" y2="480" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="504" x2="1280" y2="504" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="528" x2="1280" y2="528" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="552" x2="1280" y2="552" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="576" x2="1280" y2="576" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="600" x2="1280" y2="600" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="624" x2="1280" y2="624" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="648" x2="1280" y2="648" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="672" x2="1280" y2="672" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="0" y1="696" x2="1280" y2="696" stroke="#d4a574" stroke-width="0.5" opacity="0.06"/>
+<line x1="1080" y1="520" x2="1255.4181739990029" y2="572.1293029960653" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1011.6522371058264" y2="611.2391544643078" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1215.5717426005328" y2="500.2692471442452" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="996.5455502049699" y2="492.0830730665283" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1152.3285133947345" y2="466.44081637937603" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1110.0515723377164" y2="535.9029242603679" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1010.7415097964508" y2="464.1049059869752" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1022.7164050128191" y2="357.8192682673289" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1079.4705228735343" y2="333.00074958981105" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1134.1855606477109" y2="331.638844192086" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1156.1675673001907" y2="380.4310145785571" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1049.6988044319298" y2="453.5858633486397" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1189.397987773495" y2="432.63822190963464" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1001.1086234452351" y2="551.6409656188666" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1226.6969905083115" y2="607.8691810352433" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1235.6468037844872" y2="444.4813104478544" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1218.8204001882075" y2="485.6795033313047" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1151.2351430095393" y2="549.232762449185" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1163.8648383880266" y2="431.39588676505923" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1118.9656913116146" y2="510.96258330008203" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1263.099289445656" y2="546.450901770939" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1080.1181260460332" y2="453.00010413263874" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1213.9021227233154" y2="525.1206962602954" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="995.8651900717242" y2="542.1434811701525" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1152.8726751947993" y2="437.6011334425449" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1215.7435974660284" y2="578.9718216352596" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1016.9887839048646" y2="489.51087659160805" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1071.7038832620183" y2="352.2049629843905" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="934.0051244597016" y2="633.6243649750035" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1069.3604502378807" y2="614.4023303783301" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1171.2117150201411" y2="486.993590878671" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1070.8686798014858" y2="396.3366707894688" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1025.148950487731" y2="616.500582212765" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1024.8748888258222" y2="609.3656652078108" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1092.674627043665" y2="587.8259082453305" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1094.2833201631736" y2="680.3651669319627" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="937.8124977056054" y2="504.77783881041984" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1140.2664673079694" y2="437.7081236195366" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1217.6671383838664" y2="400.9548026621931" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="922.8231921232505" y2="476.8207102226617" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1029.2713271065938" y2="674.9051378956611" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="980.3458828667984" y2="536.4334092142241" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1005.621568388892" y2="589.7986311547133" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1269.8985072068256" y2="513.7905748559795" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1079.9917098911178" y2="561.9999991818345" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1072.4591127685192" y2="499.3327549063236" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1150.226111771728" y2="688.989032855463" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1063.259043631494" y2="534.2737654411084" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1171.9060237575177" y2="539.7302508114466" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1183.3198018009657" y2="392.63823746583444" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1076.4085990476406" y2="500.3250962086369" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1253.6023203572493" y2="508.2426888031751" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1136.8480768653822" y2="531.5020066383049" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1037.6473550668281" y2="493.42457023556034" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1071.6989554934244" y2="538.1959517503167" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="986.8049605349536" y2="374.24786581628234" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1097.5620844176312" y2="634.6628675330771" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="909.3798306783508" y2="531.3911290332337" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1136.9596040101007" y2="530.9363390132404" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<line x1="1080" y1="520" x2="1136.5173472146041" y2="506.96967138465465" stroke="#8c1515" stroke-width="1" opacity="0.10"/>
+<text x="980" y="540" font-size="320" font-family="serif" fill="#8c1515" opacity="0.08" font-weight="bold">S</text>
+
+  <!-- Subtle vignette -->
+  <rect width="1280" height="720" fill="url(#o_37308903)" opacity="0.15"/>
+
+  <!-- Provider logo / wordmark -->
+  <g transform="translate(60, 80)">
+  <text x="0" y="0" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#8c1515" letter-spacing="-1">Stanford</text>
+  <text x="0" y="30" font-family="ui-monospace, monospace" font-size="13" fill="#d4a574" opacity="0.85" letter-spacing="3">CS · OFFICIAL COURSES</text>
+</g>
+
+  <!-- Tier pill (top-left, below logo) -->
+  <g transform="translate(60, 145)">
+    <rect x="0" y="0" width="100" height="32" rx="16" fill="#c8956c"/>
+    <text x="50" y="21" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#1a1005" text-anchor="middle" letter-spacing="2">SHIP</text>
+  </g>
+
+  <!-- Quality tier badge (top-right) -->
+  <g transform="translate(1170, 60)">
+    <circle cx="0" cy="0" r="40" fill="#fbbf24" opacity="0.20"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+    <text x="0" y="12" font-family="Georgia, serif" font-size="38" font-weight="900" fill="#fbbf24" text-anchor="middle">S</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="10" fill="#fbbf24" text-anchor="middle" letter-spacing="2" opacity="0.8">GOLD</text>
+  </g>
+
+  <!-- Course title -->
+  <text x="60" y="303.45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">CS336: Language</text><text x="60" y="385.35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Modeling From</text><text x="60" y="467.25" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Scratch</text><text x="60" y="253.45" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" fill="#d4a574" opacity="0.85" letter-spacing="4">STANFORD · SHIP TRACK</text><text x="60" y="599.15" font-family="ui-monospace, monospace" font-size="16" fill="#8c1515" letter-spacing="2">⚡ +400 XP</text>
+
+  <!-- AI TRAINING HUB footer -->
+  <g transform="translate(60, 670)">
+    <line x1="0" y1="-10" x2="30" y2="-10" stroke="#8c1515" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#8c1515" letter-spacing="4" opacity="0.85">AI TRAINING HUB</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#d4a574" letter-spacing="2" opacity="0.55">COURSE · CS336</text>
+  </g>
+
+  <!-- Right side meta (provider + url hint) -->
+  <g transform="translate(1220, 670)" text-anchor="end">
+    <line x1="-30" y1="-10" x2="0" y2="-10" stroke="#8c1515" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#8c1515" letter-spacing="3" opacity="0.85">STANFORD</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#d4a574" letter-spacing="2" opacity="0.55">TIER S · 400 XP</text>
+  </g>
+
+  <!-- Subtle border accent -->
+  <rect x="20" y="20" width="1240" height="680" fill="none" stroke="#8c1515" stroke-width="1" opacity="0.10" rx="8"/>
+</svg>

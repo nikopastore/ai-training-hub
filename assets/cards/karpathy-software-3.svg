@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g_12600417" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+    <radialGradient id="o_20460099" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a_30490536" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ff6b35"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1280" height="720" fill="url(#g_12600417)"/>
+
+  <!-- Decorative pattern -->
+  <circle cx="100" cy="205" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="100" cy="360" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="100" cy="515" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="320" cy="153" r="6" fill="#4a9eff" opacity="0.6"/>
+<circle cx="320" cy="256" r="6" fill="#4a9eff" opacity="0.6"/>
+<circle cx="320" cy="359" r="6" fill="#4a9eff" opacity="0.6"/>
+<circle cx="320" cy="462" r="6" fill="#4a9eff" opacity="0.6"/>
+<circle cx="320" cy="565" r="6" fill="#4a9eff" opacity="0.6"/>
+<circle cx="540" cy="153" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="540" cy="256" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="540" cy="359" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="540" cy="462" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="540" cy="565" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="760" cy="205" r="6" fill="#4a9eff" opacity="0.6"/>
+<circle cx="760" cy="360" r="6" fill="#4a9eff" opacity="0.6"/>
+<circle cx="760" cy="515" r="6" fill="#4a9eff" opacity="0.6"/>
+<circle cx="980" cy="256" r="6" fill="#ff6b35" opacity="0.6"/>
+<circle cx="980" cy="462" r="6" fill="#ff6b35" opacity="0.6"/>
+<line x1="100" y1="205" x2="320" y2="153" stroke="#ff6b35" stroke-width="0.5" opacity="0.21375878820092095"/>
+<line x1="100" y1="205" x2="320" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.2724386429479123"/>
+<line x1="100" y1="205" x2="320" y2="359" stroke="#ff6b35" stroke-width="0.5" opacity="0.10506452034271507"/>
+<line x1="100" y1="205" x2="320" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.2527556037776548"/>
+<line x1="100" y1="205" x2="320" y2="565" stroke="#ff6b35" stroke-width="0.5" opacity="0.2456943201158169"/>
+<line x1="100" y1="360" x2="320" y2="153" stroke="#ff6b35" stroke-width="0.5" opacity="0.1297348789194846"/>
+<line x1="100" y1="360" x2="320" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.2527268751087644"/>
+<line x1="100" y1="360" x2="320" y2="359" stroke="#ff6b35" stroke-width="0.5" opacity="0.2624702710070185"/>
+<line x1="100" y1="360" x2="320" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.24114830257226738"/>
+<line x1="100" y1="360" x2="320" y2="565" stroke="#ff6b35" stroke-width="0.5" opacity="0.24424237007034008"/>
+<line x1="100" y1="515" x2="320" y2="153" stroke="#ff6b35" stroke-width="0.5" opacity="0.1685572344845459"/>
+<line x1="100" y1="515" x2="320" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.23645899371599244"/>
+<line x1="100" y1="515" x2="320" y2="359" stroke="#ff6b35" stroke-width="0.5" opacity="0.2834696217029663"/>
+<line x1="100" y1="515" x2="320" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.2110891894185068"/>
+<line x1="100" y1="515" x2="320" y2="565" stroke="#ff6b35" stroke-width="0.5" opacity="0.24335466714216342"/>
+<line x1="320" y1="153" x2="540" y2="153" stroke="#ff6b35" stroke-width="0.5" opacity="0.15448275628819277"/>
+<line x1="320" y1="153" x2="540" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.19152314160106698"/>
+<line x1="320" y1="153" x2="540" y2="359" stroke="#ff6b35" stroke-width="0.5" opacity="0.14586877733417547"/>
+<line x1="320" y1="153" x2="540" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.14112153681074463"/>
+<line x1="320" y1="153" x2="540" y2="565" stroke="#ff6b35" stroke-width="0.5" opacity="0.23882070842951592"/>
+<line x1="320" y1="256" x2="540" y2="153" stroke="#ff6b35" stroke-width="0.5" opacity="0.2229567340937339"/>
+<line x1="320" y1="256" x2="540" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.2061879078343951"/>
+<line x1="320" y1="256" x2="540" y2="359" stroke="#ff6b35" stroke-width="0.5" opacity="0.16380225482778304"/>
+<line x1="320" y1="256" x2="540" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.13072587344858894"/>
+<line x1="320" y1="256" x2="540" y2="565" stroke="#ff6b35" stroke-width="0.5" opacity="0.16919978953219134"/>
+<line x1="320" y1="359" x2="540" y2="153" stroke="#ff6b35" stroke-width="0.5" opacity="0.13484861693651692"/>
+<line x1="320" y1="359" x2="540" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.2906397865472089"/>
+<line x1="320" y1="359" x2="540" y2="359" stroke="#ff6b35" stroke-width="0.5" opacity="0.2578544010592404"/>
+<line x1="320" y1="359" x2="540" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.19075300771991177"/>
+<line x1="320" y1="359" x2="540" y2="565" stroke="#ff6b35" stroke-width="0.5" opacity="0.29724940683959566"/>
+<line x1="320" y1="462" x2="540" y2="153" stroke="#ff6b35" stroke-width="0.5" opacity="0.20251989882337318"/>
+<line x1="320" y1="462" x2="540" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.1861449591869418"/>
+<line x1="320" y1="462" x2="540" y2="359" stroke="#ff6b35" stroke-width="0.5" opacity="0.2272511710789822"/>
+<line x1="320" y1="462" x2="540" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.11107744331523042"/>
+<line x1="320" y1="462" x2="540" y2="565" stroke="#ff6b35" stroke-width="0.5" opacity="0.22473710302650504"/>
+<line x1="320" y1="565" x2="540" y2="153" stroke="#ff6b35" stroke-width="0.5" opacity="0.23738388697869697"/>
+<line x1="320" y1="565" x2="540" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.26033596313511975"/>
+<line x1="320" y1="565" x2="540" y2="359" stroke="#ff6b35" stroke-width="0.5" opacity="0.221522498846725"/>
+<line x1="320" y1="565" x2="540" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.1779436377717028"/>
+<line x1="320" y1="565" x2="540" y2="565" stroke="#ff6b35" stroke-width="0.5" opacity="0.1438380826466421"/>
+<line x1="540" y1="153" x2="760" y2="205" stroke="#ff6b35" stroke-width="0.5" opacity="0.13395914006617307"/>
+<line x1="540" y1="153" x2="760" y2="360" stroke="#ff6b35" stroke-width="0.5" opacity="0.1828087417479842"/>
+<line x1="540" y1="153" x2="760" y2="515" stroke="#ff6b35" stroke-width="0.5" opacity="0.16255149670526203"/>
+<line x1="540" y1="256" x2="760" y2="205" stroke="#ff6b35" stroke-width="0.5" opacity="0.20871478752091654"/>
+<line x1="540" y1="256" x2="760" y2="360" stroke="#ff6b35" stroke-width="0.5" opacity="0.2783260076896911"/>
+<line x1="540" y1="256" x2="760" y2="515" stroke="#ff6b35" stroke-width="0.5" opacity="0.12765891988302952"/>
+<line x1="540" y1="359" x2="760" y2="205" stroke="#ff6b35" stroke-width="0.5" opacity="0.12678719884040474"/>
+<line x1="540" y1="359" x2="760" y2="360" stroke="#ff6b35" stroke-width="0.5" opacity="0.27345817542057027"/>
+<line x1="540" y1="359" x2="760" y2="515" stroke="#ff6b35" stroke-width="0.5" opacity="0.24005862416308588"/>
+<line x1="540" y1="462" x2="760" y2="205" stroke="#ff6b35" stroke-width="0.5" opacity="0.2791678979896951"/>
+<line x1="540" y1="462" x2="760" y2="360" stroke="#ff6b35" stroke-width="0.5" opacity="0.145889318007366"/>
+<line x1="540" y1="462" x2="760" y2="515" stroke="#ff6b35" stroke-width="0.5" opacity="0.1449360309401745"/>
+<line x1="540" y1="565" x2="760" y2="205" stroke="#ff6b35" stroke-width="0.5" opacity="0.19294136053253574"/>
+<line x1="540" y1="565" x2="760" y2="360" stroke="#ff6b35" stroke-width="0.5" opacity="0.2982179641858349"/>
+<line x1="540" y1="565" x2="760" y2="515" stroke="#ff6b35" stroke-width="0.5" opacity="0.13585654933134667"/>
+<line x1="760" y1="205" x2="980" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.21592045121162706"/>
+<line x1="760" y1="205" x2="980" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.19819860268153705"/>
+<line x1="760" y1="360" x2="980" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.19033430310669483"/>
+<line x1="760" y1="360" x2="980" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.2855193351198052"/>
+<line x1="760" y1="515" x2="980" y2="256" stroke="#ff6b35" stroke-width="0.5" opacity="0.2944424101791334"/>
+<line x1="760" y1="515" x2="980" y2="462" stroke="#ff6b35" stroke-width="0.5" opacity="0.2102026231786288"/>
+
+  <!-- Subtle vignette -->
+  <rect width="1280" height="720" fill="url(#o_20460099)" opacity="0.15"/>
+
+  <!-- Provider logo / wordmark -->
+  <g transform="translate(60, 80)">
+  <text x="0" y="0" font-family="Arial Black, sans-serif" font-size="38" font-weight="900" fill="#ff6b35" letter-spacing="-1">Karpathy</text>
+  <text x="0" y="28" font-family="ui-monospace, monospace" font-size="13" fill="#4a9eff" opacity="0.85" letter-spacing="3">YOUTUBE · NEURAL NETS</text>
+  <line x1="0" y1="12" x2="160" y2="12" stroke="#4a9eff" stroke-width="2" opacity="0.6"/>
+</g>
+
+  <!-- Tier pill (top-left, below logo) -->
+  <g transform="translate(60, 145)">
+    <rect x="0" y="0" width="100" height="32" rx="16" fill="#7c9885"/>
+    <text x="50" y="21" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#0d1117" text-anchor="middle" letter-spacing="2">LEARN</text>
+  </g>
+
+  <!-- Quality tier badge (top-right) -->
+  <g transform="translate(1170, 60)">
+    <circle cx="0" cy="0" r="40" fill="#d1d5db" opacity="0.20"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#d1d5db" stroke-width="2.5"/>
+    <text x="0" y="12" font-family="Georgia, serif" font-size="38" font-weight="900" fill="#d1d5db" text-anchor="middle">A</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="10" fill="#d1d5db" text-anchor="middle" letter-spacing="2" opacity="0.8">SILVER</text>
+  </g>
+
+  <!-- Course title -->
+  <text x="60" y="344.40000000000003" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Software 3.0</text><text x="60" y="426.30000000000007" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">(Karpathy Talk)</text><text x="60" y="294.40000000000003" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" fill="#4a9eff" opacity="0.85" letter-spacing="4">KARPATHY · LEARN TRACK</text><text x="60" y="558.2" font-family="ui-monospace, monospace" font-size="16" fill="#ff6b35" letter-spacing="2">⚡ +220 XP</text>
+
+  <!-- AI TRAINING HUB footer -->
+  <g transform="translate(60, 670)">
+    <line x1="0" y1="-10" x2="30" y2="-10" stroke="#ff6b35" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#ff6b35" letter-spacing="4" opacity="0.85">AI TRAINING HUB</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#4a9eff" letter-spacing="2" opacity="0.55">COURSE · KARPATHY-SOFTWARE-3</text>
+  </g>
+
+  <!-- Right side meta (provider + url hint) -->
+  <g transform="translate(1220, 670)" text-anchor="end">
+    <line x1="-30" y1="-10" x2="0" y2="-10" stroke="#ff6b35" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#ff6b35" letter-spacing="3" opacity="0.85">KARPATHY</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#4a9eff" letter-spacing="2" opacity="0.55">TIER A · 220 XP</text>
+  </g>
+
+  <!-- Subtle border accent -->
+  <rect x="20" y="20" width="1240" height="680" fill="none" stroke="#ff6b35" stroke-width="1" opacity="0.10" rx="8"/>
+</svg>

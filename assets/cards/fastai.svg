@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g_34914418" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1f2e"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <radialGradient id="o_70905384" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ff6b35" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a_77368720" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ff6b35"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1280" height="720" fill="url(#g_34914418)"/>
+
+  <!-- Decorative pattern -->
+  <line x1="120" y1="80" x2="500" y2="80" stroke="#ff6b35" stroke-width="2" opacity="0.18"/>
+<line x1="120" y1="150" x2="500" y2="150" stroke="#ff6b35" stroke-width="2" opacity="0.18"/>
+<line x1="120" y1="220" x2="500" y2="220" stroke="#ff6b35" stroke-width="2" opacity="0.18"/>
+<line x1="120" y1="290" x2="500" y2="290" stroke="#ff6b35" stroke-width="2" opacity="0.18"/>
+<line x1="120" y1="360" x2="500" y2="360" stroke="#ff6b35" stroke-width="2" opacity="0.18"/>
+<line x1="120" y1="430" x2="500" y2="430" stroke="#ff6b35" stroke-width="2" opacity="0.18"/>
+<line x1="120" y1="500" x2="500" y2="500" stroke="#ff6b35" stroke-width="2" opacity="0.18"/>
+<line x1="120" y1="570" x2="500" y2="570" stroke="#ff6b35" stroke-width="2" opacity="0.18"/>
+<line x1="120" y1="80" x2="120" y2="640" stroke="#ff6b35" stroke-width="3" opacity="0.25"/>
+<line x1="500" y1="80" x2="500" y2="640" stroke="#ff6b35" stroke-width="3" opacity="0.25"/>
+<circle cx="822" cy="192" r="5" fill="#79c0ff" opacity="0.4"/>
+<circle cx="839" cy="475" r="4" fill="#79c0ff" opacity="0.4"/>
+<circle cx="922" cy="485" r="2" fill="#79c0ff" opacity="0.4"/>
+<circle cx="806" cy="272" r="4" fill="#79c0ff" opacity="0.4"/>
+<circle cx="797" cy="508" r="5" fill="#79c0ff" opacity="0.4"/>
+<circle cx="1022" cy="423" r="4" fill="#79c0ff" opacity="0.4"/>
+<circle cx="1135" cy="508" r="3" fill="#79c0ff" opacity="0.4"/>
+<circle cx="816" cy="446" r="5" fill="#79c0ff" opacity="0.4"/>
+<circle cx="621" cy="451" r="3" fill="#79c0ff" opacity="0.4"/>
+<circle cx="832" cy="100" r="3" fill="#79c0ff" opacity="0.4"/>
+<circle cx="793" cy="195" r="5" fill="#79c0ff" opacity="0.4"/>
+<circle cx="1000" cy="574" r="2" fill="#79c0ff" opacity="0.4"/>
+<circle cx="823" cy="380" r="5" fill="#79c0ff" opacity="0.4"/>
+<circle cx="758" cy="453" r="4" fill="#79c0ff" opacity="0.4"/>
+<circle cx="972" cy="375" r="4" fill="#79c0ff" opacity="0.4"/>
+<circle cx="608" cy="178" r="5" fill="#79c0ff" opacity="0.4"/>
+<circle cx="983" cy="103" r="4" fill="#79c0ff" opacity="0.4"/>
+<circle cx="911" cy="366" r="5" fill="#79c0ff" opacity="0.4"/>
+<circle cx="1089" cy="218" r="4" fill="#79c0ff" opacity="0.4"/>
+<circle cx="871" cy="245" r="5" fill="#79c0ff" opacity="0.4"/>
+
+  <!-- Subtle vignette -->
+  <rect width="1280" height="720" fill="url(#o_70905384)" opacity="0.15"/>
+
+  <!-- Provider logo / wordmark -->
+  <g transform="translate(60, 80)">
+  <text x="0" y="0" font-family="Arial Black, sans-serif" font-size="40" font-weight="900" fill="#ff6b35" letter-spacing="-1">fast.ai</text>
+  <text x="0" y="28" font-family="ui-monospace, monospace" font-size="13" fill="#79c0ff" opacity="0.85" letter-spacing="3">PRACTICAL · DEEP LEARNING</text>
+  <line x1="0" y1="12" x2="40" y2="12" stroke="#ff6b35" stroke-width="3" opacity="0.7"/>
+</g>
+
+  <!-- Tier pill (top-left, below logo) -->
+  <g transform="translate(60, 145)">
+    <rect x="0" y="0" width="100" height="32" rx="16" fill="#d97757"/>
+    <text x="50" y="21" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#1a1005" text-anchor="middle" letter-spacing="2">BUILD</text>
+  </g>
+
+  <!-- Quality tier badge (top-right) -->
+  <g transform="translate(1170, 60)">
+    <circle cx="0" cy="0" r="40" fill="#d1d5db" opacity="0.20"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#d1d5db" stroke-width="2.5"/>
+    <text x="0" y="12" font-family="Georgia, serif" font-size="38" font-weight="900" fill="#d1d5db" text-anchor="middle">A</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="10" fill="#d1d5db" text-anchor="middle" letter-spacing="2" opacity="0.8">SILVER</text>
+  </g>
+
+  <!-- Course title -->
+  <text x="60" y="303.45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Practical Deep</text><text x="60" y="385.35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Learning for</text><text x="60" y="467.25" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Coders</text><text x="60" y="253.45" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" fill="#79c0ff" opacity="0.85" letter-spacing="4">FAST.AI · BUILD TRACK</text><text x="60" y="599.15" font-family="ui-monospace, monospace" font-size="16" fill="#ff6b35" letter-spacing="2">⚡ +280 XP</text>
+
+  <!-- AI TRAINING HUB footer -->
+  <g transform="translate(60, 670)">
+    <line x1="0" y1="-10" x2="30" y2="-10" stroke="#ff6b35" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#ff6b35" letter-spacing="4" opacity="0.85">AI TRAINING HUB</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#79c0ff" letter-spacing="2" opacity="0.55">COURSE · FASTAI</text>
+  </g>
+
+  <!-- Right side meta (provider + url hint) -->
+  <g transform="translate(1220, 670)" text-anchor="end">
+    <line x1="-30" y1="-10" x2="0" y2="-10" stroke="#ff6b35" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#ff6b35" letter-spacing="3" opacity="0.85">FAST.AI</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#79c0ff" letter-spacing="2" opacity="0.55">TIER A · 280 XP</text>
+  </g>
+
+  <!-- Subtle border accent -->
+  <rect x="20" y="20" width="1240" height="680" fill="none" stroke="#ff6b35" stroke-width="1" opacity="0.10" rx="8"/>
+</svg>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g_34069574" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d1f3c"/>
+      <stop offset="100%" stop-color="#0a1428"/>
+    </linearGradient>
+    <radialGradient id="o_87802018" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4285f4" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#4285f4" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a_58253502" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4285f4"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1280" height="720" fill="url(#g_34069574)"/>
+
+  <!-- Decorative pattern -->
+  <circle cx="1076" cy="210" r="60" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.12"/>
+<circle cx="1086" cy="219" r="100" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.12"/>
+<circle cx="1055" cy="226" r="140" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.12"/>
+<circle cx="1095" cy="185" r="180" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.12"/>
+<circle cx="1102" cy="174" r="220" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.12"/>
+<circle cx="1082" cy="224" r="260" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.12"/>
+<circle cx="1102" cy="180" r="300" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.12"/>
+<circle cx="1082" cy="190" r="340" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.12"/>
+<circle cx="308" cy="636" r="3" fill="#34a853" opacity="0.1776013608430077"/>
+<circle cx="564" cy="498" r="1" fill="#34a853" opacity="0.28464795395116094"/>
+<circle cx="523" cy="546" r="3" fill="#34a853" opacity="0.27991094785744763"/>
+<circle cx="291" cy="619" r="1" fill="#34a853" opacity="0.18988481976209778"/>
+<circle cx="1044" cy="319" r="1" fill="#34a853" opacity="0.2266243485491077"/>
+<circle cx="304" cy="580" r="3" fill="#34a853" opacity="0.3075119837369483"/>
+<circle cx="664" cy="473" r="2" fill="#34a853" opacity="0.18804110788740022"/>
+<circle cx="640" cy="569" r="3" fill="#34a853" opacity="0.36634291308216127"/>
+<circle cx="284" cy="309" r="3" fill="#34a853" opacity="0.2126097361187472"/>
+<circle cx="867" cy="536" r="3" fill="#34a853" opacity="0.24303237622655322"/>
+<circle cx="624" cy="291" r="2" fill="#34a853" opacity="0.2768450886666384"/>
+<circle cx="416" cy="268" r="3" fill="#34a853" opacity="0.39666380777559357"/>
+<circle cx="720" cy="219" r="1" fill="#34a853" opacity="0.3976172734899033"/>
+<circle cx="138" cy="234" r="3" fill="#34a853" opacity="0.30789455938579346"/>
+<circle cx="126" cy="119" r="3" fill="#34a853" opacity="0.29471430173537044"/>
+<circle cx="147" cy="599" r="3" fill="#34a853" opacity="0.2156883844519284"/>
+<circle cx="252" cy="375" r="1" fill="#34a853" opacity="0.26890369133520003"/>
+<circle cx="483" cy="624" r="3" fill="#34a853" opacity="0.3004978892747251"/>
+<circle cx="697" cy="123" r="1" fill="#34a853" opacity="0.1917631635861962"/>
+<circle cx="128" cy="271" r="2" fill="#34a853" opacity="0.3060827098074428"/>
+<circle cx="295" cy="186" r="1" fill="#34a853" opacity="0.1758933740256234"/>
+<circle cx="1147" cy="217" r="3" fill="#34a853" opacity="0.32583992830976516"/>
+<circle cx="628" cy="80" r="3" fill="#34a853" opacity="0.3220434130322264"/>
+<circle cx="388" cy="215" r="1" fill="#34a853" opacity="0.22114956053452334"/>
+<circle cx="382" cy="162" r="1" fill="#34a853" opacity="0.3074618984621874"/>
+<circle cx="89" cy="292" r="2" fill="#34a853" opacity="0.24439440580533003"/>
+<circle cx="171" cy="374" r="1" fill="#34a853" opacity="0.28234474544373933"/>
+<circle cx="768" cy="133" r="1" fill="#34a853" opacity="0.28511101760546587"/>
+<circle cx="959" cy="517" r="1" fill="#34a853" opacity="0.3105455509984374"/>
+<circle cx="976" cy="320" r="2" fill="#34a853" opacity="0.2665182699502948"/>
+<circle cx="107" cy="425" r="3" fill="#34a853" opacity="0.20098371125019124"/>
+<circle cx="195" cy="642" r="3" fill="#34a853" opacity="0.31483830334581386"/>
+<circle cx="320" cy="591" r="1" fill="#34a853" opacity="0.30679352658381137"/>
+<circle cx="327" cy="561" r="2" fill="#34a853" opacity="0.1750575457723085"/>
+<circle cx="515" cy="359" r="1" fill="#34a853" opacity="0.3005385193985105"/>
+<circle cx="292" cy="144" r="1" fill="#34a853" opacity="0.24131410575577045"/>
+<circle cx="1181" cy="458" r="3" fill="#34a853" opacity="0.2598504937939117"/>
+<circle cx="791" cy="190" r="1" fill="#34a853" opacity="0.22625380696550532"/>
+<circle cx="205" cy="295" r="3" fill="#34a853" opacity="0.3946768305090582"/>
+<circle cx="153" cy="600" r="1" fill="#34a853" opacity="0.20925387882391575"/>
+
+  <!-- Subtle vignette -->
+  <rect width="1280" height="720" fill="url(#o_87802018)" opacity="0.15"/>
+
+  <!-- Provider logo / wordmark -->
+  <g transform="translate(60, 80)">
+  <text x="0" y="0" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#4285f4" letter-spacing="-1">Google</text>
+  <text x="0" y="30" font-family="ui-monospace, monospace" font-size="13" fill="#34a853" opacity="0.85" letter-spacing="3">CLOUD · AI · CERTIFIED</text>
+  <circle cx="0" cy="0" r="6" fill="#34a853" opacity="0.8"/>
+</g>
+
+  <!-- Tier pill (top-left, below logo) -->
+  <g transform="translate(60, 145)">
+    <rect x="0" y="0" width="100" height="32" rx="16" fill="#7c9885"/>
+    <text x="50" y="21" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#0d1117" text-anchor="middle" letter-spacing="2">LEARN</text>
+  </g>
+
+  <!-- Quality tier badge (top-right) -->
+  <g transform="translate(1170, 60)">
+    <circle cx="0" cy="0" r="40" fill="#cd7f32" opacity="0.20"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#cd7f32" stroke-width="2.5"/>
+    <text x="0" y="12" font-family="Georgia, serif" font-size="38" font-weight="900" fill="#cd7f32" text-anchor="middle">B</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="10" fill="#cd7f32" text-anchor="middle" letter-spacing="2" opacity="0.8">BRONZE</text>
+  </g>
+
+  <!-- Course title -->
+  <text x="60" y="344.40000000000003" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Generative AI</text><text x="60" y="426.30000000000007" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Learning Path</text><text x="60" y="294.40000000000003" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" fill="#34a853" opacity="0.85" letter-spacing="4">GOOGLE CLOUD · LEARN TRACK</text><text x="60" y="558.2" font-family="ui-monospace, monospace" font-size="16" fill="#4285f4" letter-spacing="2">⚡ +220 XP</text>
+
+  <!-- AI TRAINING HUB footer -->
+  <g transform="translate(60, 670)">
+    <line x1="0" y1="-10" x2="30" y2="-10" stroke="#4285f4" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#4285f4" letter-spacing="4" opacity="0.85">AI TRAINING HUB</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#34a853" letter-spacing="2" opacity="0.55">COURSE · GOOGLE-GENERATIVE-AI</text>
+  </g>
+
+  <!-- Right side meta (provider + url hint) -->
+  <g transform="translate(1220, 670)" text-anchor="end">
+    <line x1="-30" y1="-10" x2="0" y2="-10" stroke="#4285f4" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#4285f4" letter-spacing="3" opacity="0.85">GOOGLE CLOUD</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#34a853" letter-spacing="2" opacity="0.55">TIER B · 220 XP</text>
+  </g>
+
+  <!-- Subtle border accent -->
+  <rect x="20" y="20" width="1240" height="680" fill="none" stroke="#4285f4" stroke-width="1" opacity="0.10" rx="8"/>
+</svg>

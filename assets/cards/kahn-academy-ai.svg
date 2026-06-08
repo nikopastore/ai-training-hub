@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g_81595292" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1f3c"/>
+      <stop offset="100%" stop-color="#0d1428"/>
+    </linearGradient>
+    <radialGradient id="o_23316895" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1865b3" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1865b3" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a_12063251" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1865b3"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1280" height="720" fill="url(#g_81595292)"/>
+
+  <!-- Decorative pattern -->
+  <ellipse cx="595" cy="264" rx="35" ry="17" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(20 595 264)"/>
+<ellipse cx="222" cy="208" rx="23" ry="11" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(140 222 208)"/>
+<ellipse cx="139" cy="498" rx="46" ry="23" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(95 139 498)"/>
+<ellipse cx="553" cy="408" rx="53" ry="26" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(118 553 408)"/>
+<ellipse cx="980" cy="85" rx="58" ry="29" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(37 980 85)"/>
+<ellipse cx="759" cy="580" rx="49" ry="24" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(48 759 580)"/>
+<ellipse cx="219" cy="409" rx="34" ry="17" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(0 219 409)"/>
+<ellipse cx="476" cy="305" rx="42" ry="21" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(98 476 305)"/>
+<ellipse cx="635" cy="275" rx="36" ry="18" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(78 635 275)"/>
+<ellipse cx="303" cy="421" rx="56" ry="28" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(150 303 421)"/>
+<ellipse cx="509" cy="634" rx="37" ry="18" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(121 509 634)"/>
+<ellipse cx="1057" cy="466" rx="27" ry="13" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(136 1057 466)"/>
+<ellipse cx="1090" cy="253" rx="57" ry="28" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(0 1090 253)"/>
+<ellipse cx="912" cy="166" rx="25" ry="12" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(13 912 166)"/>
+<ellipse cx="659" cy="80" rx="46" ry="23" fill="none" stroke="#d4622a" stroke-width="1.5" opacity="0.15" transform="rotate(72 659 80)"/>
+
+  <!-- Subtle vignette -->
+  <rect width="1280" height="720" fill="url(#o_23316895)" opacity="0.15"/>
+
+  <!-- Provider logo / wordmark -->
+  <g transform="translate(60, 80)">
+  <text x="0" y="0" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#1865b3" letter-spacing="-1">Khan Academy</text>
+  <text x="0" y="28" font-family="ui-monospace, monospace" font-size="13" fill="#d4622a" opacity="0.85" letter-spacing="3">AI FOR EDUCATION</text>
+  <circle cx="0" cy="0" r="6" fill="#d4622a" opacity="0.7"/>
+</g>
+
+  <!-- Tier pill (top-left, below logo) -->
+  <g transform="translate(60, 145)">
+    <rect x="0" y="0" width="100" height="32" rx="16" fill="#7c9885"/>
+    <text x="50" y="21" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#0d1117" text-anchor="middle" letter-spacing="2">LEARN</text>
+  </g>
+
+  <!-- Quality tier badge (top-right) -->
+  <g transform="translate(1170, 60)">
+    <circle cx="0" cy="0" r="40" fill="#cd7f32" opacity="0.20"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#cd7f32" stroke-width="2.5"/>
+    <text x="0" y="12" font-family="Georgia, serif" font-size="38" font-weight="900" fill="#cd7f32" text-anchor="middle">B</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="10" fill="#cd7f32" text-anchor="middle" letter-spacing="2" opacity="0.8">BRONZE</text>
+  </g>
+
+  <!-- Course title -->
+  <text x="60" y="344.40000000000003" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Kahn Academy AI</text><text x="60" y="426.30000000000007" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">for Education</text><text x="60" y="294.40000000000003" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" fill="#d4622a" opacity="0.85" letter-spacing="4">KHAN ACADEMY · LEARN TRACK</text><text x="60" y="558.2" font-family="ui-monospace, monospace" font-size="16" fill="#1865b3" letter-spacing="2">⚡ +180 XP</text>
+
+  <!-- AI TRAINING HUB footer -->
+  <g transform="translate(60, 670)">
+    <line x1="0" y1="-10" x2="30" y2="-10" stroke="#1865b3" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#1865b3" letter-spacing="4" opacity="0.85">AI TRAINING HUB</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#d4622a" letter-spacing="2" opacity="0.55">COURSE · KAHN-ACADEMY-AI</text>
+  </g>
+
+  <!-- Right side meta (provider + url hint) -->
+  <g transform="translate(1220, 670)" text-anchor="end">
+    <line x1="-30" y1="-10" x2="0" y2="-10" stroke="#1865b3" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#1865b3" letter-spacing="3" opacity="0.85">KHAN ACADEMY</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#d4622a" letter-spacing="2" opacity="0.55">TIER B · 180 XP</text>
+  </g>
+
+  <!-- Subtle border accent -->
+  <rect x="20" y="20" width="1240" height="680" fill="none" stroke="#1865b3" stroke-width="1" opacity="0.10" rx="8"/>
+</svg>

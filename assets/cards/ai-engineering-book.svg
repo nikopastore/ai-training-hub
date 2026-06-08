@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g_74582072" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1410"/>
+      <stop offset="100%" stop-color="#0a0805"/>
+    </linearGradient>
+    <radialGradient id="o_54695326" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#d4622a" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#d4622a" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a_36563927" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#d4622a"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1280" height="720" fill="url(#g_74582072)"/>
+
+  <!-- Decorative pattern -->
+  <line x1="195" y1="60" x2="195" y2="660" stroke="#f5e6d3" stroke-width="1" opacity="0.08"/>
+<line x1="306" y1="60" x2="306" y2="660" stroke="#f5e6d3" stroke-width="1" opacity="0.08"/>
+<line x1="416" y1="60" x2="416" y2="660" stroke="#f5e6d3" stroke-width="1" opacity="0.08"/>
+<line x1="535" y1="60" x2="535" y2="660" stroke="#f5e6d3" stroke-width="1" opacity="0.08"/>
+<line x1="640" y1="60" x2="640" y2="660" stroke="#f5e6d3" stroke-width="1" opacity="0.08"/>
+<line x1="753" y1="60" x2="753" y2="660" stroke="#f5e6d3" stroke-width="1" opacity="0.08"/>
+<line x1="858" y1="60" x2="858" y2="660" stroke="#f5e6d3" stroke-width="1" opacity="0.08"/>
+<line x1="971" y1="60" x2="971" y2="660" stroke="#f5e6d3" stroke-width="1" opacity="0.08"/>
+<line x1="60" y1="0" x2="1220" y2="0" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="30" x2="1220" y2="30" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="60" x2="1220" y2="60" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="90" x2="1220" y2="90" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="120" x2="1220" y2="120" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="150" x2="1220" y2="150" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="180" x2="1220" y2="180" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="210" x2="1220" y2="210" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="240" x2="1220" y2="240" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="270" x2="1220" y2="270" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="300" x2="1220" y2="300" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="330" x2="1220" y2="330" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="360" x2="1220" y2="360" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="390" x2="1220" y2="390" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="420" x2="1220" y2="420" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="450" x2="1220" y2="450" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="480" x2="1220" y2="480" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="510" x2="1220" y2="510" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="540" x2="1220" y2="540" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="570" x2="1220" y2="570" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="600" x2="1220" y2="600" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="630" x2="1220" y2="630" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="660" x2="1220" y2="660" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+<line x1="60" y1="690" x2="1220" y2="690" stroke="#f5e6d3" stroke-width="0.4" opacity="0.05"/>
+
+  <!-- Subtle vignette -->
+  <rect width="1280" height="720" fill="url(#o_54695326)" opacity="0.15"/>
+
+  <!-- Provider logo / wordmark -->
+  <g transform="translate(60, 80)">
+  <text x="0" y="0" font-family="Georgia, serif" font-size="38" font-weight="700" fill="#d4622a" letter-spacing="1" font-style="italic">O'Reilly</text>
+  <text x="0" y="28" font-family="ui-monospace, monospace" font-size="13" fill="#f5e6d3" opacity="0.85" letter-spacing="3">REFERENCE · PRODUCTION AI</text>
+  <line x1="0" y1="12" x2="160" y2="12" stroke="#d4622a" stroke-width="2" opacity="0.5"/>
+</g>
+
+  <!-- Tier pill (top-left, below logo) -->
+  <g transform="translate(60, 145)">
+    <rect x="0" y="0" width="100" height="32" rx="16" fill="#c8956c"/>
+    <text x="50" y="21" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#1a1005" text-anchor="middle" letter-spacing="2">SHIP</text>
+  </g>
+
+  <!-- Quality tier badge (top-right) -->
+  <g transform="translate(1170, 60)">
+    <circle cx="0" cy="0" r="40" fill="#fbbf24" opacity="0.20"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+    <text x="0" y="12" font-family="Georgia, serif" font-size="38" font-weight="900" fill="#fbbf24" text-anchor="middle">S</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="10" fill="#fbbf24" text-anchor="middle" letter-spacing="2" opacity="0.8">GOLD</text>
+  </g>
+
+  <!-- Course title -->
+  <text x="60" y="303.45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">AI Engineering</text><text x="60" y="385.35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">(Chip Huyen,</text><text x="60" y="467.25" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">O'Reilly)</text><text x="60" y="253.45" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" fill="#f5e6d3" opacity="0.85" letter-spacing="4">O'REILLY · SHIP TRACK</text><text x="60" y="599.15" font-family="ui-monospace, monospace" font-size="16" fill="#d4622a" letter-spacing="2">⚡ +350 XP</text>
+
+  <!-- AI TRAINING HUB footer -->
+  <g transform="translate(60, 670)">
+    <line x1="0" y1="-10" x2="30" y2="-10" stroke="#d4622a" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#d4622a" letter-spacing="4" opacity="0.85">AI TRAINING HUB</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#f5e6d3" letter-spacing="2" opacity="0.55">COURSE · AI-ENGINEERING-BOOK</text>
+  </g>
+
+  <!-- Right side meta (provider + url hint) -->
+  <g transform="translate(1220, 670)" text-anchor="end">
+    <line x1="-30" y1="-10" x2="0" y2="-10" stroke="#d4622a" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#d4622a" letter-spacing="3" opacity="0.85">O'REILLY</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#f5e6d3" letter-spacing="2" opacity="0.55">TIER S · 350 XP</text>
+  </g>
+
+  <!-- Subtle border accent -->
+  <rect x="20" y="20" width="1240" height="680" fill="none" stroke="#d4622a" stroke-width="1" opacity="0.10" rx="8"/>
+</svg>

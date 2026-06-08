@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="g_97580302" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a1a2e"/>
+      <stop offset="100%" stop-color="#050d1a"/>
+    </linearGradient>
+    <radialGradient id="o_32446387" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0066cc" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#0066cc" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="a_81214072" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0066cc"/>
+    </marker>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background gradient -->
+  <rect width="1280" height="720" fill="url(#g_97580302)"/>
+
+  <!-- Decorative pattern -->
+  <circle cx="126" cy="108" r="5" fill="#0066cc" opacity="0.35"/>
+<circle cx="119" cy="203" r="4" fill="#00d4ff" opacity="0.35"/>
+<circle cx="119" cy="316" r="6" fill="#0066cc" opacity="0.35"/>
+<circle cx="119" cy="421" r="5" fill="#00d4ff" opacity="0.35"/>
+<circle cx="110" cy="550" r="4" fill="#0066cc" opacity="0.35"/>
+<circle cx="212" cy="107" r="3" fill="#00d4ff" opacity="0.35"/>
+<circle cx="201" cy="206" r="4" fill="#0066cc" opacity="0.35"/>
+<circle cx="209" cy="329" r="3" fill="#00d4ff" opacity="0.35"/>
+<circle cx="201" cy="424" r="6" fill="#0066cc" opacity="0.35"/>
+<circle cx="201" cy="550" r="6" fill="#00d4ff" opacity="0.35"/>
+<circle cx="307" cy="104" r="4" fill="#0066cc" opacity="0.35"/>
+<circle cx="294" cy="216" r="4" fill="#00d4ff" opacity="0.35"/>
+<circle cx="298" cy="322" r="6" fill="#0066cc" opacity="0.35"/>
+<circle cx="296" cy="424" r="3" fill="#00d4ff" opacity="0.35"/>
+<circle cx="308" cy="541" r="3" fill="#0066cc" opacity="0.35"/>
+<circle cx="386" cy="110" r="6" fill="#00d4ff" opacity="0.35"/>
+<circle cx="380" cy="201" r="3" fill="#0066cc" opacity="0.35"/>
+<circle cx="387" cy="311" r="4" fill="#00d4ff" opacity="0.35"/>
+<circle cx="385" cy="424" r="6" fill="#0066cc" opacity="0.35"/>
+<circle cx="385" cy="547" r="3" fill="#00d4ff" opacity="0.35"/>
+<circle cx="474" cy="108" r="3" fill="#0066cc" opacity="0.35"/>
+<circle cx="480" cy="202" r="3" fill="#00d4ff" opacity="0.35"/>
+<circle cx="475" cy="329" r="4" fill="#0066cc" opacity="0.35"/>
+<circle cx="476" cy="421" r="6" fill="#00d4ff" opacity="0.35"/>
+<circle cx="481" cy="537" r="4" fill="#0066cc" opacity="0.35"/>
+<circle cx="562" cy="91" r="5" fill="#00d4ff" opacity="0.35"/>
+<circle cx="577" cy="219" r="4" fill="#0066cc" opacity="0.35"/>
+<circle cx="573" cy="317" r="4" fill="#00d4ff" opacity="0.35"/>
+<circle cx="580" cy="438" r="5" fill="#0066cc" opacity="0.35"/>
+<circle cx="565" cy="546" r="6" fill="#00d4ff" opacity="0.35"/>
+<circle cx="665" cy="92" r="3" fill="#0066cc" opacity="0.35"/>
+<circle cx="659" cy="200" r="5" fill="#00d4ff" opacity="0.35"/>
+<circle cx="670" cy="311" r="4" fill="#0066cc" opacity="0.35"/>
+<circle cx="662" cy="428" r="5" fill="#00d4ff" opacity="0.35"/>
+<circle cx="668" cy="548" r="4" fill="#0066cc" opacity="0.35"/>
+<circle cx="759" cy="107" r="3" fill="#00d4ff" opacity="0.35"/>
+<circle cx="746" cy="209" r="3" fill="#0066cc" opacity="0.35"/>
+<circle cx="740" cy="310" r="3" fill="#00d4ff" opacity="0.35"/>
+<circle cx="760" cy="439" r="3" fill="#0066cc" opacity="0.35"/>
+<circle cx="741" cy="539" r="6" fill="#00d4ff" opacity="0.35"/>
+<line x1="390" y1="540" x2="210" y2="540" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="750" y1="430" x2="300" y2="540" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="570" y1="540" x2="120" y2="210" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="570" y1="320" x2="210" y2="210" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="120" y1="100" x2="390" y2="100" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="210" y1="430" x2="480" y2="100" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="210" y1="430" x2="300" y2="540" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="570" y1="430" x2="660" y2="320" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="390" y1="210" x2="570" y2="320" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="120" y1="100" x2="120" y2="320" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="390" y1="430" x2="300" y2="320" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="570" y1="100" x2="750" y2="430" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="210" y1="100" x2="390" y2="540" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="120" y1="540" x2="210" y2="540" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+<line x1="750" y1="100" x2="570" y2="210" stroke="#0066cc" stroke-width="0.5" opacity="0.15"/>
+
+  <!-- Subtle vignette -->
+  <rect width="1280" height="720" fill="url(#o_32446387)" opacity="0.15"/>
+
+  <!-- Provider logo / wordmark -->
+  <g transform="translate(60, 80)">
+  <text x="0" y="0" font-family="Georgia, serif" font-size="34" font-weight="700" fill="#0066cc" letter-spacing="-1">DeepLearning.AI</text>
+  <text x="0" y="28" font-family="ui-monospace, monospace" font-size="13" fill="#00d4ff" opacity="0.85" letter-spacing="3">ANDREW NG · SHORT COURSES</text>
+  <line x1="0" y1="12" x2="40" y2="12" stroke="#00d4ff" stroke-width="3" opacity="0.7"/>
+</g>
+
+  <!-- Tier pill (top-left, below logo) -->
+  <g transform="translate(60, 145)">
+    <rect x="0" y="0" width="100" height="32" rx="16" fill="#d97757"/>
+    <text x="50" y="21" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#1a1005" text-anchor="middle" letter-spacing="2">BUILD</text>
+  </g>
+
+  <!-- Quality tier badge (top-right) -->
+  <g transform="translate(1170, 60)">
+    <circle cx="0" cy="0" r="40" fill="#d1d5db" opacity="0.20"/>
+    <circle cx="0" cy="0" r="32" fill="none" stroke="#d1d5db" stroke-width="2.5"/>
+    <text x="0" y="12" font-family="Georgia, serif" font-size="38" font-weight="900" fill="#d1d5db" text-anchor="middle">A</text>
+    <text x="0" y="60" font-family="ui-monospace, monospace" font-size="10" fill="#d1d5db" text-anchor="middle" letter-spacing="2" opacity="0.8">SILVER</text>
+  </g>
+
+  <!-- Course title -->
+  <text x="60" y="303.45" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">DeepLearning.AI</text><text x="60" y="385.35" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Short Courses</text><text x="60" y="467.25" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="78" font-weight="800" fill="#f5e6d3" letter-spacing="-2">Catalog</text><text x="60" y="253.45" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="14" fill="#00d4ff" opacity="0.85" letter-spacing="4">DEEPLEARNING.AI · BUILD TRACK</text><text x="60" y="599.15" font-family="ui-monospace, monospace" font-size="16" fill="#0066cc" letter-spacing="2">⚡ +280 XP</text>
+
+  <!-- AI TRAINING HUB footer -->
+  <g transform="translate(60, 670)">
+    <line x1="0" y1="-10" x2="30" y2="-10" stroke="#0066cc" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#0066cc" letter-spacing="4" opacity="0.85">AI TRAINING HUB</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#00d4ff" letter-spacing="2" opacity="0.55">COURSE · DEEPLEARNING-AI-SHORT-COURSES</text>
+  </g>
+
+  <!-- Right side meta (provider + url hint) -->
+  <g transform="translate(1220, 670)" text-anchor="end">
+    <line x1="-30" y1="-10" x2="0" y2="-10" stroke="#0066cc" stroke-width="2" opacity="0.7"/>
+    <text x="0" y="0" font-family="ui-monospace, 'JetBrains Mono', monospace" font-size="13" fill="#0066cc" letter-spacing="3" opacity="0.85">DEEPLEARNING.AI</text>
+    <text x="0" y="18" font-family="ui-monospace, monospace" font-size="10" fill="#00d4ff" letter-spacing="2" opacity="0.55">TIER A · 280 XP</text>
+  </g>
+
+  <!-- Subtle border accent -->
+  <rect x="20" y="20" width="1240" height="680" fill="none" stroke="#0066cc" stroke-width="1" opacity="0.10" rx="8"/>
+</svg>
