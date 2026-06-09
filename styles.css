@@ -418,14 +418,47 @@ body {
   background: linear-gradient(180deg, var(--paper) 0%, #fdfaf2 100%);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 18px 20px;
   display: flex; flex-direction: column;
+  overflow: hidden;
   box-shadow: var(--shadow-1);
   transition: transform 200ms, box-shadow 200ms;
 }
 .pick-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-2); }
 .pick-card.quality-s { border-left: 4px solid #d4a341; }
 .pick-card.completed { background: linear-gradient(180deg, var(--paper), var(--cream-2)); }
+.pick-image {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--cream-2);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  transition: filter 200ms;
+}
+.pick-card:hover .pick-image { filter: brightness(1.04); }
+.pick-image-img {
+  max-width: 72px; max-height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+.pick-image-fallback {
+  width: 72px; height: 72px;
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.pick-body {
+  padding: 16px 20px 18px;
+  display: flex; flex-direction: column;
+  flex: 1;
+}
 .pick-card-top {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 6px; gap: 8px;
@@ -477,8 +510,8 @@ body {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 18px 20px;
   display: flex; flex-direction: column;
+  overflow: hidden;
   transition: transform 200ms, box-shadow 200ms, border-color 200ms;
   box-shadow: var(--shadow-1);
 }
@@ -493,6 +526,52 @@ body {
 }
 .course.in-progress {
   border-color: var(--terracotta-soft);
+}
+
+/* ============================================================
+   COURSE IMAGE (brand logo at top of each card)
+   ============================================================ */
+.course-image {
+  position: relative;
+  width: 100%;
+  height: 96px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--cream-2);
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+  transition: filter 200ms, transform 200ms;
+}
+.course:hover .course-image {
+  filter: brightness(1.04);
+}
+.course-image:hover {
+  background-color: var(--paper);
+}
+.course-image-img {
+  max-width: 56px; max-height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.08));
+}
+.course-image-fallback {
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.2);
+}
+.course-image .tier-badge {
+  position: absolute; top: 8px; right: 8px;
+  width: 24px; height: 24px; font-size: 11px; border-radius: 6px;
+}
+.course-body {
+  padding: 14px 18px 16px;
+  display: flex; flex-direction: column;
+  flex: 1;
 }
 
 .course-head {
@@ -581,6 +660,18 @@ body {
 .btn-ghost:hover { background: var(--cream-2); }
 .btn-link { background: transparent; border: none; color: var(--terracotta); padding: 0; }
 .btn-link:hover { text-decoration: underline; }
+
+.btn-open {
+  background: var(--terracotta);
+  color: var(--cream);
+  border-color: var(--terracotta);
+  font-weight: 600;
+}
+.btn-open:hover {
+  background: var(--terracotta-2);
+  border-color: var(--terracotta-2);
+  color: var(--cream);
+}
 
 .course-status {
   font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;

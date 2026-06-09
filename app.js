@@ -328,23 +328,30 @@
     picks.forEach(course => {
       const courseState = state.courses[course.id] || { status: "not-started" };
       const status = courseState.status;
+      const brand = course.brand || { logo: "", color: "#2a241d", initials: "AI", name: course.provider };
       const card = document.createElement("article");
       card.className = `pick-card quality-${(course.quality || "B").toLowerCase()} ${status === "completed" ? "completed" : ""} ${status === "in-progress" ? "in-progress" : ""}`;
       card.dataset.id = course.id;
       card.innerHTML = `
         ${status === "completed" ? `<div class="completed-check" aria-label="Completed">✓</div>` : ""}
-        <div class="pick-card-top">
-          <span class="course-provider">${course.provider}</span>
-          <span class="tier-badge tier-badge-${course.quality.toLowerCase()}" title="${course.qualityReason || ""}">${course.quality}</span>
-        </div>
-        <h3 class="pick-card-title">${course.title}</h3>
-        <p class="pick-card-desc">${course.description || ""}</p>
-        <div class="pick-card-actions">
-          <span class="course-xp">+${course.xp} XP</span>
-          <a class="btn btn-ghost" href="${course.url}" target="_blank" rel="noopener noreferrer">Open ↗</a>
-          <button class="btn ${status === "completed" ? "btn-ghost" : status === "in-progress" ? "btn-terracotta" : "btn-primary"}" data-action="${status === "completed" ? "uncomplete" : status === "in-progress" ? "complete" : "start"}">${
-            status === "completed" ? "Done" : status === "in-progress" ? "Mark complete" : "Start"
-          }</button>
+        <a class="pick-image" href="${course.url}" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, ${brand.color}33 0%, ${brand.color}11 100%);" title="Open ${course.title} on ${course.provider}">
+          <img class="pick-image-img" src="${brand.logo}" alt="${brand.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div class="pick-image-fallback" style="display:none; background: ${brand.color};">${brand.initials}</div>
+        </a>
+        <div class="pick-body">
+          <div class="pick-card-top">
+            <span class="course-provider">${course.provider}</span>
+            <span class="tier-badge tier-badge-${course.quality.toLowerCase()}" title="${course.qualityReason || ""}">${course.quality}</span>
+          </div>
+          <h3 class="pick-card-title">${course.title}</h3>
+          <p class="pick-card-desc">${course.description || ""}</p>
+          <div class="pick-card-actions">
+            <span class="course-xp">+${course.xp} XP</span>
+            <a class="btn btn-open" href="${course.url}" target="_blank" rel="noopener noreferrer" data-action="open">Open ↗</a>
+            <button class="btn ${status === "completed" ? "btn-ghost" : status === "in-progress" ? "btn-terracotta" : "btn-primary"}" data-action="${status === "completed" ? "uncomplete" : status === "in-progress" ? "complete" : "start"}">${
+              status === "completed" ? "Done" : status === "in-progress" ? "Mark complete" : "Start"
+            }</button>
+          </div>
         </div>
       `;
       grid.appendChild(card);
@@ -379,8 +386,8 @@
     }).join("");
 
     const quality = course.quality || "B";
-    const qualityLabel = QUALITY_LABELS[quality] || `Tier ${quality}`;
     const qualityReason = course.qualityReason || "";
+    const brand = course.brand || { logo: "", color: "#2a241d", initials: "AI", name: course.provider };
 
     let actionHTML = "";
     let statusHTML = "";
@@ -397,21 +404,27 @@
 
     card.innerHTML = `
       ${status === "completed" ? `<div class="completed-check" aria-label="Completed">✓</div>` : ""}
-      <div class="course-top">
-        <span class="course-provider">${course.provider}</span>
+      <a class="course-image" href="${course.url}" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, ${brand.color}22 0%, ${brand.color}11 100%);" title="Open ${course.title} on ${course.provider}">
+        <img class="course-image-img" src="${brand.logo}" alt="${brand.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="course-image-fallback" style="display:none; background: ${brand.color};">${brand.initials}</div>
         <span class="tier-badge tier-badge-${quality.toLowerCase()}" title="${qualityReason}" aria-label="Quality tier ${quality}">${quality}</span>
-      </div>
-      <h3 class="course-title">${course.title}</h3>
-      <p class="course-desc">${course.description || ""}</p>
-      <div class="course-meta">${tagsHTML}</div>
-      <div class="course-actions">
-        <div>
-          ${statusHTML}
-          <span class="course-xp">+${course.xp} XP</span>
+      </a>
+      <div class="course-body">
+        <div class="course-top">
+          <span class="course-provider">${course.provider}</span>
         </div>
-        <div style="display:flex; gap:6px;">
-          <a class="btn btn-ghost" href="${course.url}" target="_blank" rel="noopener noreferrer">Open ↗</a>
-          ${actionHTML}
+        <h3 class="course-title">${course.title}</h3>
+        <p class="course-desc">${course.description || ""}</p>
+        <div class="course-meta">${tagsHTML}</div>
+        <div class="course-actions">
+          <div>
+            ${statusHTML}
+            <span class="course-xp">+${course.xp} XP</span>
+          </div>
+          <div style="display:flex; gap:6px;">
+            <a class="btn btn-open" href="${course.url}" target="_blank" rel="noopener noreferrer" data-action="open">Open ↗</a>
+            ${actionHTML}
+          </div>
         </div>
       </div>
     `;
@@ -511,6 +524,7 @@
     const target = e.target.closest("[data-action]");
     if (!target) return;
     const action = target.dataset.action;
+    if (action === "open") return; // Let the link do its thing
     const card = target.closest(".course");
     if (!card) return;
     const courseId = card.dataset.id;

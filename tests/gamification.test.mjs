@@ -298,6 +298,31 @@ test("at least 60 courses in catalog", () => {
   assert.ok(catalog.length >= 60, `expected >= 60 courses, got ${catalog.length}`);
 });
 
+test("every course has a brand field with logo + color + initials", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  for (const c of catalog) {
+    assert.ok(c.brand, `course ${c.id} missing brand`);
+    assert.ok(c.brand.logo, `course ${c.id} missing brand.logo`);
+    assert.ok(c.brand.color, `course ${c.id} missing brand.color`);
+    assert.match(c.brand.color, /^#[0-9a-f]{6}$/i, `course ${c.id} invalid color format`);
+    assert.ok(c.brand.initials, `course ${c.id} missing brand.initials`);
+    assert.ok(c.brand.name, `course ${c.id} missing brand.name`);
+  }
+});
+
+test("brand logos use ui-avatars (reliable always-200 source)", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  for (const c of catalog) {
+    assert.match(c.brand.logo, /ui-avatars\.com/, `course ${c.id} should use ui-avatars for reliability`);
+  }
+});
+
+test("at least 10 unique brand colors used across the catalog", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const colors = new Set(catalog.map(c => c.brand.color));
+  assert.ok(colors.size >= 10, `expected >= 10 unique brand colors, got ${colors.size}`);
+});
+
 // ============================================================
 // STATE
 // ============================================================

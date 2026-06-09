@@ -14,7 +14,13 @@
     "description": "Learn how to use Claude for everyday work tasks, understand core features, and explore resources for more advanced learning.",
     "quality": "A",
     "qualityReason": "The official Anthropic 101. Authoritative entry point.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-ai-fluency",
@@ -32,7 +38,13 @@
     "description": "The meta course \u2014 learn to collaborate with AI systems effectively, efficiently, ethically, and safely. The Anthropic-endorsed framework for AI collaboration.",
     "quality": "A",
     "qualityReason": "Anthropic's official fluency framework. Strong brand weight.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-capabilities",
@@ -49,7 +61,13 @@
     "description": "An introductory course about how AI works \u2014 what models can and can't do, and how to think about their failure modes.",
     "quality": "A",
     "qualityReason": "Anthropic's intro to how AI works.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-prompt-eng",
@@ -66,7 +84,13 @@
     "description": "The patterns that make prompts work \u2014 clarity, examples, system prompts, structured output. The single highest-leverage skill in applied AI.",
     "quality": "A",
     "qualityReason": "The Anthropic-endorsed prompt engineering fundamentals. Essential.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-prompt-eng-intermediate",
@@ -83,7 +107,13 @@
     "description": "Beyond the basics \u2014 chain-of-thought, role prompting, when to break the rules, and how to debug bad outputs.",
     "quality": "A",
     "qualityReason": "Intermediate-level official Anthropic prompting material.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-claude-cowork",
@@ -101,7 +131,13 @@
     "description": "Work alongside Claude on real files and projects. Hands-on with the Cowork task loop, plugins, skills, file and research workflows, and multi-step work.",
     "quality": "A",
     "qualityReason": "Hands-on with the new Cowork paradigm from the team that built it.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-api",
@@ -119,7 +155,13 @@
     "description": "The full spectrum of working with Anthropic models \u2014 Messages API, streaming, tool use, vision inputs, prompt caching, and the SDKs.",
     "quality": "A",
     "qualityReason": "Official Claude API training. Direct from Anthropic.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-tool-use",
@@ -137,7 +179,13 @@
     "description": "How to give Claude hands \u2014 function calling, tool schemas, multi-step agents, and the gotchas that break them.",
     "quality": "A",
     "qualityReason": "Function calling + agents. Core production skill.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-mcp",
@@ -156,7 +204,13 @@
     "description": "Build MCP servers and clients from scratch in Python. Master the three core primitives \u2014 tools, resources, and prompts \u2014 to connect Claude to external services.",
     "quality": "A",
     "qualityReason": "Official MCP intro. The emerging standard's first-party training.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-mcp-advanced",
@@ -175,7 +229,13 @@
     "description": "Advanced MCP implementation patterns \u2014 sampling, notifications, file system access, and transport mechanisms for production MCP server development.",
     "quality": "S",
     "qualityReason": "The only authoritative deep-dive on the emerging MCP standard. Cutting-edge.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-claude-code-101",
@@ -194,7 +254,13 @@
     "description": "Learn to use Claude Code effectively in your daily development workflow \u2014 the official on-ramp to agentic coding.",
     "quality": "A",
     "qualityReason": "Official Claude Code on-ramp. Authoritative.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-claude-code-action",
@@ -213,7 +279,13 @@
     "description": "Integrate Claude Code into your development workflow \u2014 subagents, hooks, worktrees, plan mode, and the patterns that turn it into a real teammate.",
     "quality": "S",
     "qualityReason": "Real-world Claude Code workflows from the team that built it.",
-    "picks": true
+    "picks": true,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-agent-skills",
@@ -232,7 +304,13 @@
     "description": "Build, configure, and share Skills in Claude Code \u2014 reusable markdown instructions that Claude automatically applies to the right tasks at the right time.",
     "quality": "A",
     "qualityReason": "The official Skills framework training.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-subagents",
@@ -252,7 +330,13 @@
     "description": "Use and create sub-agents in Claude Code to manage context, delegate tasks, and build specialized workflows that keep the main conversation clean.",
     "quality": "A",
     "qualityReason": "Official sub-agents training. Modern agent patterns.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-agents-compound",
@@ -270,7 +354,13 @@
     "description": "Real systems are pipelines, not single calls. Retrieval, routing, ensembles, evaluators \u2014 the architecture patterns from production.",
     "quality": "S",
     "qualityReason": "Compound AI systems is the most important architectural shift in 2025-2026.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-eval",
@@ -288,7 +378,13 @@
     "description": "You can't ship what you can't measure. Building eval suites, grading rubrics, A/B testing prompts, and the metrics that actually matter.",
     "quality": "S",
     "qualityReason": "Evaluation is the #1 missing skill in production AI. This is the definitive resource.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-constitutional",
@@ -306,7 +402,13 @@
     "description": "How Claude is trained to be helpful, harmless, and honest \u2014 and why that matters when you're building with it.",
     "quality": "A",
     "qualityReason": "How Claude is actually trained. Authoritative.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-context-eng",
@@ -324,7 +426,13 @@
     "description": "Context is the new prompt. Memory, retrieval, summarization, scratchpads \u2014 engineering what the model sees is most of the work.",
     "quality": "S",
     "qualityReason": "Context engineering is the new prompt engineering. Anthropic's authoritative take.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-extended-thinking",
@@ -342,7 +450,13 @@
     "description": "When to let Claude think out loud, when not to, and how to budget reasoning tokens for the right tasks.",
     "quality": "A",
     "qualityReason": "Reasoning tokens are a key 2025 capability.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-vision",
@@ -360,7 +474,13 @@
     "description": "Multimodal inputs \u2014 PDFs, charts, screenshots, document Q&A. The real-world patterns for visual understanding.",
     "quality": "A",
     "qualityReason": "Multimodal inputs are essential for modern applications.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-prompt-caching",
@@ -378,7 +498,13 @@
     "description": "Caching, batching, model selection, and the architectural moves that take your API bill from painful to negligible.",
     "quality": "S",
     "qualityReason": "Cost optimization is the #1 production concern. The official guide.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-claude-sdk",
@@ -396,7 +522,13 @@
     "description": "The Claude Agent SDK in Python and TypeScript \u2014 full programmatic control, streaming, retries, and production patterns.",
     "quality": "S",
     "qualityReason": "The canonical SDK reference from Anthropic. Production-ready.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-flow-engineering",
@@ -414,7 +546,13 @@
     "description": "Orchestrating multi-step agent workflows \u2014 error recovery, human-in-the-loop, state machines for agents.",
     "quality": "S",
     "qualityReason": "The most advanced agent orchestration material available \u2014 production-grade patterns.",
-    "picks": true
+    "picks": true,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-claude-on-aws",
@@ -432,7 +570,13 @@
     "description": "Deploying Claude through AWS \u2014 IAM, VPC, cost controls, and the production deployment story.",
     "quality": "A",
     "qualityReason": "AWS deployment from Anthropic's team.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-claude-on-gcp",
@@ -450,7 +594,13 @@
     "description": "Vertex AI setup, model garden, and integrating Claude into Google Cloud workflows.",
     "quality": "A",
     "qualityReason": "GCP/Vertex deployment from Anthropic's team.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-fluency-educators",
@@ -468,7 +618,13 @@
     "description": "Empowers faculty, instructional designers, and educational leaders to apply AI fluency in their teaching practice and institutional strategy.",
     "quality": "A",
     "qualityReason": "Audience-specific fluency training from Anthropic.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "anthropic-building-effective-agents",
@@ -487,7 +643,13 @@
     "description": "Anthropic's definitive framework on when to use agents vs simple chains, with reference architectures (orchestrator-workers, evaluator-optimizer, parallelization).",
     "quality": "A",
     "qualityReason": "Anthropic's canonical agent framework post.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AE&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AE",
+      "name": "Anthropic Eng"
+    }
   },
   {
     "id": "anthropic-claude-code-best-practices",
@@ -506,7 +668,13 @@
     "description": "Anthropic's official guidance on power-using Claude Code \u2014 CLAUDE.md, subagents, hooks, worktrees, plan mode, and context engineering.",
     "quality": "S",
     "qualityReason": "Official Anthropic engineering guide for power-using Claude Code.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AE&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AE",
+      "name": "Anthropic Eng"
+    }
   },
   {
     "id": "karpathy-zero-to-hero",
@@ -524,7 +692,13 @@
     "description": "Build GPT from scratch, in code, line by line. The single best resource for understanding what an LLM actually is. 7 videos, ~8 hours total.",
     "quality": "A",
     "qualityReason": "The best hands-on transformer education. Karpathy is the gold standard.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=K&background=ff0000&color=fff&size=128&bold=true&format=svg",
+      "color": "#ff0000",
+      "initials": "K",
+      "name": "Karpathy"
+    }
   },
   {
     "id": "karpathy-llm-intro",
@@ -542,7 +716,13 @@
     "description": "Karpathy's 1-hour mental model for how LLMs work \u2014 pretraining, fine-tuning, RLHF, the transformer stack. Best on-ramp if you only have 60 minutes.",
     "quality": "A",
     "qualityReason": "The 1-hour mental model from the field's leading educator.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=K&background=ff0000&color=fff&size=128&bold=true&format=svg",
+      "color": "#ff0000",
+      "initials": "K",
+      "name": "Karpathy"
+    }
   },
   {
     "id": "karpathy-software-3",
@@ -560,7 +740,13 @@
     "description": "Karpathy's 2025 talk on Software 3.0 \u2014 the emerging paradigm where LLMs are a new kind of computer and English is the new programming language. Must-watch framing.",
     "quality": "A",
     "qualityReason": "Karpathy's 2025 framing talk. Must-watch.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=K&background=ff0000&color=fff&size=128&bold=true&format=svg",
+      "color": "#ff0000",
+      "initials": "K",
+      "name": "Karpathy"
+    }
   },
   {
     "id": "3blue1brown-llm",
@@ -578,7 +764,13 @@
     "description": "The visual, intuitive series on transformers, embeddings, attention, and how LLMs generate text. The best 1-hour primer if you think in pictures.",
     "quality": "A",
     "qualityReason": "The best visual transformer primer. Universally praised.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=3B&background=1a1a1a&color=fff&size=128&bold=true&format=svg",
+      "color": "#1a1a1a",
+      "initials": "3B",
+      "name": "3Blue1Brown"
+    }
   },
   {
     "id": "3blue1brown-nn",
@@ -597,7 +789,13 @@
     "description": "The original 3Blue1Brown series on deep learning \u2014 backprop, gradient descent, and how networks learn. The most-watched visual DL series on the internet.",
     "quality": "A",
     "qualityReason": "The most-watched visual DL series. Excellent.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=3B&background=1a1a1a&color=fff&size=128&bold=true&format=svg",
+      "color": "#1a1a1a",
+      "initials": "3B",
+      "name": "3Blue1Brown"
+    }
   },
   {
     "id": "cs231n",
@@ -615,7 +813,13 @@
     "description": "Andrej Karpathy's legendary Stanford course. The deep dive into CNNs, backprop, and the foundations of modern vision.",
     "quality": "A",
     "qualityReason": "Karpathy's legendary Stanford CNN course. Industry classic.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=SU&background=8c1515&color=fff&size=128&bold=true&format=svg",
+      "color": "#8c1515",
+      "initials": "SU",
+      "name": "Stanford"
+    }
   },
   {
     "id": "cs336",
@@ -633,7 +837,13 @@
     "description": "Build a language model from scratch \u2014 tokenization, architectures, distributed training, and the systems-level work that productionizes LLMs.",
     "quality": "S",
     "qualityReason": "Stanford's flagship LM-from-scratch course. The most rigorous available.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=SU&background=8c1515&color=fff&size=128&bold=true&format=svg",
+      "color": "#8c1515",
+      "initials": "SU",
+      "name": "Stanford"
+    }
   },
   {
     "id": "fastai",
@@ -650,7 +860,13 @@
     "description": "Top-down, code-first. Get a working model in 5 minutes, then peel back the layers. The best on-ramp for ML practitioners.",
     "quality": "A",
     "qualityReason": "Top-down practical DL. Jeremy Howard's pedagogical style.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=FA&background=7b3aaf&color=fff&size=128&bold=true&format=svg",
+      "color": "#7b3aaf",
+      "initials": "FA",
+      "name": "fast.ai"
+    }
   },
   {
     "id": "huggingface-agents",
@@ -667,7 +883,13 @@
     "description": "smolagents, function-calling, RAG, and the open-source stack for building production agents. Hands-on from notebook to deployment.",
     "quality": "A",
     "qualityReason": "The OSS standard for agentic AI education.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=HF&background=ff9a00&color=fff&size=128&bold=true&format=svg",
+      "color": "#ff9a00",
+      "initials": "HF",
+      "name": "Hugging Face"
+    }
   },
   {
     "id": "deeplearning-ai-agentic",
@@ -685,7 +907,13 @@
     "description": "Andrew Ng's short course on the agent stack \u2014 ReAct, planning, reflection, and the five patterns that show up in every real system.",
     "quality": "A",
     "qualityReason": "Andrew Ng's authoritative agentic AI course.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=DL&background=0066b3&color=fff&size=128&bold=true&format=svg",
+      "color": "#0066b3",
+      "initials": "DL",
+      "name": "DeepLearning.AI"
+    }
   },
   {
     "id": "deeplearning-ai-short-courses",
@@ -703,7 +931,13 @@
     "description": "The full catalog of Andrew Ng's 1-2 hour short courses \u2014 agents, RAG, function-calling, vector DBs, and the constant stream of new 2025-2026 content.",
     "quality": "A",
     "qualityReason": "The constantly-updated Andrew Ng short-course catalog.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=DL&background=0066b3&color=fff&size=128&bold=true&format=svg",
+      "color": "#0066b3",
+      "initials": "DL",
+      "name": "DeepLearning.AI"
+    }
   },
   {
     "id": "google-generative-ai",
@@ -720,7 +954,13 @@
     "description": "Google's structured path through generative AI \u2014 Gemini, embeddings, vector search, and the production patterns on GCP.",
     "quality": "B",
     "qualityReason": "Google's structured path. Good content, less recognized than their certs.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=GC&background=34a853&color=fff&size=128&bold=true&format=svg",
+      "color": "#34a853",
+      "initials": "GC",
+      "name": "Google Cloud"
+    }
   },
   {
     "id": "madewithml",
@@ -739,7 +979,13 @@
     "description": "End-to-end MLOps/LLMOps course \u2014 feature stores, model registries, evaluation, monitoring, CI/CD. The de-facto roadmap for shipping ML responsibly.",
     "quality": "S",
     "qualityReason": "The de-facto MLOps/LLMOps roadmap. Used by serious teams shipping ML in production.",
-    "picks": true
+    "picks": true,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AM&background=3e5e3a&color=fff&size=128&bold=true&format=svg",
+      "color": "#3e5e3a",
+      "initials": "AM",
+      "name": "Anyscale"
+    }
   },
   {
     "id": "ai-engineering-book",
@@ -758,7 +1004,13 @@
     "description": "The reference book for building production AI applications. RAG, fine-tuning, agents, evaluation, latency/cost tradeoffs, and how the ecosystem evolved through 2024-2025.",
     "quality": "S",
     "qualityReason": "Chip Huyen's book is THE production AI reference. Used across the industry.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=OR&background=e60000&color=fff&size=128&bold=true&format=svg",
+      "color": "#e60000",
+      "initials": "OR",
+      "name": "O'Reilly"
+    }
   },
   {
     "id": "llm-patterns-yan",
@@ -777,7 +1029,13 @@
     "description": "Battle-tested engineering patterns from real LLM products. Best single read for senior engineers moving from prototype to production \u2014 evals, UX, RAG, architecture tradeoffs.",
     "quality": "S",
     "qualityReason": "Eugene Yan's pattern catalog is the best free senior-engineer resource for LLM products.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=EY&background=4285f4&color=fff&size=128&bold=true&format=svg",
+      "color": "#4285f4",
+      "initials": "EY",
+      "name": "Eugene Yan"
+    }
   },
   {
     "id": "mcp-spec",
@@ -796,7 +1054,13 @@
     "description": "The canonical MCP spec \u2014 the emerging standard for LLM tool integration. Read this if you want to build or host an MCP server.",
     "quality": "A",
     "qualityReason": "The canonical MCP spec. Essential reading for tool integration.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AS&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AS",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "ai-jason-youtube",
@@ -814,7 +1078,13 @@
     "description": "Best-in-class end-to-end build videos on LangGraph, multi-agent systems, evals, and production patterns. Concise, technically accurate, ships with GitHub repos.",
     "quality": "B",
     "qualityReason": "Best end-to-end build videos, but YouTube-tier (not official training).",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=JZ&background=ff4500&color=fff&size=128&bold=true&format=svg",
+      "color": "#ff4500",
+      "initials": "JZ",
+      "name": "AI Jason"
+    }
   },
   {
     "id": "anthropic-prompt-eng-guide",
@@ -833,7 +1103,13 @@
     "description": "Authoritative guide for Claude prompts \u2014 XML structuring, system-prompt design, long-context tips, prompt caching, tool use, and computer use. The 2025 reference.",
     "quality": "A",
     "qualityReason": "The official Anthropic prompt engineering reference guide.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AD&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AD",
+      "name": "Anthropic Docs"
+    }
   },
   {
     "id": "prompting-guide-dair",
@@ -851,7 +1127,13 @@
     "description": "Community-maintained, model-agnostic prompt engineering reference \u2014 CoT, ReAct, ToT, APE, and recent 2025-era techniques. Best general-purpose starting point.",
     "quality": "B",
     "qualityReason": "Community-maintained, model-agnostic reference. Good but not authoritative.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=DA&background=6366f1&color=fff&size=128&bold=true&format=svg",
+      "color": "#6366f1",
+      "initials": "DA",
+      "name": "DAIR.AI"
+    }
   },
   {
     "id": "langfuse-docs",
@@ -871,7 +1153,13 @@
     "description": "Open-source LLM engineering platform: tracing, prompt management, evaluations, datasets, cost/latency analytics. The OSS default for production observability.",
     "quality": "S",
     "qualityReason": "The OSS standard for LLM observability/tracing/evals. Industry-recognized.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=LF&background=7c3aed&color=fff&size=128&bold=true&format=svg",
+      "color": "#7c3aed",
+      "initials": "LF",
+      "name": "Langfuse"
+    }
   },
   {
     "id": "kahn-academy-ai",
@@ -888,7 +1176,13 @@
     "description": "Khan Academy's AI literacy track \u2014 concepts, ethics, and how to think about AI in everyday life and work.",
     "quality": "B",
     "qualityReason": "Solid AI literacy for general audiences. Good intro.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=KA&background=14bf96&color=fff&size=128&bold=true&format=svg",
+      "color": "#14bf96",
+      "initials": "KA",
+      "name": "Khan Academy"
+    }
   },
   {
     "id": "fullstack-deeplearning",
@@ -905,7 +1199,13 @@
     "description": "The course on shipping ML \u2014 data labeling, training pipelines, deployment, monitoring, and the boring work that makes models actually useful.",
     "quality": "B",
     "qualityReason": "Comprehensive shipping ML content. Older (2020) but still relevant.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=FS&background=0ea5e9&color=fff&size=128&bold=true&format=svg",
+      "color": "#0ea5e9",
+      "initials": "FS",
+      "name": "FSDL"
+    }
   },
   {
     "id": "anthropic-claude-cert-architect",
@@ -924,7 +1224,13 @@
     ],
     "url": "https://anthropic.skilljar.com/ai-fluency-framework-foundations",
     "description": "Anthropic's official AI Fluency framework course \u2014 the 4D model (Delegation, Description, Discernment, Diligence) for collaborating with AI. Awards a free Certificate of Completion. (Note: there is no 'Claude Certified Architect' credential from Anthropic \u2014 this is the closest official substitute.)",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AN&background=d4a341&color=fff&size=128&bold=true&format=svg",
+      "color": "#d4a341",
+      "initials": "AN",
+      "name": "Anthropic"
+    }
   },
   {
     "id": "github-foundations",
@@ -943,7 +1249,13 @@
     ],
     "url": "https://learn.github.com/certifications/github-foundations",
     "description": "GitHub's official GH-900 entry-level certification \u2014 Git basics, repositories, collaboration features, and modern dev workflows. 60-question proctored exam, $99. (Note: passing isn't required to learn \u2014 the free learning path is itself the training.)",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=GH&background=181717&color=fff&size=128&bold=true&format=svg",
+      "color": "#181717",
+      "initials": "GH",
+      "name": "GitHub"
+    }
   },
   {
     "id": "google-ai-essentials",
@@ -961,7 +1273,13 @@
     ],
     "url": "https://grow.google/ai-essentials/",
     "description": "Google's official beginner course on generative-AI fundamentals, prompt design, and using AI tools responsibly. Taught by Google experts, ~5 hours, awards a Google Certificate.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=G&background=4285f4&color=fff&size=128&bold=true&format=svg",
+      "color": "#4285f4",
+      "initials": "G",
+      "name": "Google"
+    }
   },
   {
     "id": "aws-ai-practitioner",
@@ -980,7 +1298,13 @@
     ],
     "url": "https://aws.amazon.com/certification/certified-ai-practitioner/",
     "description": "AWS's foundational AI/ML/GenAI literacy exam \u2014 validates broad understanding of AI concepts, responsible AI, and core AWS AI services (SageMaker, Bedrock, Rekognition, Comprehend). 65-question exam, $100, 3-year validity. The single most recognized foundational AI cert available.",
-    "picks": true
+    "picks": true,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AWS&background=ff9900&color=fff&size=128&bold=true&format=svg",
+      "color": "#ff9900",
+      "initials": "AWS",
+      "name": "Amazon Web Services"
+    }
   },
   {
     "id": "ibm-genai-engineering",
@@ -999,7 +1323,13 @@
     ],
     "url": "https://www.coursera.org/professional-certificates/ibm-generative-ai-engineering",
     "description": "IBM's 16-course career-track program \u2014 Python, ML, deep learning, NLP, LLMs, RAG, LangChain, deploying GenAI apps/agents. Taught by IBM Skills Network. Professional certificate from IBM, ~144 hours total.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=IBM&background=0530ad&color=fff&size=128&bold=true&format=svg",
+      "color": "#0530ad",
+      "initials": "IBM",
+      "name": "IBM"
+    }
   },
   {
     "id": "azure-ai-engineer",
@@ -1018,7 +1348,13 @@
     ],
     "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-engineer/",
     "description": "Microsoft's official AI Engineer cert \u2014 design and implement AI solutions on Azure using Cognitive Services, Azure OpenAI, Bot Service, and applied ML. Real exam costs $165; free learning paths available on Microsoft Learn.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=MS&background=5e5e5e&color=fff&size=128&bold=true&format=svg",
+      "color": "#5e5e5e",
+      "initials": "MS",
+      "name": "Microsoft"
+    }
   },
   {
     "id": "aws-ml-specialty",
@@ -1037,7 +1373,13 @@
     ],
     "url": "https://aws.amazon.com/certification/certified-machine-learning-specialty/",
     "description": "AWS's specialty ML cert \u2014 data engineering, exploratory data analysis, ML modeling, feature engineering, model training/tuning, deployment, and operationalizing ML. The deepest ML cert from any major cloud. $300 exam, 3-year validity.",
-    "picks": true
+    "picks": true,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=AWS&background=ff9900&color=fff&size=128&bold=true&format=svg",
+      "color": "#ff9900",
+      "initials": "AWS",
+      "name": "Amazon Web Services"
+    }
   },
   {
     "id": "google-ml-engineer",
@@ -1056,7 +1398,13 @@
     ],
     "url": "https://cloud.google.com/learn/certification/machine-learning-engineer",
     "description": "Google's professional ML Engineer cert \u2014 framing ML problems, data preparation, model development, deployment, and ML pipeline orchestration on Vertex AI. Two-hour proctored exam, $200, 2-year validity.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=G&background=4285f4&color=fff&size=128&bold=true&format=svg",
+      "color": "#4285f4",
+      "initials": "G",
+      "name": "Google"
+    }
   },
   {
     "id": "nvidia-dli",
@@ -1075,7 +1423,13 @@
     ],
     "url": "https://www.nvidia.com/en-us/training/",
     "description": "NVIDIA DLI's hands-on training catalog \u2014 fundamentals of deep learning, accelerated computing with CUDA, LLMs, generative AI, computer vision, and robotics. Free self-paced + paid instructor-led courses with certificates of competency.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=NV&background=76b900&color=fff&size=128&bold=true&format=svg",
+      "color": "#76b900",
+      "initials": "NV",
+      "name": "NVIDIA"
+    }
   },
   {
     "id": "kaggle-learn",
@@ -1094,6 +1448,12 @@
     ],
     "url": "https://www.kaggle.com/learn",
     "description": "Kaggle's catalog of free, hands-on micro-courses \u2014 Python, pandas, intro to ML, intermediate ML, deep learning, computer vision, NLP, time series, and reinforcement learning. Built-in browser notebooks, no setup required. Kaggle micro-credentials awarded.",
-    "picks": false
+    "picks": false,
+    "brand": {
+      "logo": "https://ui-avatars.com/api/?name=K&background=20beff&color=fff&size=128&bold=true&format=svg",
+      "color": "#20beff",
+      "initials": "K",
+      "name": "Kaggle"
+    }
   }
 ]
