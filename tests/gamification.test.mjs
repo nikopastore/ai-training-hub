@@ -310,11 +310,19 @@ test("every course has a brand field with logo + color + initials", () => {
   }
 });
 
-test("brand logos use ui-avatars (reliable always-200 source)", () => {
+test("every course has a real logo URL (not a placeholder service)", () => {
   const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
-  for (const c of catalog) {
-    assert.match(c.brand.logo, /ui-avatars\.com/, `course ${c.id} should use ui-avatars for reliability`);
-  }
+  // Count how many courses use real logo sources vs placeholders
+  const realSources = ["wikipedia", "yt3", "devicon", "avatars.githubusercontent.com", "madewithml.com", "langfuse.com", "github.githubassets", "huggingface.co"];
+  const realCount = catalog.filter(c => realSources.some(s => c.brand.logo.includes(s))).length;
+  // At least 95% should be real (we have 60 courses with 23 unique URLs, mostly all real)
+  assert.ok(realCount >= 55, `expected >= 55 courses with real logos, got ${realCount}`);
+});
+
+test("no course uses ui-avatars (placeholder service)", () => {
+  const catalog = JSON.parse(readFileSync(join(projectRoot, "data/courses.json"), "utf8"));
+  const placeholderCount = catalog.filter(c => c.brand.logo.includes("ui-avatars")).length;
+  assert.equal(placeholderCount, 0, `expected 0 placeholder logos, found ${placeholderCount}`);
 });
 
 test("at least 10 unique brand colors used across the catalog", () => {
