@@ -13,7 +13,7 @@
 <body>
   <div class="noise" aria-hidden="true"></div>
 
-  <header class="site-header">
+  <header class="site-header site-header-sticky">
     <div class="brand">
       <div class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="28" height="28">
@@ -97,6 +97,8 @@
       <div class="tier-distribution" id="tier-distribution"></div>
     </section>
 
+    <section class="continue-card" id="continue-card" aria-labelledby="continue-heading" hidden></section>
+
     <section class="top-picks" aria-labelledby="top-picks-heading">
       <div class="top-picks-head">
         <h2 id="top-picks-heading">
@@ -150,6 +152,13 @@
           <p>Specialized or narrow scope, useful for specific contexts</p>
         </div>
       </div>
+    </section>
+
+    <section class="empty-state" id="empty-state" aria-live="polite" hidden>
+      <div class="empty-state-icon" aria-hidden="true">⌕</div>
+      <h2>No courses match those filters</h2>
+      <p>Try a broader search or clear the filters to get back to the full AI training map.</p>
+      <button class="btn btn-primary" data-action="clear-filters">Clear filters</button>
     </section>
 
     <section class="tier-section" data-tier="learn">

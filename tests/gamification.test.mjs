@@ -653,3 +653,43 @@ test("P1 integration: export a real session and re-import on a blank slate", () 
   assert.deepEqual(after.courses, before.courses);
   assert.deepEqual(Object.keys(after.achievements), Object.keys(before.achievements));
 });
+
+// ============================================================
+// P2 — ONBOARDING + STICKY MOTIVATION UX
+// ============================================================
+test("P2 exposes an onboarding storage key", () => {
+  assert.equal(Hub.ONBOARDING_KEY, "ai-training-hub-onboarding-v1");
+});
+
+test("shouldShowOnboarding only returns true for a first-run blank state", () => {
+  const blank = { courses: {}, xp: 0, achievements: {} };
+  assert.equal(Hub.shouldShowOnboarding(blank, null), true);
+  assert.equal(Hub.shouldShowOnboarding(blank, "seen"), false);
+  assert.equal(Hub.shouldShowOnboarding({ ...blank, xp: 100 }, null), false);
+  assert.equal(Hub.shouldShowOnboarding({ ...blank, courses: { c1: { status: "in-progress" } } }, null), false);
+});
+
+test("getNextInProgressCourse returns the most recently started active course", () => {
+  const catalog = [
+    { id: "old", title: "Old course" },
+    { id: "new", title: "New course" },
+    { id: "done", title: "Done course" },
+  ];
+  const state = {
+    courses: {
+      old: { status: "in-progress", startedAt: "2026-01-01T00:00:00.000Z" },
+      new: { status: "in-progress", startedAt: "2026-02-01T00:00:00.000Z" },
+      done: { status: "completed", startedAt: "2026-03-01T00:00:00.000Z" },
+    },
+  };
+  assert.equal(Hub.getNextInProgressCourse(catalog, state)?.id, "new");
+});
+
+test("filterCatalog returns matching courses for empty-state decisions", () => {
+  const catalog = [
+    { id: "a", title: "Claude Code", provider: "Anthropic", tier: "build", quality: "S", tags: ["coding"], description: "agents" },
+    { id: "b", title: "AI Basics", provider: "Google", tier: "learn", quality: "A", tags: ["foundations"], description: "intro" },
+  ];
+  assert.deepEqual(Hub.filterCatalog(catalog, { activeFilter: "build", activeQuality: "S", searchQuery: "claude" }).map(c => c.id), ["a"]);
+  assert.deepEqual(Hub.filterCatalog(catalog, { activeFilter: "ship", activeQuality: "all", searchQuery: "zzz" }), []);
+});

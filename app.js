@@ -14,6 +14,7 @@
   const STORAGE_KEY = `ai-training-hub-state-v${CURRENT_SCHEMA}`;
   const THEME_KEY = "ai-training-hub-theme";
   const FILTERS_KEY = "ai-training-hub-filters";
+  const ONBOARDING_KEY = "ai-training-hub-onboarding-v1";
   const TIERS = ["learn", "build", "ship"];
   const TIER_LABELS = { learn: "Learn", build: "Build", ship: "Ship" };
 
@@ -165,6 +166,41 @@
       }));
     } catch (_) { /* noop */ }
   };
+  const stateHasProgress = (snapshot) => {
+    const s = snapshot || defaultState();
+    const courses = s.courses && typeof s.courses === "object" ? s.courses : {};
+    const hasCourseProgress = Object.values(courses).some(c => c && c.status && c.status !== "not-started");
+    const hasAchievements = s.achievements && typeof s.achievements === "object" && Object.keys(s.achievements).length > 0;
+    return (s.xp || 0) > 0 || hasCourseProgress || hasAchievements;
+  };
+  const shouldShowOnboarding = (snapshot, seenValue) => !seenValue && !stateHasProgress(snapshot);
+  const getNextInProgressCourse = (list, snapshot = state) => {
+    const coursesState = snapshot?.courses || {};
+    return (list || [])
+      .filter(c => coursesState[c.id]?.status === "in-progress")
+      .sort((a, b) => {
+        const aTime = Date.parse(coursesState[a.id]?.startedAt || "") || 0;
+        const bTime = Date.parse(coursesState[b.id]?.startedAt || "") || 0;
+        return bTime - aTime;
+      })[0] || null;
+  };
+  const courseMatchesFilters = (course, filters = {}) => {
+    const tier = filters.activeFilter || "all";
+    const quality = filters.activeQuality || "all";
+    const query = (filters.searchQuery || "").trim().toLowerCase();
+    if (tier !== "all" && course.tier !== tier) return false;
+    if (quality !== "all" && course.quality !== quality) return false;
+    if (query) {
+      return (
+        (course.title || "").toLowerCase().includes(query) ||
+        (course.provider || "").toLowerCase().includes(query) ||
+        (course.tags || []).some(t => String(t).toLowerCase().includes(query)) ||
+        (course.description || "").toLowerCase().includes(query)
+      );
+    }
+    return true;
+  };
+  const filterCatalog = (list, filters) => (list || []).filter(c => courseMatchesFilters(c, filters));
   const applyFilters = (saved) => {
     if (!saved || typeof saved !== "object") return;
     if (typeof saved.activeFilter === "string") activeFilter = saved.activeFilter;
@@ -392,13 +428,36 @@
   };
   const emptyQualities = () => QUALITY_TIERS.filter(q => !activeQualities().includes(q));
 
+  const setAnimatedNumber = (node, next) => {
+    if (!node) return;
+    const formatted = next.toLocaleString();
+    const current = Number(String(node.dataset.value || node.textContent || "0").replace(/,/g, "")) || 0;
+    node.dataset.value = String(next);
+    const reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!window.requestAnimationFrame || reduceMotion || current === next) {
+      node.textContent = formatted;
+      return;
+    }
+    const start = window.performance?.now?.() || Date.now();
+    const duration = 520;
+    const step = (now) => {
+      const elapsed = Math.min(1, ((now || Date.now()) - start) / duration);
+      const eased = 1 - Math.pow(1 - elapsed, 3);
+      const value = Math.round(current + (next - current) * eased);
+      node.textContent = value.toLocaleString();
+      if (elapsed < 1) window.requestAnimationFrame(step);
+      else node.textContent = formatted;
+    };
+    window.requestAnimationFrame(step);
+  };
+
   const renderStats = () => {
     const { level, currentLevelXP, nextLevelXP } = levelFromXP(state.xp);
-    el("#stat-level").textContent = level;
-    el("#stat-xp").textContent = state.xp.toLocaleString();
-    el("#stat-streak").textContent = state.streak;
+    setAnimatedNumber(el("#stat-level"), level);
+    setAnimatedNumber(el("#stat-xp"), state.xp);
+    setAnimatedNumber(el("#stat-streak"), state.streak);
     const active = Object.values(state.courses).filter(s => s.status === "in-progress").length;
-    el("#stat-active").textContent = active;
+    setAnimatedNumber(el("#stat-active"), active);
 
     // Level-to-next-XP sub-bar (P1.4). Cap level at 99 in the engine to
     // avoid runaway levels; the bar is hidden at the level cap.
@@ -498,20 +557,38 @@
     });
   };
 
-  const matchesFilter = (course) => {
-    if (activeFilter !== "all" && course.tier !== activeFilter) return false;
-    if (activeQuality !== "all" && course.quality !== activeQuality) return false;
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      return (
-        course.title.toLowerCase().includes(q) ||
-        course.provider.toLowerCase().includes(q) ||
-        (course.tags || []).some(t => t.toLowerCase().includes(q)) ||
-        (course.description || "").toLowerCase().includes(q)
-      );
+  const renderContinueCard = () => {
+    const wrap = el("#continue-card");
+    if (!wrap) return;
+    const course = getNextInProgressCourse(catalog, state);
+    if (!course) {
+      wrap.hidden = true;
+      wrap.innerHTML = "";
+      return;
     }
-    return true;
+    const startedAt = state.courses[course.id]?.startedAt;
+    const started = startedAt ? new Date(startedAt).toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "recently";
+    const brand = course.brand || { logo: "", color: "#2a241d", initials: "AI", name: course.provider };
+    wrap.hidden = false;
+    wrap.dataset.id = course.id;
+    wrap.innerHTML = `
+      <div class="continue-copy">
+        <span class="continue-kicker">Continue where you left off</span>
+        <h2 id="continue-heading">${course.title}</h2>
+        <p>${course.provider} · started ${started} · +${course.xp || 100} XP when complete</p>
+      </div>
+      <div class="continue-brand" style="--continue-color:${brand.color};">
+        <img src="${brand.logo}" alt="${brand.name}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+        <span style="display:none;">${brand.initials}</span>
+      </div>
+      <div class="continue-actions">
+        <a class="btn btn-open" href="${course.url}" target="_blank" rel="noopener noreferrer" data-action="open">Open ↗</a>
+        <button class="btn btn-terracotta" data-action="complete">Mark complete</button>
+      </div>
+    `;
   };
+
+  const matchesFilter = (course) => courseMatchesFilters(course, { activeFilter, activeQuality, searchQuery });
 
   const renderCourse = (course) => {
     const courseState = state.courses[course.id] || { status: "not-started" };
@@ -572,11 +649,19 @@
   };
 
   const renderCourses = () => {
+    const visibleCourses = filterCatalog(catalog, { activeFilter, activeQuality, searchQuery });
+    const isEmpty = visibleCourses.length === 0;
+    const empty = el("#empty-state");
+    if (empty) empty.hidden = !isEmpty;
+
     TIERS.forEach(tier => {
+      const section = document.querySelector(`.tier-section[data-tier="${tier}"]`);
       const grid = document.querySelector(`.course-grid[data-tier="${tier}"]`);
       if (!grid) return;
+      if (section) section.hidden = isEmpty;
       grid.innerHTML = "";
-      const filtered = catalog.filter(c => c.tier === tier && matchesFilter(c));
+      if (isEmpty) return;
+      const filtered = visibleCourses.filter(c => c.tier === tier);
       if (filtered.length === 0) {
         grid.innerHTML = `<p style="color: var(--ink-3); font-size: 13px; padding: 12px 0;">No courses match.</p>`;
         return;
@@ -636,6 +721,7 @@
     renderStats();
     renderProgress();
     renderTierDistribution();
+    renderContinueCard();
     renderTopPicks();
     renderFilters();
     renderCourses();
@@ -673,6 +759,74 @@
     toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
   };
 
+  const showAchievementReveal = (achievement) => {
+    if (!achievement) return;
+    const reveal = document.createElement("div");
+    reveal.className = "achievement-reveal";
+    reveal.setAttribute("role", "status");
+    reveal.innerHTML = `
+      <div class="achievement-reveal-icon">${achievement.icon}</div>
+      <div>
+        <span class="achievement-reveal-kicker">Achievement unlocked</span>
+        <strong>${achievement.name}</strong>
+        <p>${achievement.desc}</p>
+      </div>
+    `;
+    document.body.appendChild(reveal);
+    window.requestAnimationFrame?.(() => reveal.classList.add("show"));
+    setTimeout(() => {
+      reveal.classList.remove("show");
+      setTimeout(() => reveal.remove(), 260);
+    }, 4200);
+  };
+
+  // ============================================================
+  // ONBOARDING (P2)
+  // ============================================================
+  const markOnboardingSeen = () => {
+    try { localStorage.setItem(ONBOARDING_KEY, "seen"); } catch (_) { /* noop */ }
+  };
+  const buildOnboardingModal = () => {
+    if (document.querySelector("#onboarding-modal")) return;
+    const modal = document.createElement("div");
+    modal.id = "onboarding-modal";
+    modal.className = "onboarding-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-label", "Welcome to AI Training Hub");
+    modal.hidden = true;
+    modal.innerHTML = `
+      <div class="onboarding-card">
+        <span class="onboarding-kicker">Welcome</span>
+        <h2>Build AI fluency without losing the thread.</h2>
+        <p>Start with the 5 highest-signal S-tier picks, or jump straight into hands-on Build courses. Your progress stays private in this browser.</p>
+        <div class="onboarding-steps">
+          <span><strong>1</strong> Start a course</span>
+          <span><strong>2</strong> Earn XP</span>
+          <span><strong>3</strong> Keep shipping</span>
+        </div>
+        <div class="onboarding-actions">
+          <button class="btn btn-primary" data-action="onboarding-top-picks">Start with top picks</button>
+          <button class="btn btn-terracotta" data-action="onboarding-build">Jump to Build</button>
+          <button class="btn btn-ghost" data-action="dismiss-onboarding">Skip</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+  };
+  const showOnboardingIfNeeded = () => {
+    let seen = null;
+    try { seen = localStorage.getItem(ONBOARDING_KEY); } catch (_) { /* noop */ }
+    if (!shouldShowOnboarding(state, seen)) return;
+    buildOnboardingModal();
+    const modal = document.querySelector("#onboarding-modal");
+    if (modal) modal.hidden = false;
+  };
+  const hideOnboarding = () => {
+    const modal = document.querySelector("#onboarding-modal");
+    if (modal) modal.hidden = true;
+    markOnboardingSeen();
+  };
+
   // ============================================================
   // EVENTS
   // ============================================================
@@ -690,6 +844,45 @@
       toggleTheme();
       return;
     }
+    if (action === "dismiss-onboarding") {
+      hideOnboarding();
+      return;
+    }
+    if (action === "onboarding-top-picks") {
+      hideOnboarding();
+      activeFilter = "all";
+      activeQuality = "S";
+      searchQuery = "";
+      const searchEl = el("#search");
+      if (searchEl) searchEl.value = "";
+      renderAll();
+      saveFilters();
+      el("#top-picks-heading")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    if (action === "onboarding-build") {
+      hideOnboarding();
+      activeFilter = "build";
+      activeQuality = "all";
+      searchQuery = "";
+      const searchEl = el("#search");
+      if (searchEl) searchEl.value = "";
+      renderAll();
+      saveFilters();
+      document.querySelector('[data-tier="build"]')?.scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+    if (action === "clear-filters") {
+      activeFilter = "all";
+      activeQuality = "all";
+      searchQuery = "";
+      const searchEl = el("#search");
+      if (searchEl) searchEl.value = "";
+      renderAll();
+      saveFilters();
+      showToast("Filters cleared.");
+      return;
+    }
     if (action === "open-settings" || action === "close-settings" || action === "export-progress" || action === "import-progress" || action === "confirm-reset" || action === "cancel-reset") {
       return; // handled by their dedicated listeners below
     }
@@ -704,8 +897,8 @@
       if (result) {
         renderAll();
         showToast(`Started: ${course.title}`);
-        result.newlyUnlocked.forEach(a => {
-          setTimeout(() => showToast(`🏆 ${a.name} unlocked!`), 1500);
+        result.newlyUnlocked.forEach((a, i) => {
+          setTimeout(() => showAchievementReveal(a), 700 + (i * 350));
         });
       }
     } else if (action === "complete") {
@@ -717,8 +910,8 @@
         } else {
           showToast(`+${result.xpGained} XP — ${course.title}`);
         }
-        result.newlyUnlocked.forEach(a => {
-          setTimeout(() => showToast(`🏆 ${a.name} unlocked!`), 1500);
+        result.newlyUnlocked.forEach((a, i) => {
+          setTimeout(() => showAchievementReveal(a), 700 + (i * 350));
         });
       }
     } else if (action === "uncomplete") {
@@ -1008,6 +1201,7 @@
     const searchEl = el("#search");
     if (searchEl && searchQuery) searchEl.value = searchQuery;
     renderAll();
+    showOnboardingIfNeeded();
   };
 
   if (typeof window !== "undefined") {
@@ -1024,12 +1218,16 @@
       STORAGE_KEY,
       THEME_KEY,
       FILTERS_KEY,
+      ONBOARDING_KEY,
       getState: () => JSON.parse(JSON.stringify(state)),
       startCourse,
       completeCourse,
       uncompleteCourse,
       resetAll,
       migrateState,
+      shouldShowOnboarding,
+      getNextInProgressCourse,
+      filterCatalog,
       exportPayload: () => ({
         app: "ai-training-hub",
         exportVersion: 1,
