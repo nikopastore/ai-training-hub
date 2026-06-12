@@ -13,18 +13,28 @@ const projectRoot = join(__dirname, "..");
 
 const appSource = readFileSync(join(projectRoot, "app.js"), "utf8");
 
-const window = {};
+const noop = () => {};
+const window = {
+  addEventListener: noop,
+  removeEventListener: noop,
+  scrollTo: noop,
+  scrollY: 0,
+  matchMedia: () => ({ matches: false, addEventListener: noop, removeEventListener: noop }),
+  AITrainingHub: undefined,
+};
 const localStorage = (() => {
   let store = {};
+  const keys = () => Object.keys(store);
   return {
     getItem: (k) => store[k] ?? null,
     setItem: (k, v) => { store[k] = String(v); },
     removeItem: (k) => { delete store[k]; },
     clear: () => { store = {}; },
+    get length() { return keys().length; },
+    key: (i) => keys()[i] ?? null,
   };
 })();
 
-const noop = () => {};
 const noopEl = {
   textContent: "",
   innerHTML: "",
@@ -33,10 +43,15 @@ const noopEl = {
   setAttribute: noop,
   appendChild: noop,
   addEventListener: noop,
+  removeEventListener: noop,
   querySelector: () => null,
   querySelectorAll: () => [],
   closest: () => null,
   dataset: {},
+  hidden: false,
+  focus: noop,
+  value: "",
+  files: [],
 };
 const document = {
   readyState: "complete",
@@ -45,6 +60,7 @@ const document = {
   querySelectorAll: () => [],
   createElement: () => noopEl,
   body: { appendChild: noop },
+  documentElement: { dataset: {} },
 };
 const fetch = async () => { throw new Error("fetch not available in tests"); };
 
@@ -488,4 +504,152 @@ test("big XP grant triggers multi-level up", () => {
   const r = Hub.completeCourse("l3", course, [course]);
   assert.ok(r.newLevel >= 2);
   assert.equal(r.leveledUp, true);
+});
+
+// ============================================================
+// P1.3 SCHEMA VERSIONING
+// ============================================================
+test("default state carries current schema number", () => {
+  Hub.resetAll();
+  assert.equal(Hub.getState().schema, Hub.CURRENT_SCHEMA);
+});
+
+test("STORAGE_KEY reflects current schema (so users on v1 can be migrated)", () => {
+  assert.match(Hub.STORAGE_KEY, /^ai-training-hub-state-v\d+$/);
+  assert.equal(Hub.STORAGE_KEY, `ai-training-hub-state-v${Hub.CURRENT_SCHEMA}`);
+});
+
+test("migrateState fills missing fields with defaults", () => {
+  const out = Hub.migrateState({ xp: 250, courses: { c1: { status: "in-progress" } } });
+  assert.equal(out.schema, Hub.CURRENT_SCHEMA);
+  assert.equal(out.xp, 250);
+  assert.equal(out.streak, 0);
+  assert.deepEqual(out.courses, { c1: { status: "in-progress" } });
+});
+
+test("migrateState rejects bogus shapes and returns a default", () => {
+  assert.equal(Hub.migrateState(null).schema, Hub.CURRENT_SCHEMA);
+  assert.equal(Hub.migrateState(undefined).schema, Hub.CURRENT_SCHEMA);
+  assert.equal(Hub.migrateState("garbage").schema, Hub.CURRENT_SCHEMA);
+  assert.equal(Hub.migrateState(42).schema, Hub.CURRENT_SCHEMA);
+});
+
+test("migrateState clamps negative/NaN XP to zero", () => {
+  assert.equal(Hub.migrateState({ xp: -50 }).xp, 0);
+  assert.equal(Hub.migrateState({ xp: Number.NaN }).xp, 0);
+  assert.equal(Hub.migrateState({ xp: Number.POSITIVE_INFINITY }).xp, 0);
+});
+
+// ============================================================
+// P1.2 EXPORT / IMPORT
+// ============================================================
+test("exportPayload includes app identifier + version + timestamp + state", () => {
+  Hub.resetAll();
+  Hub.completeCourse("ex1", { id: "ex1", xp: 100, tags: [] }, [{ id: "ex1", xp: 100, tags: [] }]);
+  const payload = Hub.exportPayload();
+  assert.equal(payload.app, "ai-training-hub");
+  assert.equal(typeof payload.exportVersion, "number");
+  assert.match(payload.exportedAt, /^\d{4}-\d{2}-\d{2}T/);
+  assert.equal(payload.schema, Hub.CURRENT_SCHEMA);
+  assert.equal(payload.state.xp, 100);
+});
+
+test("applyPayload rejects non-hub-shaped payloads", () => {
+  assert.equal(Hub.applyPayload(null), false);
+  assert.equal(Hub.applyPayload({ app: "something-else" }), false);
+  assert.equal(Hub.applyPayload({ app: "ai-training-hub" }), false);
+});
+
+test("applyPayload round-trips: export → clear → import → same state", () => {
+  Hub.resetAll();
+  Hub.completeCourse("rt1", { id: "rt1", xp: 250, tags: [] }, [{ id: "rt1", xp: 250, tags: [] }]);
+  Hub.completeCourse("rt2", { id: "rt2", xp: 300, tags: ["anthropic"] }, [{ id: "rt2", xp: 300, tags: ["anthropic"] }]);
+  const snapshot = Hub.exportPayload();
+  Hub.resetAll();
+  assert.equal(Hub.getState().xp, 0);
+  const ok = Hub.applyPayload(snapshot);
+  assert.equal(ok, true);
+  assert.equal(Hub.getState().xp, 550);
+  assert.ok(Hub.getState().courses.rt1);
+  assert.ok(Hub.getState().courses.rt2);
+  assert.ok(Hub.getState().achievements["first-step"]);
+});
+
+test("applyPayload migrates old-shape data (no schema field) on import", () => {
+  const old = { xp: 200, courses: {}, achievements: {} }; // no schema
+  const ok = Hub.applyPayload({ app: "ai-training-hub", state: old });
+  assert.equal(ok, true);
+  assert.equal(Hub.getState().schema, Hub.CURRENT_SCHEMA);
+  assert.equal(Hub.getState().xp, 200);
+});
+
+// ============================================================
+// P1.1 DARK MODE
+// ============================================================
+test("THEME_KEY and FILTERS_KEY are exposed for testability", () => {
+  assert.equal(Hub.THEME_KEY, "ai-training-hub-theme");
+  assert.equal(Hub.FILTERS_KEY, "ai-training-hub-filters");
+});
+
+test("applyTheme sets the data-theme attribute on documentElement", () => {
+  const applied = Hub.applyTheme("dark");
+  assert.equal(applied, "dark");
+  assert.equal(document.documentElement.dataset.theme, "dark");
+  Hub.applyTheme("light");
+  assert.equal(document.documentElement.dataset.theme, "light");
+});
+
+test("toggleTheme flips between light and dark", () => {
+  Hub.applyTheme("light");
+  assert.equal(Hub.toggleTheme(), "dark");
+  assert.equal(Hub.getTheme(), "dark");
+  assert.equal(Hub.toggleTheme(), "light");
+  assert.equal(Hub.getTheme(), "light");
+});
+
+test("toggleTheme persists the new theme to localStorage", () => {
+  Hub.applyTheme("light");
+  Hub.toggleTheme();
+  assert.equal(localStorage.getItem(Hub.THEME_KEY), "dark");
+  Hub.toggleTheme();
+  assert.equal(localStorage.getItem(Hub.THEME_KEY), "light");
+});
+
+// ============================================================
+// P1.3 LOAD-STATE MIGRATION FROM OLDER STORAGE KEYS
+// ============================================================
+test("a payload stored under the current key is round-tripped", () => {
+  localStorage.clear();
+  Hub.resetAll();
+  Hub.completeCourse("m1", { id: "m1", xp: 100, tags: [] }, [{ id: "m1", xp: 100, tags: [] }]);
+  const raw = localStorage.getItem(Hub.STORAGE_KEY);
+  assert.ok(raw);
+  const parsed = JSON.parse(raw);
+  assert.equal(parsed.xp, 100);
+  assert.equal(parsed.schema, Hub.CURRENT_SCHEMA);
+});
+
+// ============================================================
+// P1 — INTEGRATION SMOKE
+// ============================================================
+test("P1 integration: export a real session and re-import on a blank slate", () => {
+  Hub.resetAll();
+  // Simulate a real session: start 2, complete 1.
+  const catalog = [
+    { id: "i1", xp: 100, tags: ["anthropic"] },
+    { id: "i2", xp: 200, tags: [] },
+  ];
+  Hub.startCourse("i1", catalog[0], catalog);
+  Hub.completeCourse("i1", catalog[0], catalog);
+  Hub.startCourse("i2", catalog[1], catalog);
+  const before = Hub.getState();
+  const backup = Hub.exportPayload();
+  Hub.resetAll();
+  assert.equal(Hub.getState().xp, 0);
+  Hub.applyPayload(backup);
+  const after = Hub.getState();
+  assert.equal(after.xp, before.xp);
+  assert.equal(after.streak, before.streak);
+  assert.deepEqual(after.courses, before.courses);
+  assert.deepEqual(Object.keys(after.achievements), Object.keys(before.achievements));
 });

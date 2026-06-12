@@ -25,43 +25,118 @@
   --glass-border: rgba(42, 36, 29, 0.06);
   --shadow-1: 0 1px 2px rgba(42, 36, 29, 0.04), 0 2px 6px rgba(42, 36, 29, 0.05);
   --shadow-2: 0 4px 12px rgba(42, 36, 29, 0.08), 0 12px 32px rgba(42, 36, 29, 0.06);
+  --shadow-3: 0 10px 30px rgba(0, 0, 0, 0.18), 0 30px 80px rgba(0, 0, 0, 0.18);
+  --danger: #c0392b;
+  --danger-2: #962d22;
+  --bg-gradient-1: rgba(232, 144, 111, 0.18);
+  --bg-gradient-2: rgba(136, 160, 127, 0.15);
+  --header-gradient-from: rgba(250, 246, 239, 0.92);
+  --header-gradient-to: rgba(250, 246, 239, 0.65);
+  --noise-opacity: 0.04;
   --radius-sm: 8px;
   --radius: 14px;
   --radius-lg: 22px;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  color-scheme: light;
+}
+
+/* DARK MODE — same tokens, inverted. Driven by [data-theme="dark"] on
+   <html> which is set by app.js before first paint. Every surface is
+   defined by a variable so this block is the single source of truth for
+   the dark palette. */
+[data-theme="dark"] {
+  --cream: #14110d;
+  --cream-2: #1d1914;
+  --paper: #1a1611;
+  --ink: #f4ede0;
+  --ink-2: #cfc5b6;
+  --ink-3: #94897a;
+  --ink-4: #6a6155;
+  --terracotta: #e8906f;
+  --terracotta-2: #d17a59;
+  --terracotta-soft: #c75a3d;
+  --forest: #88a07f;
+  --forest-2: #a3bca1;
+  --forest-soft: #3e5e3a;
+  --amber: #d4a341;
+  --line: rgba(244, 237, 224, 0.08);
+  --line-2: rgba(244, 237, 224, 0.16);
+  --glass: rgba(26, 22, 17, 0.7);
+  --glass-border: rgba(244, 237, 224, 0.08);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-2: 0 4px 12px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.35);
+  --shadow-3: 0 10px 30px rgba(0, 0, 0, 0.6), 0 30px 80px rgba(0, 0, 0, 0.5);
+  --bg-gradient-1: rgba(232, 144, 111, 0.10);
+  --bg-gradient-2: rgba(136, 160, 127, 0.08);
+  --header-gradient-from: rgba(20, 17, 13, 0.92);
+  --header-gradient-to: rgba(20, 17, 13, 0.65);
+  --noise-opacity: 0.05;
+  color-scheme: dark;
+}
+
+/* Follow OS preference until the user clicks the toggle (which sets a
+   stored value and overrides this). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --cream: #14110d;
+    --cream-2: #1d1914;
+    --paper: #1a1611;
+    --ink: #f4ede0;
+    --ink-2: #cfc5b6;
+    --ink-3: #94897a;
+    --ink-4: #6a6155;
+    --terracotta: #e8906f;
+    --terracotta-2: #d17a59;
+    --terracotta-soft: #c75a3d;
+    --forest: #88a07f;
+    --forest-2: #a3bca1;
+    --forest-soft: #3e5e3a;
+    --bg-gradient-1: rgba(232, 144, 111, 0.10);
+    --bg-gradient-2: rgba(136, 160, 127, 0.08);
+    --header-gradient-from: rgba(20, 17, 13, 0.92);
+    --header-gradient-to: rgba(20, 17, 13, 0.65);
+    --noise-opacity: 0.05;
+    color-scheme: dark;
+  }
 }
 
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
+*:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
 body {
   font-family: var(--font-sans);
   color: var(--ink);
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(232, 144, 111, 0.18), transparent 60%),
-    radial-gradient(900px 500px at -10% 30%, rgba(136, 160, 127, 0.15), transparent 60%),
+    radial-gradient(1200px 600px at 80% -10%, var(--bg-gradient-1), transparent 60%),
+    radial-gradient(900px 500px at -10% 30%, var(--bg-gradient-2), transparent 60%),
     var(--cream);
   min-height: 100vh;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 250ms ease, color 250ms ease;
 }
 
 .noise {
   position: fixed; inset: 0;
   pointer-events: none; z-index: 0;
-  opacity: 0.04;
+  opacity: var(--noise-opacity);
   background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
 }
 
 .site-header {
   position: relative; z-index: 1;
   display: flex; align-items: center; justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
   padding: 28px 40px 22px;
   border-bottom: 1px solid var(--line);
-  background: linear-gradient(180deg, rgba(250, 246, 239, 0.92), rgba(250, 246, 239, 0.65));
+  background: linear-gradient(180deg, var(--header-gradient-from), var(--header-gradient-to));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -82,6 +157,31 @@ body {
   text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500;
 }
 
+/* ============================================================
+   HEADER ACTION BUTTONS — theme toggle + settings gear
+   ============================================================ */
+.header-actions {
+  display: flex; gap: 6px; align-items: center;
+}
+.icon-btn {
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: all 150ms;
+  box-shadow: var(--shadow-1);
+  padding: 0;
+}
+.icon-btn:hover { color: var(--ink); border-color: var(--line-2); }
+.icon-btn:active { transform: scale(0.96); }
+.icon-btn .theme-icon-dark { display: none; }
+.icon-btn .theme-icon-light { display: block; }
+[data-theme="dark"] .icon-btn .theme-icon-light { display: none; }
+[data-theme="dark"] .icon-btn .theme-icon-dark { display: block; }
+
 .stats { display: flex; gap: 10px; }
 .stat {
   display: flex; flex-direction: column; align-items: flex-start;
@@ -92,6 +192,8 @@ body {
   min-width: 72px;
   box-shadow: var(--shadow-1);
 }
+/* Level card is wider to fit the sub-bar + label. */
+.stat.stat-level { min-width: 140px; }
 .stat-label {
   font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
   color: var(--ink-3); font-weight: 600;
@@ -102,6 +204,33 @@ body {
   color: var(--ink);
   margin-top: 2px;
   font-variant-numeric: tabular-nums;
+}
+
+/* Level-to-next-XP sub-bar (P1.4). Makes the level number meaningful
+   by showing exactly how far you are from the next promotion. */
+.level-xp-track {
+  width: 100%;
+  height: 4px;
+  background: var(--cream-2);
+  border-radius: 999px;
+  margin-top: 6px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.level-xp-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--terracotta), var(--amber));
+  border-radius: 999px;
+  transition: width 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.level-xp-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--ink-3);
+  margin-top: 4px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
 }
 
 .container {
@@ -672,6 +801,19 @@ body {
   border-color: var(--terracotta-2);
   color: var(--cream);
 }
+.btn-danger {
+  background: var(--danger);
+  color: white;
+  border-color: var(--danger);
+}
+.btn-danger:hover:not(:disabled) {
+  background: var(--danger-2);
+  border-color: var(--danger-2);
+}
+.btn-danger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
 
 .course-status {
   font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
@@ -776,4 +918,109 @@ body {
   .stats { width: 100%; flex-wrap: wrap; }
   .container { padding: 24px 20px 60px; }
   .course-grid { grid-template-columns: 1fr; }
+  .stat.stat-level { min-width: 120px; }
+  .header-actions { width: 100%; justify-content: flex-end; }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ============================================================
+   SETTINGS PANEL — slide-in dialog for export/import/reset
+   ============================================================ */
+.settings-panel {
+  position: fixed; inset: 0;
+  z-index: 200;
+  background: rgba(20, 17, 13, 0.55);
+  display: grid; place-items: center;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: settings-fade 150ms ease-out;
+}
+@keyframes settings-fade { from { opacity: 0; } to { opacity: 1; } }
+.settings-panel[hidden] { display: none !important; }
+.settings-panel > * {
+  background: var(--paper);
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3);
+  width: 100%;
+  max-width: 540px;
+  max-height: 86vh;
+  overflow-y: auto;
+  padding: 24px 28px;
+  position: relative;
+  animation: settings-pop 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes settings-pop {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+.settings-panel-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 6px;
+}
+.settings-panel-head h2 {
+  margin: 0; font-size: 20px; font-weight: 700; letter-spacing: -0.01em;
+}
+.settings-panel-hint {
+  margin: 0 0 18px;
+  padding: 10px 14px;
+  background: var(--cream-2);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+.settings-row {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+.settings-row-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.settings-row-text strong { font-size: 13px; font-weight: 600; color: var(--ink); }
+.settings-row-text span { font-size: 12px; color: var(--ink-3); line-height: 1.4; }
+.settings-row-danger .settings-row-text strong { color: var(--danger); }
+.settings-row .btn { flex-shrink: 0; }
+
+.settings-reset-confirm {
+  margin-top: 12px;
+  padding: 14px;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1px solid rgba(192, 57, 43, 0.25);
+  border-radius: 10px;
+}
+[data-theme="dark"] .settings-reset-confirm {
+  background: rgba(192, 57, 43, 0.15);
+  border-color: rgba(192, 57, 43, 0.4);
+}
+.settings-reset-confirm p {
+  margin: 0 0 8px; font-size: 12px; color: var(--ink-2);
+}
+.settings-reset-confirm code {
+  font-family: var(--font-mono); background: var(--cream-2);
+  padding: 1px 6px; border-radius: 4px; font-size: 11px;
+  border: 1px solid var(--line);
+}
+.settings-reset-confirm input {
+  width: 100%;
+  padding: 8px 12px;
+  font: inherit;
+  font-family: var(--font-mono);
+  background: var(--paper);
+  border: 1px solid var(--line-2);
+  border-radius: 8px;
+  color: var(--ink);
+  outline: none;
+  margin-bottom: 10px;
+}
+.settings-reset-confirm input:focus { border-color: var(--danger); }
+.settings-reset-actions { display: flex; gap: 8px; justify-content: flex-end; }

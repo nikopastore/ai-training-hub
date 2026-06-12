@@ -28,9 +28,13 @@
     </div>
 
     <div class="stats" role="group" aria-label="Your stats">
-      <div class="stat" title="Level">
+      <div class="stat stat-level" title="Level — XP to next level">
         <span class="stat-label">Level</span>
         <span class="stat-value" id="stat-level">1</span>
+        <div class="level-xp-track" aria-hidden="true">
+          <div class="level-xp-bar" id="level-xp-bar"></div>
+        </div>
+        <span class="level-xp-label" id="level-xp-label">0 / 100 XP</span>
       </div>
       <div class="stat" title="Total XP">
         <span class="stat-label">XP</span>
@@ -44,6 +48,32 @@
         <span class="stat-label">Active</span>
         <span class="stat-value" id="stat-active">0</span>
       </div>
+    </div>
+
+    <div class="header-actions">
+      <button class="icon-btn" data-action="toggle-theme" aria-label="Toggle theme" title="Toggle theme">
+        <svg class="theme-icon-light" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="2" x2="12" y2="5"/>
+            <line x1="12" y1="19" x2="12" y2="22"/>
+            <line x1="2" y1="12" x2="5" y2="12"/>
+            <line x1="19" y1="12" x2="22" y2="12"/>
+            <line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/>
+            <line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/>
+            <line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/>
+            <line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/>
+          </g>
+        </svg>
+        <svg class="theme-icon-dark" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/>
+        </svg>
+      </button>
+      <button class="icon-btn" data-action="open-settings" aria-label="Open settings" title="Settings (export / import / reset)">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+          <path fill="currentColor" d="M19.4 13a1.7 1.7 0 0 0 0-2l2-1.5-2-3.4-2.3 1a7.4 7.4 0 0 0-1.7-1L15 3.5h-4l-.4 2.6a7.4 7.4 0 0 0-1.7 1l-2.3-1-2 3.4L6.6 11a1.7 1.7 0 0 0 0 2l-2 1.5 2 3.4 2.3-1a7.4 7.4 0 0 0 1.7 1l.4 2.6h4l.4-2.6a7.4 7.4 0 0 0 1.7-1l2.3 1 2-3.4-2-1.5zM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/>
+        </svg>
+      </button>
     </div>
   </header>
 
@@ -92,28 +122,28 @@
     </section>
 
     <section class="tier-legend" aria-label="Quality tier legend">
-      <div class="legend-item">
+      <div class="legend-item" data-legend-quality="S">
         <span class="tier-badge tier-badge-s">S</span>
         <div>
           <strong>S — Top tier</strong>
           <p>Industry-defining content, top recognition, essential reference</p>
         </div>
       </div>
-      <div class="legend-item">
+      <div class="legend-item" data-legend-quality="A">
         <span class="tier-badge tier-badge-a">A</span>
         <div>
           <strong>A — Strong</strong>
           <p>Authoritative training, well-recognized, high production value</p>
         </div>
       </div>
-      <div class="legend-item">
+      <div class="legend-item" data-legend-quality="B">
         <span class="tier-badge tier-badge-b">B</span>
         <div>
           <strong>B — Useful</strong>
           <p>Solid content, useful learning, moderate industry recognition</p>
         </div>
       </div>
-      <div class="legend-item">
+      <div class="legend-item" data-legend-quality="C">
         <span class="tier-badge tier-badge-c">C</span>
         <div>
           <strong>C — Niche</strong>

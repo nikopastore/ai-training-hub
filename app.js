@@ -7,7 +7,13 @@
   // ============================================================
   // CONSTANTS
   // ============================================================
-  const STORAGE_KEY = "ai-training-hub-state-v1";
+  // Bump CURRENT_SCHEMA when payload shape changes. The migration shim
+  // in loadState() handles older payloads and stores the current version
+  // inside the payload so future versions can detect and migrate up.
+  const CURRENT_SCHEMA = 1;
+  const STORAGE_KEY = `ai-training-hub-state-v${CURRENT_SCHEMA}`;
+  const THEME_KEY = "ai-training-hub-theme";
+  const FILTERS_KEY = "ai-training-hub-filters";
   const TIERS = ["learn", "build", "ship"];
   const TIER_LABELS = { learn: "Learn", build: "Build", ship: "Ship" };
 
@@ -44,6 +50,7 @@
   // STATE
   // ============================================================
   const defaultState = () => ({
+    schema: CURRENT_SCHEMA,
     courses: {},
     xp: 0,
     lastActiveDate: null,
@@ -53,12 +60,44 @@
 
   let state = defaultState();
 
+  // Wrap a parsed localStorage payload with the current schema and
+  // backfill any missing fields. Add a new branch when CURRENT_SCHEMA
+  // bumps; never mutate the original parsed object.
+  const migrateState = (raw) => {
+    if (!raw || typeof raw !== "object") return defaultState();
+    const merged = { ...defaultState(), ...raw };
+    if (!merged.schema) merged.schema = 1;
+    if (!merged.courses || typeof merged.courses !== "object") merged.courses = {};
+    if (typeof merged.xp !== "number" || !Number.isFinite(merged.xp) || merged.xp < 0) merged.xp = 0;
+    if (typeof merged.streak !== "number" || merged.streak < 0) merged.streak = 0;
+    if (!merged.achievements || typeof merged.achievements !== "object") merged.achievements = {};
+    merged.schema = CURRENT_SCHEMA;
+    return merged;
+  };
+
   const loadState = () => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return;
+      if (!raw) {
+        // No current-version payload — try to migrate from any prior
+        // ai-training-hub-state-v* key (best-effort, not a fatal error).
+        const prefix = "ai-training-hub-state-v";
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && k.startsWith(prefix) && k !== STORAGE_KEY) {
+            try {
+              const older = JSON.parse(localStorage.getItem(k));
+              state = migrateState(older);
+              saveState();
+              localStorage.removeItem(k);
+              return;
+            } catch (_) { /* fallthrough */ }
+          }
+        }
+        return;
+      }
       const parsed = JSON.parse(raw);
-      state = { ...defaultState(), ...parsed };
+      state = migrateState(parsed);
     } catch (e) {
       console.warn("Failed to load state, using defaults", e);
     }
@@ -69,6 +108,75 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     } catch (e) {
       console.warn("Failed to save state", e);
+    }
+  };
+
+  // ============================================================
+  // THEME (light / dark) — persisted in localStorage with override
+  // for prefers-color-scheme. Header has a manual toggle.
+  // ============================================================
+  const getStoredTheme = () => {
+    try { return localStorage.getItem(THEME_KEY) || null; } catch { return null; }
+  };
+  const setStoredTheme = (t) => {
+    try { localStorage.setItem(THEME_KEY, t); } catch (_) { /* noop */ }
+  };
+  const applyTheme = (theme) => {
+    const resolved = theme === "dark" || theme === "light"
+      ? theme
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.dataset.theme = resolved;
+    const btn = document.querySelector("[data-action=\"toggle-theme\"]");
+    if (btn) {
+      btn.setAttribute("aria-label", `Switch to ${resolved === "dark" ? "light" : "dark"} mode`);
+      btn.setAttribute("title", `Switch to ${resolved === "dark" ? "light" : "dark"} mode`);
+    }
+    return resolved;
+  };
+  const initTheme = () => {
+    const stored = getStoredTheme();
+    return applyTheme(stored || "auto");
+  };
+  const toggleTheme = () => {
+    const current = document.documentElement.dataset.theme || "light";
+    const next = current === "dark" ? "light" : "dark";
+    setStoredTheme(next);
+    applyTheme(next);
+    return next;
+  };
+
+  // ============================================================
+  // FILTER PERSISTENCE — active tier/quality + search query + scroll
+  // ============================================================
+  const loadFilters = () => {
+    try {
+      const raw = localStorage.getItem(FILTERS_KEY);
+      if (!raw) return null;
+      return JSON.parse(raw);
+    } catch { return null; }
+  };
+  const saveFilters = () => {
+    try {
+      localStorage.setItem(FILTERS_KEY, JSON.stringify({
+        activeFilter,
+        activeQuality,
+        searchQuery,
+        scrollY: window.scrollY || 0,
+      }));
+    } catch (_) { /* noop */ }
+  };
+  const applyFilters = (saved) => {
+    if (!saved || typeof saved !== "object") return;
+    if (typeof saved.activeFilter === "string") activeFilter = saved.activeFilter;
+    if (typeof saved.activeQuality === "string") activeQuality = saved.activeQuality;
+    if (typeof saved.searchQuery === "string") searchQuery = saved.searchQuery;
+    // search input + scroll are restored after the first render
+    if (typeof saved.scrollY === "number") {
+      const restore = () => {
+        window.scrollTo({ top: saved.scrollY, behavior: "instant" in window ? "instant" : "auto" });
+      };
+      if (document.readyState === "complete") restore();
+      else window.addEventListener("load", restore, { once: true });
     }
   };
 
@@ -272,13 +380,40 @@
 
   const el = (sel) => document.querySelector(sel);
 
+  // C-tier is rendered only when the catalog actually contains C courses.
+  // C is a quality grade, not a tier label — the legend/chip/distribution
+  // surfaces are conditioned on the live catalog so the UI never shows a
+  // dead "0/0" row.
+  const activeQualities = () => {
+    const set = new Set();
+    catalog.forEach(c => { if (c.quality) set.add(c.quality); });
+    // Stable render order: S, A, B, C — but only include those present.
+    return QUALITY_TIERS.filter(q => set.has(q));
+  };
+  const emptyQualities = () => QUALITY_TIERS.filter(q => !activeQualities().includes(q));
+
   const renderStats = () => {
-    const { level } = levelFromXP(state.xp);
+    const { level, currentLevelXP, nextLevelXP } = levelFromXP(state.xp);
     el("#stat-level").textContent = level;
     el("#stat-xp").textContent = state.xp.toLocaleString();
     el("#stat-streak").textContent = state.streak;
     const active = Object.values(state.courses).filter(s => s.status === "in-progress").length;
     el("#stat-active").textContent = active;
+
+    // Level-to-next-XP sub-bar (P1.4). Cap level at 99 in the engine to
+    // avoid runaway levels; the bar is hidden at the level cap.
+    const bar = el("#level-xp-bar");
+    const label = el("#level-xp-label");
+    if (bar && label) {
+      if (level >= 99) {
+        bar.style.width = "100%";
+        label.textContent = "MAX";
+      } else {
+        const pct = Math.min(100, Math.round((currentLevelXP / nextLevelXP) * 100));
+        bar.style.width = `${pct}%`;
+        label.textContent = `${currentLevelXP} / ${nextLevelXP} XP`;
+      }
+    }
   };
 
   const renderProgress = () => {
@@ -295,7 +430,12 @@
     const grid = el("#tier-distribution");
     if (!grid) return;
     grid.innerHTML = "";
-    QUALITY_TIERS.forEach(q => {
+    const visible = activeQualities();
+    if (visible.length === 0) {
+      grid.innerHTML = `<p style="color: var(--ink-3); font-size: 13px; padding: 12px 0; grid-column: 1 / -1;">No quality grades available yet.</p>`;
+      return;
+    }
+    visible.forEach(q => {
       const all = catalog.filter(c => (c.quality || "B") === q);
       const done = all.filter(c => state.courses[c.id]?.status === "completed").length;
       const total = all.length;
@@ -460,7 +600,9 @@
     const qualityContainer = el("#quality-chips");
     if (qualityContainer) {
       qualityContainer.innerHTML = "";
-      ["all", ...QUALITY_TIERS].forEach(q => {
+      // Only render chips for qualities actually present in the catalog.
+      // This hides C (or any grade) when the catalog has zero of that grade.
+      ["all", ...activeQualities()].forEach(q => {
         const chip = document.createElement("button");
         chip.className = `chip quality-chip-${q.toLowerCase()} ${activeQuality === q ? "active" : ""}`;
         chip.textContent = q === "all" ? "All tiers" : q;
@@ -498,6 +640,20 @@
     renderFilters();
     renderCourses();
     renderAchievements();
+    renderLegend();
+  };
+
+  // Hide quality legend items whose grade has 0 courses in the catalog.
+  // C-tier is the common case (catalog only has S/A/B) — showing "0/0"
+  // legend would be dead UI. We treat the legend as a derived view.
+  const renderLegend = () => {
+    const visible = new Set(activeQualities());
+    const empty = emptyQualities();
+    document.querySelectorAll("[data-legend-quality]").forEach(node => {
+      const q = node.dataset.legendQuality;
+      const shouldHide = empty.includes(q);
+      node.hidden = shouldHide;
+    });
   };
 
   // ============================================================
@@ -520,12 +676,24 @@
   // ============================================================
   // EVENTS
   // ============================================================
+  // Course cards and top-pick cards share a [data-id] contract but use
+  // different wrapper classes (.course vs .pick-card). The action handler
+  // resolves the course id from the closest data-id-bearing ancestor so
+  // Start / Mark complete / Undo work everywhere, including the featured
+  // strip (audit caught this as a silent gap in v1).
   const handleAction = (e) => {
     const target = e.target.closest("[data-action]");
     if (!target) return;
     const action = target.dataset.action;
     if (action === "open") return; // Let the link do its thing
-    const card = target.closest(".course");
+    if (action === "toggle-theme") {
+      toggleTheme();
+      return;
+    }
+    if (action === "open-settings" || action === "close-settings" || action === "export-progress" || action === "import-progress" || action === "confirm-reset" || action === "cancel-reset") {
+      return; // handled by their dedicated listeners below
+    }
+    const card = target.closest("[data-id]");
     if (!card) return;
     const courseId = card.dataset.id;
     const course = catalog.find(c => c.id === courseId);
@@ -562,11 +730,205 @@
     }
   };
 
+  // ============================================================
+  // SETTINGS MENU — Export / Import / Reset (P1.2)
+  // Pattern: a single floating panel; "type RESET" confirmation for
+  // destructive reset; never a single-click wipe.
+  // ============================================================
+  const buildSettingsPanel = () => {
+    if (document.querySelector("#settings-panel")) return;
+    const panel = document.createElement("div");
+    panel.id = "settings-panel";
+    panel.className = "settings-panel";
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-label", "Settings");
+    panel.hidden = true;
+    panel.innerHTML = `
+      <div class="settings-panel-head">
+        <h2>Settings</h2>
+        <button class="icon-btn" data-action="close-settings" aria-label="Close settings" title="Close">×</button>
+      </div>
+      <p class="settings-panel-hint">Your progress is saved in this browser only. Export a backup before clearing site data or switching devices.</p>
+      <div class="settings-row">
+        <div class="settings-row-text">
+          <strong>Export backup</strong>
+          <span>Download a JSON file with all your progress, achievements, and XP.</span>
+        </div>
+        <button class="btn btn-primary" data-action="export-progress">Download .json</button>
+      </div>
+      <div class="settings-row">
+        <div class="settings-row-text">
+          <strong>Import backup</strong>
+          <span>Restore from a previously exported JSON file. Replaces current progress.</span>
+        </div>
+        <label class="btn btn-primary" for="import-file-input">Choose file…</label>
+        <input id="import-file-input" type="file" accept="application/json,.json" hidden />
+      </div>
+      <div class="settings-row">
+        <div class="settings-row-text">
+          <strong>Theme</strong>
+          <span>Toggle between light and dark mode.</span>
+        </div>
+        <button class="btn btn-primary" data-action="toggle-theme" id="settings-theme-btn">Switch theme</button>
+      </div>
+      <div class="settings-row settings-row-danger">
+        <div class="settings-row-text">
+          <strong>Reset progress</strong>
+          <span>Wipes all XP, streaks, and completion state from this browser. Export first if unsure.</span>
+        </div>
+        <button class="btn btn-danger" data-action="prompt-reset" id="settings-reset-btn">Reset…</button>
+      </div>
+      <div class="settings-reset-confirm" id="settings-reset-confirm" hidden>
+        <p>This is permanent. Type <code>RESET</code> to confirm:</p>
+        <input type="text" id="settings-reset-input" autocomplete="off" spellcheck="false" />
+        <div class="settings-reset-actions">
+          <button class="btn" data-action="cancel-reset">Cancel</button>
+          <button class="btn btn-danger" data-action="confirm-reset" disabled>Reset everything</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(panel);
+
+    // Backdrop click closes the panel (but not when clicking inside it).
+    panel.addEventListener("click", (e) => {
+      if (e.target === panel) hideSettings();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !panel.hidden) hideSettings();
+    });
+
+    // Settings-specific actions
+    panel.addEventListener("click", (e) => {
+      const t = e.target.closest("[data-action]");
+      if (!t) return;
+      const a = t.dataset.action;
+      if (a === "close-settings") hideSettings();
+      else if (a === "export-progress") exportProgress();
+      else if (a === "toggle-theme") toggleTheme();
+      else if (a === "prompt-reset") showResetConfirm();
+      else if (a === "cancel-reset") hideResetConfirm();
+      else if (a === "confirm-reset") confirmReset();
+    });
+
+    // Import file
+    const fileInput = panel.querySelector("#import-file-input");
+    if (fileInput) {
+      fileInput.addEventListener("change", (e) => {
+        const file = e.target.files && e.target.files[0];
+        if (file) importProgressFile(file);
+        fileInput.value = ""; // allow re-importing the same file
+      });
+    }
+
+    // Reset confirmation input — enable the destructive button only when
+    // the user types the exact string "RESET".
+    const resetInput = panel.querySelector("#settings-reset-input");
+    if (resetInput) {
+      resetInput.addEventListener("input", (e) => {
+        const btn = panel.querySelector("[data-action=\"confirm-reset\"]");
+        if (btn) btn.disabled = e.target.value.trim() !== "RESET";
+      });
+    }
+  };
+
+  const showSettings = () => {
+    buildSettingsPanel();
+    const panel = document.querySelector("#settings-panel");
+    if (panel) panel.hidden = false;
+  };
+  const hideSettings = () => {
+    const panel = document.querySelector("#settings-panel");
+    if (panel) panel.hidden = true;
+    hideResetConfirm();
+  };
+  const showResetConfirm = () => {
+    const wrap = document.querySelector("#settings-reset-confirm");
+    const input = document.querySelector("#settings-reset-input");
+    if (wrap) wrap.hidden = false;
+    if (input) { input.value = ""; input.focus(); }
+    const btn = document.querySelector("[data-action=\"confirm-reset\"]");
+    if (btn) btn.disabled = true;
+  };
+  const hideResetConfirm = () => {
+    const wrap = document.querySelector("#settings-reset-confirm");
+    if (wrap) wrap.hidden = true;
+  };
+  const confirmReset = () => {
+    const input = document.querySelector("#settings-reset-input");
+    if (!input || input.value.trim() !== "RESET") return;
+    resetAll();
+    hideSettings();
+    renderAll();
+    showToast("Progress reset.");
+  };
+
+  // ============================================================
+  // EXPORT / IMPORT — portable JSON, includes schema + exportedAt
+  // ============================================================
+  const EXPORT_VERSION = 1;
+  const exportProgress = () => {
+    try {
+      const payload = {
+        app: "ai-training-hub",
+        exportVersion: EXPORT_VERSION,
+        exportedAt: new Date().toISOString(),
+        schema: state.schema,
+        state,
+      };
+      const json = JSON.stringify(payload, null, 2);
+      const blob = new Blob([json], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+      a.href = url;
+      a.download = `ai-training-hub-backup-${stamp}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      showToast("Backup downloaded.");
+    } catch (e) {
+      console.error("Export failed", e);
+      showToast("Export failed — see console.");
+    }
+  };
+
+  const importProgressFile = async (file) => {
+    try {
+      const text = await file.text();
+      const payload = JSON.parse(text);
+      if (!payload || payload.app !== "ai-training-hub" || !payload.state) {
+        showToast("Not a Training Hub backup file.");
+        return;
+      }
+      // Optional: confirm destructive replace
+      if (state.xp > 0 || Object.keys(state.courses).length > 0) {
+        const ok = window.confirm(
+          "This will REPLACE your current progress with the imported backup.\n\n" +
+          `Backup date: ${payload.exportedAt || "unknown"}\n` +
+          `Backup XP: ${payload.state.xp || 0}\n` +
+          `Backup courses: ${Object.keys(payload.state.courses || {}).length}\n\n` +
+          "Continue?"
+        );
+        if (!ok) return;
+      }
+      state = migrateState(payload.state);
+      saveState();
+      renderAll();
+      showToast("Backup imported.");
+      hideSettings();
+    } catch (e) {
+      console.error("Import failed", e);
+      showToast("Import failed — file is invalid JSON.");
+    }
+  };
+
   const wireEvents = () => {
     document.addEventListener("click", handleAction);
     el("#search").addEventListener("input", (e) => {
       searchQuery = e.target.value.trim();
       renderCourses();
+      saveFilters();
     });
     el("#filter-chips").addEventListener("click", (e) => {
       const chip = e.target.closest(".chip");
@@ -574,6 +936,7 @@
       activeFilter = chip.dataset.tier;
       renderFilters();
       renderCourses();
+      saveFilters();
     });
     const qualityChips = el("#quality-chips");
     if (qualityChips) {
@@ -583,15 +946,48 @@
         activeQuality = chip.dataset.quality;
         renderFilters();
         renderCourses();
+        saveFilters();
       });
     }
+    // Settings button in header
+    const settingsBtn = document.querySelector("[data-action=\"open-settings\"]");
+    if (settingsBtn) {
+      settingsBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        showSettings();
+      });
+    }
+    // Theme toggle in header
+    const themeBtn = document.querySelector("[data-action=\"toggle-theme\"]");
+    if (themeBtn) {
+      themeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleTheme();
+      });
+    }
+    // Persist scroll position (debounced via rAF).
+    let scrollRaf = 0;
+    window.addEventListener("scroll", () => {
+      if (scrollRaf) return;
+      scrollRaf = requestAnimationFrame(() => {
+        scrollRaf = 0;
+        saveFilters();
+      });
+    }, { passive: true });
   };
 
   // ============================================================
   // INIT
   // ============================================================
   const init = async () => {
+    // Theme should resolve before first paint to avoid a light→dark flash.
+    initTheme();
     loadState();
+    // Restore saved filters/search before render so the first frame is
+    // already in the user's previous view (no All→... flash on reload).
+    applyFilters(loadFilters());
     try {
       const res = await fetch("data/courses.json");
       catalog = await res.json();
@@ -599,7 +995,18 @@
       console.error("Failed to load courses.json", e);
       catalog = [];
     }
+    // Self-heal persisted filter that no longer applies to the current
+    // catalog (e.g. user previously filtered by C when C existed, then
+    // the catalog dropped C). Falling back to "all" avoids a permanently
+    // empty catalog with no visible way to recover.
+    const visible = activeQualities();
+    if (activeQuality !== "all" && !visible.includes(activeQuality)) activeQuality = "all";
+    if (!["all", ...TIERS].includes(activeFilter)) activeFilter = "all";
     wireEvents();
+    // Reflect restored search into the input field (events were wired
+    // before render so this fires the same path as user typing).
+    const searchEl = el("#search");
+    if (searchEl && searchQuery) searchEl.value = searchQuery;
     renderAll();
   };
 
@@ -613,11 +1020,32 @@
       QUALITY_TIERS,
       QUALITY_LABELS,
       QUALITY_DESCRIPTIONS,
+      CURRENT_SCHEMA,
+      STORAGE_KEY,
+      THEME_KEY,
+      FILTERS_KEY,
       getState: () => JSON.parse(JSON.stringify(state)),
       startCourse,
       completeCourse,
       uncompleteCourse,
       resetAll,
+      migrateState,
+      exportPayload: () => ({
+        app: "ai-training-hub",
+        exportVersion: 1,
+        exportedAt: new Date().toISOString(),
+        schema: state.schema,
+        state: JSON.parse(JSON.stringify(state)),
+      }),
+      applyPayload: (payload) => {
+        if (!payload || payload.app !== "ai-training-hub" || !payload.state) return false;
+        state = migrateState(payload.state);
+        saveState();
+        return true;
+      },
+      applyTheme,
+      toggleTheme,
+      getTheme: () => document.documentElement.dataset.theme || "light",
     };
   }
 
