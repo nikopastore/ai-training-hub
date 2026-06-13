@@ -248,6 +248,62 @@ body {
   padding: 36px 40px 80px;
 }
 
+.case-study-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+  padding: 22px 24px;
+  background:
+    radial-gradient(circle at top left, rgba(187, 104, 71, 0.16), transparent 36%),
+    linear-gradient(135deg, var(--paper), var(--cream-2));
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-2);
+}
+.case-study-kicker {
+  display: inline-flex;
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+.case-study-callout h2 {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 34px);
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.case-study-callout p {
+  max-width: 720px;
+  margin: 8px 0 0;
+  color: var(--ink-3);
+  line-height: 1.55;
+}
+.case-study-link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--cream);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: var(--shadow-1);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.case-study-link:hover,
+.case-study-link:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-2);
+}
+
 .progress-card {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -442,6 +498,12 @@ body {
 .course.quality-c { border-left: 3px solid #6e6457; }
 
 @media (max-width: 640px) {
+  .case-study-callout {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 18px;
+  }
+  .case-study-link { width: 100%; }
   .tier-legend { grid-template-columns: 1fr; }
   .quality-row { padding: 12px 14px; }
 }
