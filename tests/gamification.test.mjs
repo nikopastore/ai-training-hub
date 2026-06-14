@@ -62,7 +62,22 @@ const document = {
   body: { appendChild: noop },
   documentElement: { dataset: {} },
 };
-const fetch = async () => { throw new Error("fetch not available in tests"); };
+const fetch = async (url) => {
+  if (String(url).includes("data/courses.json")) {
+    const body = readFileSync(join(projectRoot, "data/courses.json"), "utf8");
+    return {
+      ok: true,
+      status: 200,
+      headers: {
+        get: (name) => name.toLowerCase() === "content-type" ? "application/json" : null,
+      },
+      text: async () => body,
+      json: async () => JSON.parse(body),
+    };
+  }
+
+  throw new Error(`fetch not available in tests: ${url}`);
+};
 
 const Hub = new Function("window", "localStorage", "document", "fetch", appSource + "; return window.AITrainingHub;")(window, localStorage, document, fetch);
 

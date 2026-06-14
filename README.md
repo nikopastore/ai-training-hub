@@ -11,10 +11,12 @@ A self-contained web app for tracking your progress through 60+ of the most impo
 - **60+ curated courses** organized into three tiers: **Learn** (foundations), **Build** (hands-on), **Ship** (production)
 - **Anthropic Skilljar courses** front and center — including Claude API, tool use, MCP, agents, and the constitutional AI track
 - **XP system** with 99 levels, scaling curve tuned to feel rewarding without being trivial
-- **15 achievements** — from "First Step" to "Completionist" — to chase
+- **19 achievements** — from "First Step" to "Completionist" — to chase
 - **Streak tracking** that auto-bumps when you come back the next day
 - **localStorage persistence** — your progress stays on your device, nothing leaves
-- **Search + tier filter** to find the right course when you have 30 minutes
+- **Onboarding, continue card, and empty-state UX** to guide first use and bring you right back to the next best action
+- **Sticky motivation header** that keeps level, XP, streak, and active course count in view while you browse
+- **Search + tier + quality filters** to find the right course when you have 30 minutes
 - **JSON-driven catalog** — `data/courses.json` is the single source of truth
 
 ## Quick start
@@ -34,7 +36,7 @@ That's it. No build step, no bundler, no transpiler. Just open `index.html` dire
 npm test
 ```
 
-74 tests covering the XP curve, level math, streak logic, achievement triggers, catalog integrity, import/export, theme persistence, and idempotency. Zero dependencies — uses Node's built-in test runner.
+74 tests covering the XP curve, level math, streak logic, achievement triggers, onboarding UX, continue-card UX, empty-state UX, catalog integrity, import/export, theme persistence, and idempotency. Zero dependencies — uses Node's built-in test runner.
 
 ## Updating the catalog
 
